@@ -242,8 +242,3 @@
   session: { currentUserId: 25 }
 }
 ```
-
-<!-- Change mesages to polymorphic-->
-<!-- joinsTable channelMemeberships
-ref id to channel
-and array of users -->

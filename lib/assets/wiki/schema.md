@@ -103,23 +103,3 @@
 + `user_id` references `users`
 + `message_id` references `message`
 + index on `[:message_id, :user_id], unique: true`
-
-
-
-## `channel_members` concerns
-+ many to many relationship from channels to users, many-to-many joins table user can like many things
-+ need a joins table for users and channels
-+ create the table like any other table w/ reference to Users and channels table
-+ Hint: sql join table
-
-## `direct_message_channels` concerns:
-+ ACTION CABLE RAILS IMPLEMENTATION OF WEB SOCKETS ALLOWS FOR LIVE SOCKETING PERSON CAN SEE IT IMMEDIATELY
-+ HOW TO CONNECT A REACT RAILS FRONTEND TO BACKEND USING ACTION CABLE RAILS
-+ Also think about how to subscribe to action cable channel in the backend
-+ add many to many table for users to direct_messages
-
-## `messages` concerns
-+ parent_message_id (else if original message => nil)
-+ polymorphic association (type, messegable id and type)
-
-<!-- channelMembers and DMmembers POST and DELETE -->
