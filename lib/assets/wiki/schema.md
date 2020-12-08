@@ -123,5 +123,3 @@
 + polymorphic association (type, messegable id and type)
 
 <!-- channelMembers and DMmembers POST and DELETE -->
-
-<!-- GET RID OF CHIRPS -->
