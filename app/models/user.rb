@@ -18,13 +18,13 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    validates :username, :fname, :lname, :password_digest, :session_token, 
-        presence: true
+    validates :username, :fname, :lname, :email, :password_digest, 
+        :session_token, presence: true
     valdates :password, length: { minimum: 6, allow_nil: true }
     validates :session_token, :name, uniqueness: true
 
     def self.find_by_credentials(credential, password) 
-        user = User.find_by(username: username) || User.find_by(email: email)
+        user = User.find_by(email: email)
         # user && user.is_password?(password) ? user : nil
         user.try(:is_password?, password) ? user : nil
     end
