@@ -101,7 +101,7 @@
             email: "matty@buzzhive.com"
         },
     },
-    channels: {
+    hives: {
         1: {
             id: 1,
             title: "general",
@@ -158,20 +158,20 @@
             authorId: 14,
         }
     },
-    channelMembers: {
+    hiveMembers: {
         1: {
             id: 1,
-            channel_id: 1,
+            hive_id: 1,
             user_id: 1
         },
         ...
         98: {
             id: 98,
-            channel_id: 7,
+            hive_id: 7,
             user_id: 14
         }
     },
-    directMessageChannels: {
+    directMessagehives: {
         1: {
             id: 1,
             authorId: 14
@@ -185,7 +185,7 @@
             authorId: 12,
         }
     },
-    directMessageChannelMembers: {
+    directMessagehiveMembers: {
         1: {
             id: 1,
             authorId: 14
@@ -205,7 +205,7 @@
             body: "Hello there",
             parent_messae_id: null,
             messageable_id: 1,
-            messageable_type: directMessageChannels;
+            messageable_type: directMessageHives;
         },
         ...
         3: {

@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_011145) do
+ActiveRecord::Schema.define(version: 2020_12_10_220322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hives", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.boolean "private", null: false
+    t.integer "author_id", null: false
+    t.string "ref_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_hives_on_author_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "body", null: false
+    t.integer "author_id", null: false
+    t.integer "parent_message_id"
+    t.integer "msgeable_id", null: false
+    t.string "msgeable_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id", "msgeable_type", "msgeable_id"], name: "index_messages_on_author_id_and_msgeable_type_and_msgeable_id", unique: true
+    t.index ["author_id"], name: "index_messages_on_author_id"
+    t.index ["msgeable_type", "msgeable_id"], name: "index_messages_on_msgeable_type_and_msgeable_id"
+    t.index ["parent_message_id"], name: "index_messages_on_parent_message_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
