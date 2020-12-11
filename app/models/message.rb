@@ -12,17 +12,16 @@
 #  updated_at        :datetime         not null
 #
 class Message < ApplicationRecord
+
     validates :body, presence: true
-    validates :author_id, uniqueness: { scope: [:msgeable_id, :msgeable_type] }
 
     after_initialize :ensure_messageable!
 
-    belongs_to :messageable, polymorphic: true
+    belongs_to :msgeable, polymorphic: true
 
     belongs_to :author,
-        class_name: :Message,
-        foreign_key: :author_id,
-        inverse_of: :authored_messages
+        class_name: :User,
+        foreign_key: :author_id
 
     has_many :child_messages,
         class_name: :Message,

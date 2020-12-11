@@ -28,7 +28,7 @@ class User < ApplicationRecord
     has_many :authored_hives,
         class_name: :Hive,
         foreign_key: :author_id
-    has_many :authored_messages
+    has_many :authored_messages, inverse_of: 'author'
 
     def self.find_by_credentials(credential, password) 
         user = User.find_by(email: email)
@@ -68,5 +68,4 @@ class User < ApplicationRecord
         end
         self.session_token
     end
-
 end

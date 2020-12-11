@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_12_10_225924) do
   create_table "hives", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.boolean "private", null: false
+    t.boolean "is_private", null: false
     t.integer "author_id", null: false
     t.string "ref_link"
     t.datetime "created_at", null: false
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_12_10_225924) do
     t.string "msgeable_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id", "msgeable_type", "msgeable_id"], name: "index_messages_on_author_id_and_msgeable_type_and_msgeable_id", unique: true
     t.index ["author_id"], name: "index_messages_on_author_id"
     t.index ["msgeable_type", "msgeable_id"], name: "index_messages_on_msgeable_type_and_msgeable_id"
     t.index ["parent_message_id"], name: "index_messages_on_parent_message_id"

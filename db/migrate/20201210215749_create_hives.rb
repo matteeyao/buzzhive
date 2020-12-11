@@ -3,7 +3,7 @@ class CreateHives < ActiveRecord::Migration[5.2]
     create_table :hives do |t|
         t.string :name, null: false
         t.text :description, null: false
-        t.boolean :private, null: false
+        t.boolean :is_private, null: false
         t.integer :author_id, null: false
         t.string :ref_link
 
