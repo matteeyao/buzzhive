@@ -20,8 +20,15 @@ class User < ApplicationRecord
 
     validates :username, :fname, :lname, :email, :password_digest, 
         :session_token, presence: true
-    validates :password, length: { minimum: 6, allow_nil: true }
+    validates :password, length: {minimum: 6, allow_nil: true}
     validates :username, :email, :session_token, uniqueness: true
+
+    has_many :hive_users, dependent: :destroy
+    has_many :hive_memberships, through: :hive_users
+    has_many :authored_hives,
+        class_name: :Hive,
+        foreign_key: :author_id
+    has_many :authored_messages
 
     def self.find_by_credentials(credential, password) 
         user = User.find_by(email: email)

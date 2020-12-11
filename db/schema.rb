@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_220322) do
+ActiveRecord::Schema.define(version: 2020_12_10_225924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hive_users", force: :cascade do |t|
+    t.integer "hive_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "last_read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hive_id"], name: "index_hive_users_on_hive_id"
+    t.index ["user_id"], name: "index_hive_users_on_user_id"
+  end
 
   create_table "hives", force: :cascade do |t|
     t.string "name", null: false

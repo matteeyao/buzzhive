@@ -32,12 +32,13 @@
 + `author_id` references `users`
 + index on `author_id`
 
-## `hive_members` (Joins Table)
+## `hive_users` (Joins Table)
 | column name 	| data type 	| details                        	|
 |-------------	|-----------	|--------------------------------	|
 | id          	| integer   	| not null, primary key          	|
 | hive_id  	    | integer   	| not null, indexed, foreign key 	|
 | user_id     	| integer   	| not null, indexed, foreign key 	|
+| last_read_at  | datetime   	| not null                       	|
 | created_at  	| datetime  	| not null                       	|
 | updated_at  	| datetime  	| not null                       	|
 
@@ -57,7 +58,7 @@
 + `author_id` references `users`
 + index on `author_id`
 
-## `direct_message_hive_members` (Joins Table)
+## `direct_message_hive_users` (Joins Table)
 | column name               	| data type 	| details                        	|
 |---------------------------	|-----------	|--------------------------------	|
 | id                        	| integer   	| not null, primary key          	|
