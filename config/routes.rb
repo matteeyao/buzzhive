@@ -3,7 +3,7 @@ Rails.application.routes.draw do
         resource :user, only: [:index, :show, :create, :update, :destroy]
         resource :session, only: [:create, :destroy, :show]
         resources :hives, only: [:index, :show, :create, :update, :destroy] do
-            resource :hive_user, only: [:index, :create, :update, :destroy]
+            resource :hive_users, only: [:index, :create, :update, :destroy]
             resources :messages, only: [:index, :create, :update, :destroy]
         end
     end

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import HiveIndex from "./hive_index";
-import { fetchHives } from "../../../actions/hive_actions";
+import { fetchHives } from "../../../../actions/hive_actions";
 
 const mapStateToProps = state => {
     return {

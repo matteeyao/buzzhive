@@ -36,8 +36,8 @@ class Api::MessagesController < ApplicationController
 
     private
 
-    def selected_hive
-        Hive.find(params[:id])
+    def set_hive
+        @hive = Hive.find(params[:msgeable_id])
     end
 
     def message_params

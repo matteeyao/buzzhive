@@ -4,101 +4,101 @@
         users: {
             1: {
                 id: 1
-                username: "Anonymous Fox",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Fox",
             },
             2: {
                 id: 2
-                username: "Anonymous Bison",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Bison",
             },
             3: {
                 id: 3
-                username: "Anonymous Hedgehog",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Hedgehog",
             },
             4: {
                 id: 4
-                username: "Anonymous Orangutan",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Orangutan",
             },
             5: {
                 id: 5
-                username: "Anonymous Lynx",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Lynx",
             },
             6: {
                 id: 6
-                username: "Anonymous Hare",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Hare",
             },
             7: {
                 id: 7
-                username: "Anonymous Turtle",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Turtle",
             },
             8: {
                 id: 8
-                username: "Anonymous Parrot",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Parrot",
             },
             9: {
                 id: 9
-                username: "Anonymous Dingo",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Dingo",
             },
             10: {
                 id: 10
-                username: "Anonymous Moose",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Moose",
             },
             11: {
                 id: 11
-                username: "Anonymous Pony",
                 fname: "Guest",
                 lname: "User",
                 email: "demo@buzzhive.io"
+                username: "Anonymous Pony",
             },
             12: {
                 id: 12,
-                username: "MishMosh",
                 fname: "Michelle",
                 lname: "Kim",
                 email: "mishmosh@aa.io"
+                username: "MishMosh",
             },
             13: {
                 id: 13,
-                username: "WakaFlaka",
                 fname: "Sam",
                 lname: "Walker",
                 email: "wakaflaka@aa.io"
+                username: "WakaFlaka",
             },
             14: {
                 id: 14,
-                username: "Matty",
                 fname: "Matt",
                 lname: "Yao"
                 email: "matty@buzzhive.com"
+                username: "Matty",
             },
         },
         hives: {
@@ -158,18 +158,22 @@
                 authorId: 14,
             }   
         },
-        hiveMembers: {
-            1: {
-                id: 1,
-                hive_id: 1,
-                user_id: 1
+        currentHive: {
+            hive: {},
+            members: {
+                1: {
+                    id: 1,
+                    hive_id: 1,
+                    user_id: 1
+                },
+                ...
+                98: {
+                    id: 98,
+                    hive_id: 7,
+                    user_id: 14
+                }
             },
-            ...
-            98: {
-                id: 98,
-                hive_id: 7,
-                user_id: 14
-            }
+            messages: [],
         },
         directMessagehives: {
             1: {
@@ -240,13 +244,7 @@
         messageForm: ["Message body cannot be blank"]
     },
     session: { 
-        currentUser: {
-            id: 14,
-            fname: 'Matt',
-            lname: 'Yao',
-            username: 'Matty',
-            email: 'matty@buzzhive.com'
-        }
+        currentUserId: 14
     }
 }
 ```

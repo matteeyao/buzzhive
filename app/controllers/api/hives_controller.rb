@@ -1,14 +1,14 @@
 class Api::HivesController < ApplicationController
+    before_action :set_hive, only: [:show, :edit, :update, :destroy]
+
     def index
         @hives = Hive.includes(:users).all
         render :index
     end
 
     def show
-        @hive = selected_hive
-        # @messages = @chatroom.messages.order(created_at: :desc).limit(100).reverse
-        # @hive_user = current_user.hive_users.find_by(chatroom_id: @chatroom.id)
-        render :show
+        @messages = @hive.messages.order(created_at: :desc).limit(100).reverse
+        @hive_user = current_user.hive_users.find_by(hive_id: @hive.id)
     end
 
     # def create
@@ -44,11 +44,11 @@ class Api::HivesController < ApplicationController
 
     private
 
-    def selected_hive
-        Hive.find(params[:id])
+    def set_hive
+        @hive = Hive.find(params[:id])
     end
 
     def hive_params
-        params.require(:hive).permit(:name, :description, :private, :ref_link)
+        params.require(:hive).permit(:name, :description, :is_private, :ref_link)
     end
 end
