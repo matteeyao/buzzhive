@@ -1,0 +1,86 @@
+// Use the gear_dropdown.png screenshot as a style guide
+
+#gear-dropdown-btn {
+    position: relative;
+    padding: 7px 9px;
+}
+
+/* Only when we hover over the btn, will the contents of child class
+.gear-dropdown show: */
+#gear-dropdown-btn:hover .gear-dropdown {
+    display: block;
+}
+
+.gear-dropdown {
+    /* Every time we position an element absolutely we should be thinking about
+    which parent element we need to position relatively */
+    position: absolute;
+    display: none;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+    padding: 10px;
+    width: 225px;
+
+    /* z-index specifies the stack order of an element; the z-index property is 
+    used on positioned elements to place them in front of or behind other 
+    elements with the largest z-index being in front: */
+    z-index: 1;
+
+    color: $dark-gray;
+    font-family: $sans-serif;
+    text-align: left;
+
+    /* Box shadows are highly customizable w/ values for the x-offset, 
+    y-offset, blur-radius, spread-radious and color: */
+    box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+    /* rgba format: rgba(Red, Green, Blue, Alpha) */
+    /* The Alpha value controls the transparency. Above, the shadow is very 
+    transparent */
+
+    /* initial value of a CSS property is its default / inherited value: */
+    font-weight: initial;
+
+    .editions li,
+    .help li {
+        margin: 5px 0;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+    .editions {
+        border-bottom: 1px solid $light-gray;
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        li:hover {
+            background-color: $light-gray;
+        }
+    }
+
+    .help {
+        li {
+            color: $blue;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 5px 5px;
+    }
+}
+
+.dropdown-subtitle {
+    display: block;
+    margin: 10px 5px;
+    font-family: $sans-serif;
+    font-size: 11px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}

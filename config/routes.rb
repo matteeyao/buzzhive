@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
     namespace :api, defaults: {format: :json} do
-        resources :users do
-            # resources :subscriptions, only [:index]
-        end
+        resource :user, only: [:index, :show, :create, :update, :destroy]
         resource :session, only: [:create, :destroy, :show]
-        resources :hives do
-            resource :hive_user
-            resources :messages
+        resources :hives, only: [:index, :show, :create, :update, :destroy] do
+            resource :hive_user, only: [:index, :create, :update, :destroy]
+            resources :messages, only: [:index, :create, :update, :destroy]
         end
     end
     root "static_pages#root"
-    mount ActionCable.server => '/cable'
+    # mount ActionCable.server => '/cable'
 end

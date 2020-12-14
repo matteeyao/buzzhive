@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
     private
     def current_user
+        return nil unless session[:session_token]
         @current_user ||= User.find_by(session_token: session[:session_token])
     end
 
@@ -26,8 +27,7 @@ class ApplicationController < ActionController::Base
 
     def require_logged_in
         unless current_user
-            render json: { base: ['invalid credentials'] }, status: 401
+            render json: { base: ['Invalid credentials'] }, status: 401
         end
     end
-    
 end

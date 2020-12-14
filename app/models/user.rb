@@ -30,8 +30,8 @@ class User < ApplicationRecord
         foreign_key: :author_id
     has_many :authored_messages, inverse_of: 'author'
 
-    def self.find_by_credentials(credential, password) 
-        user = User.find_by(email: email)
+    def self.find_by_credentials(username, password) 
+        user = User.find_by(username: username)
         # user && user.is_password?(password) ? user : nil
         user.try(:is_password?, password) ? user : nil
     end
@@ -46,7 +46,7 @@ class User < ApplicationRecord
     end
 
     def reset_session_token!
-        self.generate_unique_session_token
+        generate_unique_session_token
         self.save!
         self.session_token
     end

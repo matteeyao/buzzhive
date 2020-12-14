@@ -4,6 +4,9 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            fname: '',
+            lname: '',
+            email: '',
             username: '',
             password: ''
         };
@@ -19,7 +22,8 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user)
+            .then(() => this.props.history.push('/client'));
     }
 
     renderErrors() {
@@ -35,15 +39,43 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        const signupForm = this.props.formType === 'signup' ? (
+            <div>
+                <br />
+                <label>First Name:
+                    <input type="text"
+                        value={this.state.fname}
+                        onChange={this.update('fname')}
+                        className="signup-input"
+                    />
+                </label>
+                <br />
+                <label>Last Name:
+                    <input type="text"
+                        value={this.state.lname}
+                        onChange={this.update('lname')}
+                        className="signup-input"
+                    />
+                </label>
+                <br />
+                <label>Email:
+                    <input type="text"
+                        value={this.state.email}
+                        onChange={this.update('email')}
+                        className="signup-input"
+                    />
+                </label>
+            </div>
+        ) : "";
+
         return (
-            <div className="login-form-container">
+            <div className="session-form">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to buzzhive!
-                    <br/>
-                    Please {this.props.formType} or {this.props.navLink}
+                    <h1>Welcome to buzzhive!</h1>
+                    <h3>Please {this.props.formType} or {this.props.navLink}</h3>
                     {this.renderErrors()}
                     <div className="login-form">
-                        <br/>
+                        {signupForm}
                         <label>Username:
                             <input type="text"
                                 value={this.state.username}

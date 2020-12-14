@@ -1,27 +1,28 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import {
-    Route,
-    Redirect,
-    Switch,
-    Link,
-    HashRouter
-} from 'react-router-dom';
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 
-import GreetingContainer from "./greeting/greeting_container";
-import SignUpFormContainer from './session_form/signup_form_container';
-import LogInFormContainer from './session_form/login_form_container';
+// MAIN COMPONENTS:
+import NavBarContainer from './client/navbar/navbar_container';
+import HiveIndexContainer from './client/sidebar/hive_index_container';
+// END
+
+// Session Components
+import SignUpFormContainer from './session/signup_form_container';
+import LogInFormContainer from './session/session_form_container';
+import Splash from './splash/splash';
+// END
+
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-        <header>
-            <h1>buzzhive</h1>
-            <GreetingContainer />
-        </header>
+        <Route path="/" component={NavBarContainer} />
+        <Route exact path="/" component={Splash} />
+        <ProtectedRoute exact path="/client" component={HiveIndexContainer} />
+        <AuthRoute exact path="/login" component={LogInFormContainer} />
+        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Switch>
-            <AuthRoute exact path="/login" component={LogInFormContainer} />
-            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         </Switch>
     </div>
 );

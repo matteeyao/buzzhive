@@ -34,7 +34,7 @@ hive1 = Hive.create!(
 )
 hive2 = Hive.create!(
     name: "general",
-    description: "Got something on your mind that you'd like to share with the world or simply want to chat with others from around the world? Post here in the general channel where others can like and reply to your messages.",
+    description: "Got something on your mind? Post it herewhere others can like and respond to your messages.",
     is_private: false,
     ref_link: "https://slack.com/",
     author_id: user14.id

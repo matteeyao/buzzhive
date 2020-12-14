@@ -1,18 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import Root from './components/root';
 import configureStore from './store/store';
+
+// TESTING
+// import { fetchHive, fetchHives } from './util/hive_api_util'
+import { fetchHive, fetchHives } from './actions/hive_actions'
+// END TESTING
 
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
     if (window.currentUser) {
         const preloadedState = {
-            session: { id: window.currentUser.id },
             entities: {
                 users: { [window.currentUser.id]: window.currentUser }
-            }
+            },
+            session: { currentUser: window.currentUser },
         };
         store = configureStore(preloadedState);
         delete window.currentUser;
@@ -23,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // TESTING START
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchHives = fetchHives;
+    window.fetchHive = fetchHive;
     // TESTING END
     
     const root = document.getElementById('root');

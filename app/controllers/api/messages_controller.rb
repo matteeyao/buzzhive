@@ -1,24 +1,17 @@
-class Api::HivesController < ApplicationController
+class Api::MessagesController < ApplicationController
+    before_action :set_hive, only: [:create]
+
     def index
-        @hives = Hive.includes(:users).all
+        @messages = Message.all
         render :index
     end
 
-    def show
-        @hive = selected_hive
-        # @messages = @chatroom.messages.order(created_at: :desc).limit(100).reverse
-        # @hive_user = current_user.hive_users.find_by(chatroom_id: @chatroom.id)
-        render :show
+    def create
+        @message = @hive.messages.new(message_params)
+        message.author = current_user
+        message.save
+        MessageRelayJob.perform_later(message)
     end
-
-    # def create
-    #     @hive = Hive.new(hive_params)
-    #     if @hive.save
-    #         render json: HiveSerializer.new(@hive).serialized_json
-    #     else
-    #         render json: { error: 'Unable to create channel'}
-    #     end
-    # end
 
     # def update
     #     @user = selected_user
@@ -41,14 +34,14 @@ class Api::HivesController < ApplicationController
     #     end
     # end
 
-
     private
 
     def selected_hive
         Hive.find(params[:id])
     end
 
-    def hive_params
-        params.require(:hive).permit(:name, :description, :private, :ref_link)
+    def message_params
+        params.require(:message).permit(:body, :author_id, :parent_message_id, 
+            :msgeable_id, :msgeable_type)
     end
 end
