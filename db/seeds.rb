@@ -34,7 +34,7 @@ hive1 = Hive.create!(
 )
 hive2 = Hive.create!(
     name: "general",
-    description: "Got something on your mind? Post it herewhere others can like and respond to your messages.",
+    description: "Got something on your mind? Post it here where others can like and respond to your messages.",
     is_private: false,
     ref_link: "https://slack.com/",
     author_id: user14.id
@@ -51,6 +51,9 @@ channelUser8 = HiveUser.create!(hive_id: hive2.id, user_id: user8.id)
 channelUser9 = HiveUser.create!(hive_id: hive2.id, user_id: user9.id)
 channelUser10 = HiveUser.create!(hive_id: hive2.id, user_id: user10.id)
 channelUser11 = HiveUser.create!(hive_id: hive2.id, user_id: user11.id)
+channelUser12 = HiveUser.create!(hive_id: hive2.id, user_id: user12.id)
+channelUser13 = HiveUser.create!(hive_id: hive2.id, user_id: user13.id)
+channelUser14 = HiveUser.create!(hive_id: hive2.id, user_id: user14.id)
 
 message1 = Message.create!(
     body: "Hello everyone. This is the first message tested on Buzzhive.",

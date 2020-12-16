@@ -1,16 +1,15 @@
 class Api::MessagesController < ApplicationController
     before_action :set_hive, only: [:create]
 
-    def index
-        @messages = Message.all
-        render :index
-    end
+    # def index
+    #     @messages = Message.all
+    #     render :index
+    # end
 
     def create
         @message = @hive.messages.new(message_params)
-        message.author = current_user
-        message.save
-        MessageRelayJob.perform_later(message)
+        @message.save
+        
     end
 
     # def update
@@ -37,7 +36,7 @@ class Api::MessagesController < ApplicationController
     private
 
     def set_hive
-        @hive = Hive.find(params[:msgeable_id])
+        @hive = current_user.hives.find(params[:hive_id])
     end
 
     def message_params

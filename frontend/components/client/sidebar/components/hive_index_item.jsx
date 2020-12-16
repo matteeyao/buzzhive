@@ -9,7 +9,7 @@ class IndexItem extends React.Component {
 
     handleClick() {
         const hiveId = this.props.hive.id;
-        this.props.history.push(`/hives/${hiveId}`);
+        this.props.history.push(`/client/hives/${hiveId}`);
     }
 
     render() {

@@ -1,16 +1,17 @@
 import React from "react";
-import Sidebar from "./sidebar/sidebar";
-// import ChannelShowContainer from "./channels/channel_show_container";
+import { Route, Switch } from "react-router-dom";
+import SidebarContainer from "./sidebar/sidebar";
+import ChannelShowContainer from "./channel/channel";
 
 export default () => (
     <div className="main-content">
         <div className="row">
             <div className="sections-sidebar">
-                <Sidebar />
+                <SidebarContainer />
             </div>
 
-            <div className="col-sm-3">
-                {/* <ChannelShowContainer /> */}
+            <div className="channel-detail">
+                <ChannelShowContainer />
             </div>
         </div>
     </div>

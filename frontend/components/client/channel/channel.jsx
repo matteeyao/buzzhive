@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import HiveIndexContainer from "./components/hive_index_container";
+import ChannelShowContainer from "./components/channel_show_container";
 
-class Sidebar extends Component {
+class ChannelDetail extends Component {
     render() {
         return (
             <div>
@@ -11,4 +11,4 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+export default ChannelDetail;

@@ -4,14 +4,14 @@ module ApplicationCable
 
     def connect
       self.current_user = find_verified_user
+      logger.add_tags "ActionCable", "User #{current_user.id}"
     end
 
     private
 
     def find_verified_user
-        if verified_user = User.find_by(session_token: session[:session_token])
-        # if verified_user = User.find_by(id: cookies.encrypted['_session']['user_id'])
-            verified_user
+        if current_user = User.find_by(session_token: request.session.fetch('session_token', nil))
+            current_user
         else
             reject_unauthorized_connection
         end

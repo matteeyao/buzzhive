@@ -24,7 +24,7 @@ class User < ApplicationRecord
     validates :username, :email, :session_token, uniqueness: true
 
     has_many :hive_users, dependent: :destroy
-    has_many :hive_memberships, through: :hive_users
+    has_many :hives, through: :hive_users
     has_many :authored_hives,
         class_name: :Hive,
         foreign_key: :author_id

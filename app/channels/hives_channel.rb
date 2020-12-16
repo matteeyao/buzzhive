@@ -1,7 +1,8 @@
 class HivesChannel < ApplicationCable::Channel
   def subscribed
-    # @hive = Hive.find_by(id: params[:id])
-    # stream_for @hive
+    current_user.hives.each do |hive|
+        stream_from "Hives:#{hive.id}"
+    end
   end
 
   def unsubscribed

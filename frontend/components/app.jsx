@@ -20,7 +20,7 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <ProtectedRoute path="/client" component={MainContainer} />
+            <ProtectedRoute path="/hives/:hiveId" component={MainContainer} />
         </Switch>
     </div>
 );

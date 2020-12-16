@@ -7,8 +7,9 @@ class Api::HivesController < ApplicationController
     end
 
     def show
+        # @hive_user = current_user.hive_users.find_by(hive_id: @hive.id)
         @messages = @hive.messages.order(created_at: :desc).limit(100).reverse
-        @hive_user = current_user.hive_users.find_by(hive_id: @hive.id)
+        @hive_users = @hive.hive_users.includes(:user)
     end
 
     # def create

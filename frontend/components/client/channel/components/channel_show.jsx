@@ -1,50 +1,65 @@
 import React from "react";
-import MessageForm from "./MessageForm.js";
+import MessageFormContainer from "./create_message_form_container";
 
-class Hive extends React.Component {
+class ChannelShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { messages: [] };
         this.bottom = React.createRef();
     }
 
     componentDidMount() {
-        App.cable.subscriptions.create(
-            { channel: "ChatChannel" },
-            {
-                received: data => {
-                    this.setState({
-                        messages: this.state.messages.concat(data.message)
-                    });
-                },
-                speak: function (data) {
-                    return this.perform("speak", data);
-                }
-            }
-        );
+        this.props.fetchHive(this.props.match.params.hiveId);
+        // App.cable.subscriptions.create(
+        //     { channel: "ChatChannel" },
+        //     {
+        //         received: data => {
+        //             this.setState({
+        //                 messages: this.state.messages.concat(data.message)
+        //             });
+        //         },
+        //         speak: function (data) {
+        //             return this.perform("speak", data);
+        //         }
+        //     }
+        // );
     }
 
-    componentDidUpdate() {
-        this.bottom.current.scrollIntoView();
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.hiveId !== this.props.match.params.hiveId) {
+            this.props.fetchHive(this.props.match.params.hiveId)
+        }
+        // this.bottom.current.scrollIntoView();
     }
 
     render() {
-        const messageList = this.state.messages.map(message => {
+        const { messages, users } = this.props;
+        const messageList = messages.map(message => {
             return (
                 <li key={message.id}>
-                    {message}
+                    <strong>{users[message.authorId].username}
+                        (
+                            {users[message.authorId].fname}
+                            {users[message.authorId].lname}
+                        )
+                    </strong>
+                    <div>{message.body}</div>
                     <div ref={this.bottom} />
                 </li>
             );
         });
+
         return (
             <div className="chatroom-container">
-                <div>ChatRoom</div>
+                <div>Channel</div>
                 <div className="message-list">{messageList}</div>
-                <MessageForm />
+                <br/>
+                <div className="message-input"><MessageFormContainer /></div>
             </div>
         );
     }
 }
 
-export default Hive;
+export default ChannelShow;
+
+// componentDidUpdate, when someone switches channels need to remount and fetch new information
+// runs everytime props and state changes

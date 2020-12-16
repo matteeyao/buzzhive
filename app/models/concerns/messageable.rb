@@ -7,8 +7,4 @@ module Messageable
             class_name: :Message,
             dependent: :destroy
     end
-
-    def messages
-        self.messages.sum(:value)
-    end
 end

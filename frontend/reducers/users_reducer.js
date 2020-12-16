@@ -1,11 +1,15 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_HIVE } from '../actions/hive_actions';
+import { RECEIVE_USERS } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
 
     switch (action.type) {
-        case RECEIVE_CURRENT_USER:
-            return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
+        case RECEIVE_HIVE:
+            const { data } = action;
+            return data.hiveUsers ? data.hiveUsers : {};
+        case RECEIVE_USERS:
+            return action.users;
         default:
             return state;
     }

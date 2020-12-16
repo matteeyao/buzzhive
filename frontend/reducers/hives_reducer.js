@@ -9,8 +9,9 @@ const hivesReducer = (state = {}, action) => {
         case RECEIVE_HIVES:
             return action.hives;
         case RECEIVE_HIVE:
-            const newHive = { [action.hive.id]: action.hive };
-            return Object.assign({}, state, newHive);
+            const { data } = action;
+            const hive = { [data.hive.id]: data.hive };
+            return Object.assign({}, state, hive);
         default:
             return state;
     }

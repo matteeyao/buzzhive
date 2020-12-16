@@ -158,22 +158,18 @@
                 authorId: 14,
             }   
         },
-        currentHive: {
-            hive: {},
-            members: {
-                1: {
-                    id: 1,
-                    hive_id: 1,
-                    user_id: 1
-                },
-                ...
-                98: {
-                    id: 98,
-                    hive_id: 7,
-                    user_id: 14
-                }
+        hiveMembers: {
+            1: {
+                id: 1,
+                hive_id: 1,
+                user_id: 1
             },
-            messages: [],
+            ...
+            98: {
+                id: 98,
+                hive_id: 7,
+                user_id: 14
+            }
         },
         directMessagehives: {
             1: {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import HiveIndexContainer from "./components/hive_index_container";
 
-class Sidebar extends Component {
+class SidebarDetail extends Component {
     render() {
         return (
             <div>
@@ -11,4 +11,4 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+export default SidebarDetail;

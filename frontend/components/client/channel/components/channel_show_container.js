@@ -1,17 +1,20 @@
 import { connect } from "react-redux";
-import HiveIndex from "./hive_index";
-import { fetchHives } from "../../../../actions/hive_actions";
+import { fetchHive } from "../../../../actions/hive_actions";
+import ChannelDetail from "./channel_show";
+import { withRouter } from "react-router-dom"
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        hives: Object.values(state.entities.hives),
+        hive: state.entities.hives[ownProps.match.params.hiveId],
+        messages: Object.values(state.entities.messages),
+        users: state.entities.users,
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        fetchHives: () => dispatch(fetchHives()),
+        fetchHive: (id) => dispatch(fetchHive(id)),
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HiveIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelDetail));
