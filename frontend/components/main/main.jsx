@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import SidebarContainer from "./sidebar/sidebar";
-import ChannelShowContainer from "./channel/channel";
+import ChannelShowContainer from "./channel/channel_container";
 
 export default () => (
     <div className="main-content">

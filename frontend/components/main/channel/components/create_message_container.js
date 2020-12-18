@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom"
 import { createMessage } from "../../../../actions/message_actions";
 import MessageForm from './message_form';
-import { withRouter } from "react-router-dom"
-
 
 const mapStateToProps = (state, ownProps) => {
     return ({
@@ -23,4 +22,6 @@ const mapDispatchToProps = dispatch => {
     })
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MessageForm));
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(MessageForm)
+);

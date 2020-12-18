@@ -4,6 +4,7 @@ class MessageForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.message;
+        this.baseState = this.state;
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
@@ -20,6 +21,7 @@ class MessageForm extends React.Component {
         //     message: this.state.body
         // });
         this.props.action(this.state);
+        this.setState(this.baseState);
     };
 
     render() {

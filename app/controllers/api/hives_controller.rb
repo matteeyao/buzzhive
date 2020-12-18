@@ -7,30 +7,34 @@ class Api::HivesController < ApplicationController
     end
 
     def show
-        # @hive_user = current_user.hive_users.find_by(hive_id: @hive.id)
         @messages = @hive.messages.order(created_at: :desc).limit(100).reverse
         @hive_users = @hive.hive_users.includes(:user)
     end
 
-    # def create
-    #     @hive = Hive.new(hive_params)
-    #     if @hive.save
-    #         render json: HiveSerializer.new(@hive).serialized_json
-    #     else
-    #         render json: { error: 'Unable to create channel'}
-    #     end
-    # end
+    def create
+        @hive = Hive.new(hive_params)
+        if @hive.save
+            @hive.hive_users.where(user_id: current_user.id).first_or_create
+            serialized_data = ActiveModelSerializers::Adapter::Json.new(
+                HiveSerializer.new(@hive)
+            ).serializable_hash
+            ActionCable.server.broadcast 'hives_channel', serialized_data
+            head :ok
+        else
+            render json: ['Unable to create channel.'], status: 422
+        end
+    end
 
-    # def update
-    #     @user = selected_user
-    #     if @user.try(:update_attributes, user_params)
-    #         render :show
-    #     elsif !@user
-    #         render json: ["User credentials could not be found. Please try again."], stats: 400
-    #     else
-    #         render json: @user.errors.full_messages, status: 422
-    #     end
-    # end
+    def update
+        @user = selected_user
+        if @user.try(:update_attributes, user_params)
+            render :show
+        elsif !@user
+            render json: ["User credentials could not be found. Please try again."], stats: 400
+        else
+            render json: @user.errors.full_messages, status: 422
+        end
+    end
 
     # def destroy
     #     @user = selected_user
@@ -41,7 +45,6 @@ class Api::HivesController < ApplicationController
     #         render ['User could not be located.']
     #     end
     # end
-
 
     private
 

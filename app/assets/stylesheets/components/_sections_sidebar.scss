@@ -1,7 +1,7 @@
 .sections-sidebar.expand {
 	display: flex;
 	opacity: 1;
-	width: 200px;
+	width: 300px;
 	transition: width 0.2s ease, opacity 0.5s ease;
 	overflow: visible;
 }
@@ -17,7 +17,7 @@
 	font-weight: bolder;
 	text-transform: initial;
 	// width: 0px;
-	width: 200px;
+	width: 300px;
 	z-index: 1;
 	box-shadow: 4px 0 6px 1px rgba(0,0,0,0.1);
 	// overflow: hidden;

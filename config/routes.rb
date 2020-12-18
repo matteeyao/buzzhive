@@ -8,6 +8,6 @@ Rails.application.routes.draw do
             resources :messages, only: [:create, :update, :destroy]
         end
     end
+    mount ActionCable.server, at: '/cable'
     root to: "static_pages#root"
-    # mount ActionCable.server => '/cable'
 end
