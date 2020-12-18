@@ -8,7 +8,6 @@ const messagesReducer = (state = {}, action) => {
             const { data } = action;
             return data.messages ? data.messages : {};
         case RECEIVE_MESSAGE:
-            // debugger
             const message = { [action.message.id]: action.message };
             return { ...state, ...message }
         default:

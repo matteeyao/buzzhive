@@ -17,7 +17,6 @@ class Channel extends React.Component {
         if (prevProps.match.params.hiveId !== this.props.match.params.hiveId) {
             this.props.fetchHive(this.props.match.params.hiveId)
         }
-        // debugger
         this.bottom.current.scrollIntoView();
     }
 
