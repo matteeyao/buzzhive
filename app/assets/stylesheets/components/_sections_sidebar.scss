@@ -29,7 +29,7 @@
 		position: absolute;
 		right: 0;
 		top: 7px;
-		border-left: 5px solid $light-gray;
+		border-left: 5px solid $slack-font;
 		border-top: 5px solid transparent;
 		border-bottom: 5px solid transparent;
 		width: 0;
@@ -64,7 +64,7 @@
 		li.subheader {
 			font-size: smaller;
 			text-transform: uppercase;
-			color: $gray;
+			color: $solid-grey;
 			margin: 0 0 5px 0;
 		}
 	}
@@ -77,7 +77,7 @@
 			position: absolute;
 			left: 165px;
 			background: white;
-			border: 1px solid $light-gray;
+			border: 1px solid $slack-font;
 			border-radius: 3px;
 			z-index: 1;
 			box-shadow: -1px 4px 6px rgba(0,0,0,0.09);
@@ -87,7 +87,7 @@
 		ul:before {
 			display: block;
 			content: '';
-			border-right: 21px solid $light-gray;
+			border-right: 21px solid $slack-font;
 			border-top: 21px solid transparent;
 			border-bottom: 21px solid transparent;
 			position: absolute;

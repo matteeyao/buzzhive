@@ -1,11 +1,69 @@
-$lightest-gray: #f7f7f5;
-$light-gray: #e2e2e2;
-$gray: #999;
-$dark-gray: #6f6f6f;
-
+// BLUE SHADES
 $lightest-blue: #f0f8fc;
 $light-blue: #6288a5;
 $blue: #326891;
 $dark-blue: #4d7b9f;
 $darkest-blue: #265e8b;
+$discord-font: #677ED1;
+// R: 103 G: 126 B: 209
+$discord-hover: #8397D9;
+// R: 131 G: 151 B: 217
+$slack-hyperlink: #145996;
+// R: 20 G: 89 B: 150
+$fox-logo: #044389;
+// R: 4 G: 67 B: 137
 
+// DISCORD
+$slack-landscape: #191B1E;
+// R: 25 G: 27 B: 30
+$discord-landscape: #2F3237;
+// R: 47 G: 50 B: 55
+$notes-landscape: #1E1E1E;
+// R: 30 G: 30 B: 30
+$discord-footer: #202325;
+// R: 32 G: 35 B: 37
+$slack-chatbox: #212326;
+// R: 33 G: 35 B: 38
+$discord-channel-bar: #1d1f21;  
+// R: 29 G: 31 B: 33
+$discord-sidebar: #2A2B2F;
+// R: 42 G: 43 B: 47
+$slack-sidebar: #2D2D2D;
+// R: 45 G: 45 B: 45
+$discord-hover: #2D2F34;
+// R: 45 G: 47 B: 52
+$slack-hover: #1f2124;
+// R: 31 G: 33 B: 36
+$slack-border: #2F3033;
+// R: 47 G: 48 B: 51
+$discord-reaction: #3B3E43;
+// R: 59 G: 62 B: 67
+$discord-channel-selected: #31363a;
+// R: 50 G: 53 B: 58
+
+$solid-grey: #676B71;
+// R: 103 G: 107 B: 113
+$discord-icon: #3DAC78;
+// R: 61 G: 172 B: 120
+
+// SLACK
+$read-red: #793125;
+// R: 121 G: 49 B: 37
+$unread-red: #D8462D;
+// R: 216 G: 70 B: 45
+
+// COLOR
+$slack-font: #CBCCCD;
+// R: 203 G: 204 B: 205
+$discord-font: #D7D8D9;
+// R: 215 G: 216 B: 217
+$pale-white: #E8E7E8;
+// R: 232 G: 231 B: 232
+$slack-unbold: #C0C0C1;
+// R: 192 G: 192 B: 193
+$slack-bold: #F7F7F9;
+// R: 247 G: 247 B: 249
+$discord-unbold: #83878C;
+// R: 131 G: 135 B: 140
+$discord-bold: #FFFFFF;
+// R: 255 G: 255 B: 255

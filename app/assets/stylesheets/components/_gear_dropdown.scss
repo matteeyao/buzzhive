@@ -19,7 +19,7 @@
     top: 30px;
     right: 0;
     background-color: #fff;
-    border: 1px solid $light-gray;
+    border: 1px solid $slack-font;
     border-radius: 3px;
     padding: 10px;
     width: 225px;
@@ -29,7 +29,7 @@
     elements with the largest z-index being in front: */
     z-index: 1;
 
-    color: $dark-gray;
+    color: $discord-hover;
     font-family: $sans-serif;
     text-align: left;
 
@@ -52,7 +52,7 @@
         }
 
     .editions {
-        border-bottom: 1px solid $light-gray;
+        border-bottom: 1px solid $slack-font;
 
         a {
             text-decoration: none;
@@ -60,7 +60,7 @@
         }
 
         li:hover {
-            background-color: $light-gray;
+            background-color: $slack-font;
         }
     }
 

@@ -1,2 +1,5 @@
-$serif: georgia, "times new roman", times, serif;
-$sans-serif: arial, helvetica, sans-serif;
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Arimo&display=swap);
+
+$serif: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+$sans-serif: "Arimo","Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif

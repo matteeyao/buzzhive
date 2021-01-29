@@ -1,7 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[buzzhive](https://buzzhive.herokuapp.com/#/), a collobaration hub designed 
+to personalize communication and collobation across every community. Through 
+endless conversation and authentic human connections, buzzhive provides access 
+to the right people, information, and tools for every activity from discussing 
+interests to acheiving ambitions.
+
+## Stack
+* PostgresQL
+* Ruby on Rails
+* ActionCable / WebSockets
+* React Redux
 
 Things you may want to cover:
 
