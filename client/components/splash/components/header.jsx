@@ -16,7 +16,9 @@ export default () => {
                             </svg>
                         </a>
                         <div className="mobileButtonContainer-3I8xXw">
-                            <a className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g mobileAppButton-2dMGaq" href="//discord.com/login">Open buzzhive</a>
+
+                            {/* <a className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g mobileAppButton-2dMGaq" href="//discord.com/login">Open buzzhive</a> */}
+                            <Link className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g mobileAppButton-2dMGaq" to="/login">Open buzzhive</Link>
                             <button className="menuIcon-3UgAfy" aria-hidden="false">
                             <svg width="40" height="40" viewBox="0 0 40 40">
                                 <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M33.3327 10H6.66602V15H33.3327V10ZM6.66602 18.3317H33.3327V23.3317H6.66602V18.3317ZM6.66602 26.665H33.3327V31.665H6.66602V26.665Z"></path>
@@ -35,8 +37,11 @@ export default () => {
                             </g>
                             </svg>
                         </a>
-                        <div className="links-10hR8L"><a className="link-1bIkeG link-oDO0Ir" href="javascript:;">Download</a><a className="link-1bIkeG link-oDO0Ir" href="#">Why buzzhive?</a><a className="link-1bIkeG link-oDO0Ir" href="#">Nitro</a><a className="link-1bIkeG link-oDO0Ir" href="#">Safety</a><a className="link-1bIkeG link-oDO0Ir" href="#">Support</a></div>
-                        <div className="appButton-2wSXh-"><a className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g" href="//discord.com/login">Open buzzhive</a></div>
+                        <div className="links-10hR8L"><a className="link-1bIkeG link-oDO0Ir" href="#">Download</a><a className="link-1bIkeG link-oDO0Ir" href="#">Why buzzhive?</a><a className="link-1bIkeG link-oDO0Ir" href="#">Nitro</a><a className="link-1bIkeG link-oDO0Ir" href="#">Safety</a><a className="link-1bIkeG link-oDO0Ir" href="#">Support</a></div>
+                        <div className="appButton-2wSXh-">
+                            {/* <a className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g" href="//discord.com/login">Open buzzhive</a> */}
+                            <Link className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g" to="/login">Open buzzhive</Link>
+                        </div>
                     </nav>
                 </header>
             </div>
@@ -45,7 +50,7 @@ export default () => {
                 <div className="heroBody-3b6R3c">
                     <div className="heroText-Sc7-zG">
                         <h1 className="h1-1JG5Bw">Your place to talk</h1>
-                        <div className="text-3U-SDd textMedium-1DcD2z heroSubtitle-32Iz6d">Whether you’re part of a school club, gaming group, worldwide art community, or just a handful of friends that want to spend time together, Discord makes it easy to talk every day and hang out more often.</div>
+                        <div className="text-3U-SDd textMedium-1DcD2z heroSubtitle-32Iz6d">Whether you’re part of a school club, gaming group, worldwide art community, or just a handful of friends that want to spend time together, buzzhive makes it easy to talk every day and hang out more often.</div>
                     </div>
                     <div className="ctaContainer-3vWJHU">
                         <a className="button-195cDm buttonWhite-18r1SC buttonLarge-2j8B-n downloadButton-111eh6 twoButtons-3Bk8eU">
@@ -57,7 +62,7 @@ export default () => {
                             </svg>
                             Download
                         </a>
-                        <button className="button-195cDm buttonDark-1kG4vN buttonLarge-2j8B-n gtm-click-class-open-button openButton-McADyK">Open buzzhive in your browser</button>
+                        <Link to="/login"><button className="button-195cDm buttonDark-1kG4vN buttonLarge-2j8B-n gtm-click-class-open-button openButton-McADyK">Open buzzhive in your browser</button></Link>
                     </div>
                 </div>
             </div>

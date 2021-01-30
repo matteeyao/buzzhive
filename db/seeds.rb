@@ -40,6 +40,21 @@ hive2 = Hive.create!(
     author_id: user14.id
 )
 
+channelUser1 = HiveUser.create!(hive_id: hive1.id, user_id: user1.id)
+channelUser2 = HiveUser.create!(hive_id: hive1.id, user_id: user2.id)
+channelUser3 = HiveUser.create!(hive_id: hive1.id, user_id: user3.id)
+channelUser4 = HiveUser.create!(hive_id: hive1.id, user_id: user4.id)
+channelUser5 = HiveUser.create!(hive_id: hive1.id, user_id: user5.id)
+channelUser6 = HiveUser.create!(hive_id: hive1.id, user_id: user6.id)
+channelUser7 = HiveUser.create!(hive_id: hive1.id, user_id: user7.id)
+channelUser8 = HiveUser.create!(hive_id: hive1.id, user_id: user8.id)
+channelUser9 = HiveUser.create!(hive_id: hive1.id, user_id: user9.id)
+channelUser10 = HiveUser.create!(hive_id: hive1.id, user_id: user10.id)
+channelUser11 = HiveUser.create!(hive_id: hive1.id, user_id: user11.id)
+channelUser12 = HiveUser.create!(hive_id: hive1.id, user_id: user12.id)
+channelUser13 = HiveUser.create!(hive_id: hive1.id, user_id: user13.id)
+channelUser14 = HiveUser.create!(hive_id: hive1.id, user_id: user14.id)
+
 channelUser1 = HiveUser.create!(hive_id: hive2.id, user_id: user1.id)
 channelUser2 = HiveUser.create!(hive_id: hive2.id, user_id: user2.id)
 channelUser3 = HiveUser.create!(hive_id: hive2.id, user_id: user3.id)

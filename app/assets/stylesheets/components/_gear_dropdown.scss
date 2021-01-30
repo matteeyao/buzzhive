@@ -30,7 +30,7 @@
     z-index: 1;
 
     color: $discord-hover;
-    font-family: $sans-serif;
+    font-family: $discord-font;
     text-align: left;
 
     /* Box shadows are highly customizable w/ values for the x-offset, 
@@ -79,7 +79,7 @@
 .dropdown-subtitle {
     display: block;
     margin: 10px 5px;
-    font-family: $sans-serif;
+    font-family: $discord-font;
     font-size: 11px;
     font-weight: bolder;
     text-transform: uppercase;

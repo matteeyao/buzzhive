@@ -85,7 +85,8 @@ export default () => {
                             </g>
                         </svg>
                         </a>
-                        <a className="button-195cDm buttonBrand-33cvhX buttonSmall-2bnF7I" href="//discord.com/register">Open buzzhive</a>
+                        {/* <a className="button-195cDm buttonBrand-33cvhX buttonSmall-2bnF7I" href="//discord.com/register">Open buzzhive</a> */}
+                        <Link className="button-195cDm buttonBrand-33cvhX buttonSmall-2bnF7I" to="/login">Open buzzhive</Link>
                     </div>
                 </div>
             </div>

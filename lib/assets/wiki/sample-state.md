@@ -240,7 +240,32 @@
         messageForm: ["Message body cannot be blank"]
     },
     session: { 
-        currentUserId: 14
+        currentUser: {
+                id: 10
+                fname: "Guest",
+                lname: "User",
+                email: "demo@buzzhive.io"
+                username: "Anonymous Moose",
+                hives: [{
+                    author_id: 28,
+                    created_at: "2021-01-29T18:44:42.057Z",
+                    description: "Welcome to buzzhive. Join hundreds of channels and communicate freely with other users.",
+                    id: 3,
+                    is_private: false,
+                    name: "welcome",
+                    ref_link: null,
+                    dated_at: "2021-01-29T18:44:42.057Z"
+                }, {
+                    author_id: 28
+                    created_at: "2021-01-29T18:44:42.064Z"
+                    description: "Got something on your mind? Post it here where others can like and respond to your messages."
+                    id: 4
+                    is_private: false
+                    name: "general"
+                    ref_link: "https://slack.com/"
+                    updated_at: "2021-01-29T18:44:42.064Z"
+                }]
+        },
     }
 }
 ```

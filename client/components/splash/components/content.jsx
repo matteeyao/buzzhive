@@ -6,10 +6,10 @@ export default () => {
         <div>
             <div className="grid-3Ykf_K">
                 <div className="row-3wW-Fx container-3iEQmT imageLeft-1VXvAQ visible-hh3e_5">
-                    <img className="image-1-kW64 featureImage-3J6LeD" alt="Stylized image of a Discord server with multiple channels for studying, games, cooking, and pet photos." src="/assets/c01c644bc9fa2a28678ae2f44969d248.svg" />
+                    <img className="image-1-kW64 featureImage-3J6LeD" alt="Stylized image of a Buzzhive server with multiple channels for studying, games, cooking, and pet photos." src="/assets/c01c644bc9fa2a28678ae2f44969d248.svg" />
                     <div className="description-1K7RzO">
                         <h2 className="h2-25VyWe">An invite-only place with plenty of room to talk</h2>
-                        <div className="text-3U-SDd textMedium-1DcD2z subtitle-1ZS-lq">Discord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</div>
+                        <div className="text-3U-SDd textMedium-1DcD2z subtitle-1ZS-lq">buzzhive servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</div>
                     </div>
                 </div>
             </div>

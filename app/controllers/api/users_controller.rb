@@ -42,7 +42,7 @@ class Api::UsersController < ApplicationController
     private
 
     def selected_user
-        User.find(params[:id])
+        User.find(params[:id]).includes(:hives)
     end
 
     def user_params
