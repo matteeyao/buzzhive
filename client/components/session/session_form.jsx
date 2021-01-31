@@ -8,9 +8,33 @@ class SessionForm extends React.Component {
             lname: '',
             email: '',
             username: '',
-            password: ''
+            password: '',
+            demoUsername: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demo = this.demo.bind(this);
+    }
+
+    componentDidMount() {
+        const fetchRequestOption = {
+            method: 'GET',
+        };
+
+        fetch(`/api/users/${parseInt(Math.random() * 10 + 1)}`, fetchRequestOption)
+            .then(response => response.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        demoUsername: result.username
+                    })
+                },
+                (error) => {
+                    this.setState({
+                        // isLoaded: true,
+                        error
+                    });
+                }
+            );
     }
 
     update(field) {
@@ -23,7 +47,41 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(() => this.props.history.push('/hives/2'));
+            .then(() => this.props.history.push('/hives/1'));
+        // debugger
+    }
+
+    demo(e) {
+        e.preventDefault()
+        const data = this.state.demoUsername.split(' ')[1].split('');
+        const usernameField = document.getElementById('username_field');
+        function keystroke(i = 0) {
+            if (i < data.length) {
+                usernameField.value += data[i];
+                setTimeout(keystroke, 200, ++i);
+            }
+            // debugger
+        };
+        keystroke();
+
+        const passwordField = document.getElementById('password_field');
+        const pwData = 'demopw'.split('');
+        function pwKeystroke(j = 0) {
+            if (j < pwData.length) {
+                passwordField.value += pwData[j];
+                setTimeout(pwKeystroke, 200, ++j);
+            }
+        };
+        pwKeystroke();
+
+        setTimeout(() => {
+            const userInfo = {
+                username: this.state.demoUsername,
+                password: 'demopw'
+            };
+            this.props.processForm(userInfo)
+                .then(() => this.props.history.push('/hives/1'));
+        }, 3000);
     }
 
     renderErrors() {
@@ -71,9 +129,7 @@ class SessionForm extends React.Component {
         ) : "";
 
         const demoLogin = this.props.formType === 'Sign In with Username' ? (
-            <div>
-                <input className="c-button c-button--outline c-button--large p-get_started_email_form__button p-get_started_aubergine_button" id="submit_btn" data-style="expand-right" data-qa="submit_button"  type="submit" value={"Demo"} />
-            </div>
+            <button className="c-button c-button--outline c-button--large p-get_started_email_form__button p-get_started_aubergine_button" id="demo_btn" data-style="expand-right" data-qa="submit_button" onClick={this.demo}>Demo</button>
         ) : "";
 
         return (
@@ -83,7 +139,7 @@ class SessionForm extends React.Component {
                     <div className="center-col"><a target="_self" className="c-link" href="/" rel="noopener noreferrer"><img alt="Slack" src="https://a.slack-edge.com/bv1-9/slack_logo-ebd02d1.svg" height="34" title="Slack" /></a></div>
                     <div className="right-col">
                         <div className="p-refreshed_page__header_sidelink">New to buzzhive?<br />
-                            <a target="_self" className="c-link bold" rel="noopener noreferrer">{this.props.navLink}</a>
+                            <div target="_self" className="c-link bold" rel="noopener noreferrer">{this.props.navLink}</div>
                         </div>
                     </div>
                 </header>
@@ -120,28 +176,33 @@ class SessionForm extends React.Component {
                                         value={this.state.username}
                                         onChange={this.update('username')}
                                         className="c-input_text c-input_text--large p-get_started_email_form__input" 
-                                        id="signup_email" 
+                                        id="username_field" 
                                         placeholder="Username"
                                     />
                                 </label>
                                 <label data-qa-formtext="true">
-                                    <input type="password"
+                                    <input 
+                                        type="password"
                                         value={this.state.password}
                                         onChange={this.update('password')}
                                         className="c-input_text c-input_text--large p-get_started_email_form__input"
+                                        id="password_field"
                                         placeholder="Password"
                                     />
                                 </label>
                             </div>
                             <input className="c-button c-button--outline c-button--large p-get_started_email_form__button p-get_started_aubergine_button" id="submit_btn" data-style="expand-right" data-qa="submit_button"  type="submit" value={this.props.formType} />
-                            {demoLogin}
-                            <div class="p-get_started_signin__manual"><i class="c-icon p-get_started_signin__icon c-icon--sparkles" type="sparkles" aria-hidden="true"></i><span class="padding_left_75">Don't feel like creating an account? Feel free to run a demo or go ahead and <a target="_self" class="c-link bold" rel="noopener noreferrer" href="/#/signup">sign up instead</a>.</span></div>
                         </div>
                     </div>
+                    <div className="p-get_started_signin">
+                        {demoLogin}
+                        <div className="p-get_started_signin__manual"><i className="c-icon p-get_started_signin__icon c-icon--sparkles" type="sparkles" aria-hidden="true"></i><span className="padding_left_75">Don't feel like creating an account? Feel free to run a demo or go ahead and <a target="_self" className="c-link bold" rel="noopener noreferrer" href="/#/signup">sign up instead</a>.</span></div>
+                    </div>
                 </form>
-                <footer class="p-refreshed_page__footer">
-                    <a target="_blank" class="c-link c-button-unstyled p-refreshed_page__footer_link p-refreshed_page__footer_link--main" rel="noopener noreferrer">Privacy &amp; Terms</a><a target="_blank" class="c-link c-button-unstyled p-refreshed_page__footer_link p-refreshed_page__footer_link--main" rel="noopener noreferrer">Contact Us</a>
-                    <div class="" aria-haspopup="true"><a target="_blank" class="c-link c-button-unstyled p-refreshed_page__footer_link p-refreshed_page__footer_link--main" rel="noopener noreferrer"><i class="c-icon margin_right_25 c-icon--globe c-icon--inherit" type="globe" aria-hidden="true"></i>Change region<i class="c-icon c-icon--chevron-medium-down c-icon--inherit" type="chevron-medium-down" aria-hidden="true"></i></a></div>
+                <footer className="p-refreshed_page__footer">
+                    <a target="_blank" className="c-link c-button-unstyled p-refreshed_page__footer_link p-refreshed_page__footer_link--main" rel="noopener noreferrer">Privacy &amp; Terms</a>
+                    <a target="_blank" className="c-link c-button-unstyled p-refreshed_page__footer_link p-refreshed_page__footer_link--main" rel="noopener noreferrer">Contact Us</a>
+                    <div className="" aria-haspopup="true"><a target="_blank" className="c-link c-button-unstyled p-refreshed_page__footer_link p-refreshed_page__footer_link--main" rel="noopener noreferrer"><i className="c-icon margin_right_25 c-icon--globe c-icon--inherit" type="globe" aria-hidden="true"></i>Change region<i className="c-icon c-icon--chevron-medium-down c-icon--inherit" type="chevron-medium-down" aria-hidden="true"></i></a></div>
                 </footer>
             </div>
         );

@@ -7,9 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
+User.reset_pk_sequence
 Hive.delete_all
+Hive.reset_pk_sequence
 HiveUser.delete_all
+HiveUser.reset_pk_sequence
 Message.delete_all
+Message.reset_pk_sequence
 
 user1 = User.create!(username: "Anonymous Fox", fname: "Guest", lname: "User", email: "anonymousfox@buzzhive.io", password: "demopw")
 user2 = User.create!(username: "Anonymous Bison", fname: "Guest", lname: "User", email: "anonymousbison@buzzhive.io", password: "demopw")
