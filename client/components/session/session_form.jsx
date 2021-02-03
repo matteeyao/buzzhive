@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
             };
             this.props.processForm(userInfo)
                 .then(() => this.props.history.push('/hives/1'));
-        }, 3000);
+        }, 2000);
     }
 
     renderErrors() {

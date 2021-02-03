@@ -1,3 +1,4 @@
+// signing a user in
 export const login = user => (
     $.ajax({
         method: 'POST',
@@ -6,6 +7,7 @@ export const login = user => (
     })
 );
 
+// creating user
 export const signup = user => (
     $.ajax({
         method: 'POST',
@@ -14,6 +16,7 @@ export const signup = user => (
     })
 );
 
+// delete session and logout user
 export const logout = () => (
     $.ajax({
         method: 'DELETE',
