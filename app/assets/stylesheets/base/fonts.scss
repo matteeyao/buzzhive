@@ -79,5 +79,157 @@
 	src: url(95cd098b428b50acb7ddd9c75f425a4a.woff2) format("woff2"), url(0b0102d4268051804f46ef1d8e2403e0.woff) format("woff")
 }
 
-$discord-font: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
-$slack-font: Slack-Larsseit,Helvetica Neue,Helvetica,Segoe UI,Tahoma,Arial,sans-serif;
+@font-face {
+	font-family: Slack-Lato;
+	font-style: normal;
+	font-weight: 300;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/lato-light-0b50f74.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/lato-light-1475c14.woff) format("woff");
+	unicode-range: U+0000-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: Slack-Lato;
+	font-style: normal;
+	font-weight: 400;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/lato-regular-d9ce515.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/lato-regular-ea6d1e4.woff) format("woff");
+	unicode-range: U+0000-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: Slack-Lato;
+	font-style: normal;
+	font-weight: 700;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/lato-bold-4b1dc11.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/lato-bold-a532381.woff) format("woff");
+	unicode-range: U+0000-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: Slack-Lato;
+	font-style: normal;
+	font-weight: 900;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/lato-black-b64f5e4.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/lato-black-8857ce8.woff) format("woff");
+	unicode-range: U+0000-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: Slack-Lato;
+	font-style: italic;
+	font-weight: 300;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/lato-italic-light-c593311.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/lato-italic-light-354fb58.woff) format("woff");
+	unicode-range: U+0000-2259, U+2261-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: Slack-Lato;
+	font-style: italic;
+	font-weight: 400;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/lato-italic-5bbcd6c.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/lato-italic-d5261ac.woff) format("woff");
+	unicode-range: U+0000-2259, U+2261-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: Slack-Lato;
+	font-style: italic;
+	font-weight: 700;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/lato-italic-bold-99def7d.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/lato-italic-bold-2187a11.woff) format("woff");
+	unicode-range: U+0000-2259, U+2261-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: Slack-Lato;
+	font-style: italic;
+	font-weight: 900;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/lato-italic-black-04aca50.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/lato-italic-black-23c1971.woff) format("woff");
+	unicode-range: U+0000-2259, U+2261-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: NotoSansJP;
+	font-style: normal;
+	font-weight: 400;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/NotoSansJP-Regular.min-5096b76.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/NotoSansJP-Regular.min-ecc316e.woff) format("woff");
+	unicode-range: U+3000-303f, U+3040-309f, U+30a0-30ff, U+ff00-ffef, U+00a0, U+4e00-9f62
+}
+
+@font-face {
+	font-family: NotoSansJP;
+	font-style: normal;
+	font-weight: 700;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/NotoSansJP-Bold.min-7f00be9.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/NotoSansJP-Bold.min-19155cc.woff) format("woff");
+	unicode-range: U+3000-303f, U+3040-309f, U+30a0-30ff, U+ff00-ffef, U+00a0, U+4e00-9f62
+}
+
+@font-face {
+	font-family: NotoSansJP;
+	font-style: normal;
+	font-weight: 900;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/NotoSansJP-Bold.min-7f00be9.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/NotoSansJP-Bold.min-19155cc.woff) format("woff");
+	unicode-range: U+3000-303f, U+3040-309f, U+30a0-30ff, U+ff00-ffef, U+00a0, U+4e00-9f62
+}
+
+@font-face {
+	font-family: Slack-Larsseit;
+	font-style: normal;
+	font-weight: 700;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/larsseit-bold-0b91251.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/larsseit-bold-12559a0.woff) format("woff");
+	unicode-range: U+0000-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: Slack-Larsseit;
+	font-style: normal;
+	font-weight: 400;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/larsseit-regular-abd63de.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/larsseit-regular-7f630eb.woff) format("woff");
+	unicode-range: U+0000-f8fe, U+f900-ffff
+}
+
+@font-face {
+	font-family: NotoSansKR;
+	font-style: normal;
+	font-weight: 400;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/NotoSansKR-Regular.min-4e707f2.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/NotoSansKR-Regular.min-ca46004.woff) format("woff")
+}
+
+@font-face {
+	font-family: NotoSansKR;
+	font-style: normal;
+	font-weight: 700;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/NotoSansKR-Bold.min-0655fd8.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/NotoSansKR-Bold.min-c88a76d.woff) format("woff")
+}
+
+@font-face {
+	font-family: NotoSansKR;
+	font-style: normal;
+	font-weight: 900;
+	src: local("\263A"), url(https://a.slack-edge.com/bv1-9/NotoSansKR-Bold.min-0655fd8.woff2) format("woff2"), url(https://a.slack-edge.com/bv1-9/NotoSansKR-Bold.min-c88a76d.woff) format("woff")
+}
+
+@font-face {
+	font-family: OpenDyslexic;
+	font-style: normal;
+	font-weight: 400;
+	src: local("OpenDyslexic"), local("OpenDyslexic-Regular"), url(https://a.slack-edge.com/bv1-9/OpenDyslexic-Regular-be1e667.otf) format("opentype")
+}
+
+@font-face {
+	font-family: OpenDyslexic;
+	font-style: italic;
+	font-weight: 400;
+	src: local("OpenDyslexic-Italic"), url(https://a.slack-edge.com/bv1-9/OpenDyslexic-Italic-3718dfd.otf) format("opentype")
+}
+
+@font-face {
+	font-family: OpenDyslexic;
+	font-style: normal;
+	font-weight: 700;
+	src: local("OpenDyslexic-Bold"), url(https://a.slack-edge.com/bv1-9/OpenDyslexic-Bold-fbcbf44.otf) format("opentype")
+}
+
+@font-face {
+	font-family: OpenDyslexic;
+	font-style: italic;
+	font-weight: 700;
+	src: local("OpenDyslexic-BoldItalic"), url(https://a.slack-edge.com/bv1-9/OpenDyslexic-BoldItalic-dde9c61.otf) format("opentype")
+}
+
+$discord-font: "Whitney", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";

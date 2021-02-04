@@ -1,188 +1,45 @@
-.main-content {
-    display: grid;
-	margin-top: 10px;
-    grid-template-columns: 66.66% 33.33%;
-    // grid-template-columns: 66.66% 1fr;
-
-	header {
-		font-weight: bold;
-	}
+.p-client {
+	overflow: hidden
 }
 
-.main-story {
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 33.33% 66.66%;
-    padding-right: 20px;
-
-	.col-1-3 {
-        padding-right: 20px;
-		margin-bottom: 20px;
-	}
-
-	ul {
-		list-style: initial;
-		padding-left: 15px;
-
-		li{
-			margin: 10px 0;
-			line-height: 1.5;
-		}
-	}
+.p-client {
+	background: rgba($bh_primary_background, 1);
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-rows: 38px auto -webkit-min-content;
+	grid-template-rows: 38px auto min-content;
+	grid-template-columns: auto;
+	grid-template-areas: "p-client--iap1__top_nav" "p-client__workspace" "p-client__banners"
 }
 
-.byline {
-	color: $solid-grey;
-	margin: 4px 1px;
-	font-family: $discord-font;
-	font-weight: 400;
-	font-size: 11px;
+.p-client--custom-titlebar {
+	margin-top: 0;
+	height: 100vh
 }
 
-/* 
-	Comments Link with Blue Square
-*/
-
-.comments {
-	color: #326891;
-	font-family: $discord-font;
-	font-size: 10px;
-	vertical-align: bottom;
+.p-client--show-team-sidebar {
+	grid-template-columns: 60px auto;
+	grid-template-areas: "p-client--iap1__top_nav p-client--iap1__top_nav" "p-client__team_sidebar p-client__workspace" "p-client__banners p-client__banners"
 }
 
-iframe {
-	margin-bottom: 10px;
+.p-client--show-team-sidebar .c-banner {
+	left: 60px
 }
 
-article {
-	margin: 10px 0;
-
-	hr {
-		width: 50%;
-		color: $solid-grey;
-	}
+.p-client--blurred .p-top_nav {
+	-webkit-filter: contrast(.8) brightness(.8);
+	filter: contrast(.8) brightness(.8)
 }
 
-.kicker {
-	text-transform: uppercase;
-	font-size: 10px;
+.p-client__team_sidebar {
+	grid-area: p-client__team_sidebar
 }
 
-.opinion {
-    margin-top: 10px;
-    display: grid;
-    /* grid-template: [ <'grid-template-rows'> / <'grid-template-columns'> ] */
-    grid-template: 5% 1fr 60% / repeat(2, 50%);
-    padding-right: 20px;
-
-	.col-1-2:first-child {
-        padding-right: 20px;
-    }
-    
-	a:first-child{
-        /* Start on column 1 and end at column line 3: */
-        grid-column: 1 / 3;
-	}
-
-	.opinion-sign-up {
-        grid-column: 1 / 3;
-
-		center{
-			margin-bottom: 20px;
-		}
-	}
+.p-workspace {
+	grid-area: p-client__workspace
 }
 
-.opinions-list {
-	list-style: initial;
-	padding-left: 15px;
-	font-weight: bold;
-	font-size: 10px;
-
-	li {
-		margin: 5px 0;
-	}
+.p-client__banners {
+	grid-area: p-client__banners
 }
-
-@media all and (max-width: 1000px) {
-  .opinion, .main-story, .main-content{
-    width: 100%;
-    display: block;
-  }
-}
-
-
-
-
-.channel-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  position: relative;
-  border-radius: 5px;
-  border: 6px solid black;
-  margin: 0 0 0 320px;
-  padding: 20px;
-  overflow: scroll;
-  background-color: transparent;
-
-  width: 100%;
-  max-height: 600px;
-
-  .chatroom-container {
-      width: 80%;
-  }
-
-  figure {
-    border: 4px solid black;
-    border-radius: 8px;
-    width: 80%;
-    padding: 20px;
-    max-height: 400px;
-    background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(
-      315deg,
-      red,
-      yellow
-    ); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(
-      315deg,
-      red,
-      yellow
-    ); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(
-      315deg,
-      red,
-      yellow
-    ); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(315deg, red, yellow); /* Standard syntax */
-
-    img {
-      width: 100%;
-      max-height: 380px;
-    }
-  }
-
-  ul {
-    text-align: center;
-
-    li {
-      font-size: 20px;
-      padding: 10px 0;
-      color: black;
-    }
-  }
-
-  .error {
-    color: red;
-    font-size: 12px;
-    font-style: bold;
-  }
-
-  .message-input {
-    background-color: lightgrey;
-  }
-}
-
-

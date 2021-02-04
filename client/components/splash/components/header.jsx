@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default () => {
+export default ({currentUser}) => {
+    const authRoute = (currentUser) ? "/hives/1" : "/login";
+
     return (
         <div className="grid-3Ykf_K heroBackground-3m0TRU">
             <div className="row-3wW-Fx header-Y5-yn4 colorSchemeWhite-33VuSr">
@@ -18,7 +20,7 @@ export default () => {
                         <div className="mobileButtonContainer-3I8xXw">
 
                             {/* <a className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g mobileAppButton-2dMGaq" href="//discord.com/login">Open buzzhive</a> */}
-                            <Link className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g mobileAppButton-2dMGaq" to="/login">Open buzzhive</Link>
+                            <Link className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g mobileAppButton-2dMGaq" to={authRoute}>Open buzzhive</Link>
                             <button className="menuIcon-3UgAfy" aria-hidden="false">
                             <svg width="40" height="40" viewBox="0 0 40 40">
                                 <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M33.3327 10H6.66602V15H33.3327V10ZM6.66602 18.3317H33.3327V23.3317H6.66602V18.3317ZM6.66602 26.665H33.3327V31.665H6.66602V26.665Z"></path>
@@ -40,7 +42,7 @@ export default () => {
                         <div className="links-10hR8L"><a className="link-1bIkeG link-oDO0Ir" href="#">Download</a><a className="link-1bIkeG link-oDO0Ir" href="#">Why buzzhive?</a><a className="link-1bIkeG link-oDO0Ir" href="#">Nitro</a><a className="link-1bIkeG link-oDO0Ir" href="#">Safety</a><a className="link-1bIkeG link-oDO0Ir" href="#">Support</a></div>
                         <div className="appButton-2wSXh-">
                             {/* <a className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g" href="//discord.com/login">Open buzzhive</a> */}
-                            <Link className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g" to="/login">Open buzzhive</Link>
+                            <Link className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g" to={authRoute}>Open buzzhive</Link>
                         </div>
                     </nav>
                 </header>

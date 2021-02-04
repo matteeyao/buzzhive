@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default () => {
+export default ({currentUser}) => {
+    const authRoute = (currentUser) ? "/hives/1" : "/login";
+
     return (
         <div className="grid-3Ykf_K footer-2JjWU3 brand-2EpRQL" role="navigation">
             <div className="row-3wW-Fx">
@@ -86,7 +88,7 @@ export default () => {
                         </svg>
                         </a>
                         {/* <a className="button-195cDm buttonBrand-33cvhX buttonSmall-2bnF7I" href="//discord.com/register">Open buzzhive</a> */}
-                        <Link className="button-195cDm buttonBrand-33cvhX buttonSmall-2bnF7I" to="/login">Open buzzhive</Link>
+                        <Link className="button-195cDm buttonBrand-33cvhX buttonSmall-2bnF7I" to={authRoute}>Open buzzhive</Link>
                     </div>
                 </div>
             </div>

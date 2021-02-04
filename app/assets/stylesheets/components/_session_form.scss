@@ -8,7 +8,7 @@
     form {
         height: 500px;
         width: 400px;
-        background: $discord-landscape;
+        background: $bh_primary_background;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -753,7 +753,7 @@ body.p-refreshed_page__footer_modal--open {
 	background-color: #fff;
 	border: 2px solid #4285f4;
     color: #4285f4;
-    font-family: $slack-font; 
+    font-family: $discord-font; 
     text-transform: none;
 }
 
@@ -778,7 +778,7 @@ body.p-refreshed_page__footer_modal--open {
 
 .c-google_login.c-button--disabled .c-google_login__icon,
 .c-google_login.c-button--disabled .c-google_login__label {
-    font-family: $slack-font; 
+    font-family: $discord-font; 
 	opacity: .8;
 	color: #000
 }
@@ -1279,4 +1279,10 @@ hr {
 .c-icon--chevron-medium-down:before {
     content: "\E256";
     font-size: 14px;
+}
+
+.p-top_nav__button, .p-top_nav__search, .p-top_nav__sidebar 
+.p-channel_sidebar__history_button, .p-top_nav__sidebar 
+.p-channel_sidebar__history_button--disabled:hover, .p-top_nav__search__clear {
+    color: #F8F8FA;
 }

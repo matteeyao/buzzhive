@@ -1,25 +1,38 @@
 /* PHASE 1: Reset */
 
+blockquote, body, caption, dd, dl,
+fieldset, figure, form, h1, h2, h3, 
+h4, h5, h6, hr, legend, ol, p, pre,
+table, td, th, ul {
+    margin: 0;
+    padding: 0
+}
+
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
 fieldset, label, input, textarea,
 span, article, footer, time, small {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font: inherit;
-  color: inherit;
-  text-align: inherit;
-  text-decoration: inherit;
-  vertical-align: inherit;
-  box-sizing: inherit;
-  background: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    text-decoration: inherit;
+    vertical-align: inherit;
+    box-sizing: inherit;
+    background: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400
 }
 
 ol, ul {
-  list-style: none;
+    list-style: none;
+    list-style-type: none
 }
 
 // img {
@@ -34,24 +47,24 @@ input[type="text"],
 input[type="submit"],
 textarea,
 button {
-  /*
-  Get rid of native styling. Read more here:
-  http://css-tricks.com/almanac/properties/a/appearance/
-  */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+    /*
+    Get rid of native styling. Read more here:
+    http://css-tricks.com/almanac/properties/a/appearance/
+    */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 button,
 input[type="submit"] {
- cursor: pointer;
+    cursor: pointer;
 }
 
 /* Clearfix */
 
 .group:after {
-   content: ""; 
-   display: block;
-   clear: both;
+    content: ""; 
+    display: block;
+    clear: both;
 }

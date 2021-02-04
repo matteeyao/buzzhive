@@ -278,7 +278,7 @@ a {
 
 body {
 	text-rendering: optimizeLegibility;
-	font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: $discord-font;
 	font-weight: 400;
 	line-height: 1.15
 }
@@ -2492,7 +2492,7 @@ section .button.flat-bordered:hover {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	border: none;
-	font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: $discord-font;
 	font-weight: 500;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -4514,7 +4514,7 @@ section h3,
 section h4,
 section h5,
 section h6 {
-	font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: $discord-font;
 	color: #4f545c
 }
 
@@ -4561,7 +4561,7 @@ section h6 {
 }
 
 section p {
-	font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: $discord-font;
 	font-weight: 400;
 	color: #737f8d;
 	font-size: 16px;

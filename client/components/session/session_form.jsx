@@ -48,7 +48,6 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
             .then(() => this.props.history.push('/hives/1'));
-        // debugger
     }
 
     demo(e) {
@@ -60,7 +59,6 @@ class SessionForm extends React.Component {
                 usernameField.value += data[i];
                 setTimeout(keystroke, 200, ++i);
             }
-            // debugger
         };
         keystroke();
 
