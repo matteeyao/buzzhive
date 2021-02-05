@@ -2,8 +2,13 @@ class Api::HivesController < ApplicationController
     before_action :set_hive, only: [:show, :edit, :update, :destroy]
 
     def index
-        @hives = Hive.includes(:users).all
-        render :index
+        if params[:user_id]
+            @hives = User.find(current_user.id).hives
+            render :index
+        else
+            @hives = Hive.includes(:users).all
+            render (hive_params[:search] ? "api/hives/search" : :index)
+        end
     end
 
     def show
@@ -25,16 +30,16 @@ class Api::HivesController < ApplicationController
         end
     end
 
-    def update
-        @user = selected_user
-        if @user.try(:update_attributes, user_params)
-            render :show
-        elsif !@user
-            render json: ["User credentials could not be found. Please try again."], stats: 400
-        else
-            render json: @user.errors.full_messages, status: 422
-        end
-    end
+    # def update
+    #     @user = selected_user
+    #     if @user.try(:update_attributes, user_params)
+    #         render :show
+    #     elsif !@user
+    #         render json: ["User credentials could not be found. Please try again."], stats: 400
+    #     else
+    #         render json: @user.errors.full_messages, status: 422
+    #     end
+    # end
 
     # def destroy
     #     @user = selected_user
@@ -53,6 +58,6 @@ class Api::HivesController < ApplicationController
     end
 
     def hive_params
-        params.require(:hive).permit(:name, :description, :is_private, :ref_link)
+        params.require(:hive).permit(:name, :description, :is_private, :ref_link, :search)
     end
 end

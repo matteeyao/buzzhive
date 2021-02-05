@@ -22,3 +22,10 @@ export const createHive = hiveForm => (
         processData: false
     })
 );
+
+export const searchHives = () => (
+    $.ajax({
+        method: "GET",
+        url: `/api/hives/?hive[search]=true`
+    })
+)

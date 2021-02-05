@@ -1,14 +1,15 @@
-// CSS Reset
+// CSS RESET
 @import "base/reset.scss";
 
-// Core
+// CORE
 @import "base/colors.scss";
 @import "base/fonts.scss";
 @import "base/layout.scss";
 
-// Components
+// COMPONENTS
 @import "components/_splash_page.scss";
 @import "components/_session_form.scss";
 @import "components/_main_content.scss";
 @import "components/_main_nav.scss";
-@import "components/_main_sidebar.scss";
+@import "components/_profile_modal.scss";
+@import "components/_search_modal.scss";

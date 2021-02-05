@@ -4,12 +4,12 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // TEST IMPORTS START
-import { fetchHive, fetchHives } from './util/hive_api_util'
-// import { fetchHive, fetchHives } from './actions/hive_actions'
+// import { fetchHive, fetchHives } from './util/hive_api_util'
+import { fetchHive, fetchHives, searchHives } from './actions/hive_actions'
+
 // import { fetchUsers } from './actions/user_actions'
 import { fetchUsers } from './util/user_api_util';
-import { logout } from './actions/session_actions';
-// import { login, logout } from './util/session_api_util';
+
 // TEST IMPORTS END
 
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchHives = fetchHives;
     window.fetchHive = fetchHive;
     window.fetchUsers = fetchUsers;
-    window.logout = logout;
+    window.searchHives = searchHives;
     // TESTING END
     
     const root = document.getElementById('root');

@@ -8,14 +8,14 @@ import SignUpFormContainer from './session/signup_form_container';
 import MainContainer from './main/main';
 
 const App = () => (
-    <div>
+    <>
         <Switch>
             <Route exact path="/" component={SplashContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <ProtectedRoute path="/hives/:hiveId" component={MainContainer} />
         </Switch>
-    </div>
+    </>
 );
 
 export default App;

@@ -5,7 +5,7 @@ import Footer from './components/footer';
 
 export default ({ currentUser }) => {
     return (
-        <div>
+        <div className="splash-page">
             <Header currentUser={currentUser} />
             <Content />
             <Footer currentUser={currentUser}/>

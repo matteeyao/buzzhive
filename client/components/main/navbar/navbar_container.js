@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
-import { logout } from '../../../actions/session_actions';
+import { openModal } from '../../../actions/modal_actions';
 import NavBar from './navbar';
 
 const mapStateToProps = state => ({
-    currentUser: state.entities.users[state.session.currentUser],
+    currentUser: state.session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout()),
+    profileModal: () => dispatch(openModal('profileModal')),
+    searchModal: () => dispatch(openModal('searchModal')),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

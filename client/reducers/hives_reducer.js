@@ -1,10 +1,10 @@
 import {
     RECEIVE_HIVES,
-    RECEIVE_HIVE
+    RECEIVE_HIVE,
 } from '../actions/hive_actions';
 
 const hivesReducer = (state = {}, action) => {
-    Object.freeze(state)
+    Object.freeze(state);
     switch (action.type) {
         case RECEIVE_HIVES:
             return action.hives;
