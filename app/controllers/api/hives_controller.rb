@@ -2,13 +2,8 @@ class Api::HivesController < ApplicationController
     before_action :set_hive, only: [:show, :edit, :update, :destroy]
 
     def index
-        if params[:user_id]
-            @hives = User.find(current_user.id).hives
-            render :index
-        else
-            @hives = Hive.includes(:users).all
-            render (hive_params[:search] ? "api/hives/search" : :index)
-        end
+        @hives = Hive.includes(:users).all
+        render (hive_params[:search] ? "api/hives/search" : :index)
     end
 
     def show

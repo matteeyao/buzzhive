@@ -45,3 +45,65 @@
 .p-client__banners {
 	grid-area: p-client__banners
 }
+
+.p-workspace-layout {
+	display: grid;
+	grid-template-rows: auto;
+	overflow: hidden;
+	position: relative
+}
+
+.p-workspace-layout .p-workspace__sidebar {
+	grid-template-areas: "p-workspace__channel_sidebar";
+	grid-template-rows: auto;
+	overflow: hidden
+}
+
+.p-workspace-layout .p-workspace__sidebar:after {
+	z-index: 2
+}
+
+.p-workspace-layout .p-workspace__sidebar--collapsed {
+	display: none
+}
+
+.p-workspace-layout .p-workspace__sidebar--floating {
+	display: grid;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 204;
+	transition: transform .15s ease-in-out;
+	transform: translateX(-100%)
+}
+
+.p-workspace-layout .p-workspace__sidebar--floating.p-workspace__sidebar--visible {
+	transform: translateX(0);
+	box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .08)
+}
+
+.p-workspace-layout .p-workspace__floating_sidebar_curtain {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 203
+}
+
+
+.p-workspace-layout .p-workspace__primary_view {
+	grid-template-areas: "p-workspace__primary_view_contents";
+	grid-template-rows: auto
+}
+
+.p-workspace-layout .p-workspace__secondary_view {
+	grid-template-areas: "p-workspace__secondary_view_contents";
+	grid-template-rows: auto;
+	z-index: 202
+}
+
+.p-workspace-layout {
+  grid-template-columns: 260px auto 915px;
+  grid-template-areas: 'p-workspace__sidebar p-workspace__primary_view p-workspace__secondary_view';
+}

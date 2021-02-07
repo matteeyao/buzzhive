@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { fetchHive } from "../../../actions/hive_actions";
-import Hive from "./hive";
+import Hive from "./channel";
 import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => {

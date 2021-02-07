@@ -1,7 +1,7 @@
 export const fetchHives = (data) => (
     $.ajax({
         method: 'GET',
-        url: 'api/hives',
+        url: '/api/hives/?hive[search]=true',
         data
     })
 );

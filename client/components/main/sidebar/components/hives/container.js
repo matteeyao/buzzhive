@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import HiveIndex from "./hive_index";
-import { fetchHives } from "../../../../actions/hive_actions";
+import Hives from "./component";
+import { fetchHives } from "../../../../../actions/hive_actions";
 
 const mapStateToProps = state => {
     return {
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HiveIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(Hives);
