@@ -10,7 +10,7 @@ export default ({state}) => (
             <NavBar />
             <div className="p-workspace-layout">
                 <Sidebar />
-                < Channel />
+                <Channel />
             </div>
         </div>
         <div className="ReactModalPortal">
