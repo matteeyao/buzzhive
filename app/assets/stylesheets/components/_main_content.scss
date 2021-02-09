@@ -1703,7 +1703,8 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 .p-threads_flexpane__header_channel_name,
 .p-threads_flexpane__header_permalink:focus,
 .p-threads_flexpane__header_permalink:hover {
-	color: rgba($bh_foreground_max, .7)
+    color: rgba($bh_foreground_max, .7);
+    text-decoration: none;
 }
 
 .p-threads_flexpane__header_channel_name {

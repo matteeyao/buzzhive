@@ -47,8 +47,8 @@ class Channel extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div class="p-workspace__secondary_view p-workspace__secondary_view--large">
-                    <div class="p-workspace__secondary_view_contents">
+                <div className="p-workspace__secondary_view p-workspace__secondary_view--large">
+                    <div className="p-workspace__secondary_view_contents">
                         <div role="complementary" class="p-flexpane p-flexpane--iap1">
                             <ThreadHeader
                                 currentHive={currentHive}

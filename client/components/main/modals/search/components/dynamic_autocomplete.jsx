@@ -19,7 +19,7 @@ export default ({searchString, searchResults}) => {
         return filtered.map( result => {
             
             const locked = result.isPrivate ?
-                <i class="c-icon c-channel_icon--small c-small_channel_entity__icon c-icon--lock-o" type="lock-o" aria-hidden="true"></i> :
+                <i className="c-icon c-channel_icon--small c-small_channel_entity__icon c-icon--lock-o" type="lock-o" aria-hidden="true"></i> :
                 <i className="c-icon c-channel_icon--small c-small_channel_entity__icon c-icon--hash-medium" type="hash-medium" aria-hidden="true"></i>
 
             return (
