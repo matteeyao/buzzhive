@@ -2,7 +2,7 @@
 import NavBar from "./navbar/navbar_container";
 import Modals from "./modals/modal_container";
 import Sidebar from "./sidebar/sidebar";
-import Channel from "./channel/channel_container";
+import Client from "./client/channel_container";
 
 export default ({state}) => (
     <div className="p-client_container">
@@ -10,7 +10,7 @@ export default ({state}) => (
             <NavBar />
             <div className="p-workspace-layout">
                 <Sidebar />
-                <Channel />
+                <Client />
             </div>
         </div>
         <div className="ReactModalPortal">

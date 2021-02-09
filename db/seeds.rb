@@ -75,15 +75,39 @@ channelUser13 = HiveUser.create!(hive_id: hive2.id, user_id: user13.id)
 channelUser14 = HiveUser.create!(hive_id: hive2.id, user_id: user14.id)
 
 message1 = Message.create!(
-    body: "Hello everyone. This is the first message tested on Buzzhive.",
+    body: "Hello everyone. This is the first test message on Buzzhive.",
     author_id: user14.id,
     msgeable_id: hive2.id,
     msgeable_type: 'Hive'
 )
+
 message2 = Message.create!(
     body: "Ahoy there! Excited to be here!",
     author_id: user6.id,
     parent_message_id: message1.id,
+    msgeable_id: hive2.id,
+    msgeable_type: 'Hive'
+)
+
+message3 = Message.create!(
+    body: "Glad to have you aboard matey.",
+    author_id: user14.id,
+    parent_message_id: message2.id,
+    msgeable_id: hive2.id,
+    msgeable_type: 'Hive'
+)
+
+message4 = Message.create!(
+    body: "Where can I find the repo for buzzhive?",
+    author_id: user7.id,
+    msgeable_id: hive2.id,
+    msgeable_type: 'Hive'
+)
+
+message5 = Message.create!(
+    body: "You can find it here, at https://github.com/matteeyao/buzzhive.",
+    author_id: user14.id,
+    parent_message_id: message4.id,
     msgeable_id: hive2.id,
     msgeable_type: 'Hive'
 )

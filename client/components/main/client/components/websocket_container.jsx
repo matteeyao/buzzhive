@@ -32,7 +32,7 @@ class WebSocket extends React.Component {
     };
 
     render() {
-        return (<div></div>);
+        return (<></>);
     }
 }
 

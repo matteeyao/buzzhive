@@ -4,7 +4,7 @@ Rails.application.routes.draw do
         resource :session, only: [:create, :destroy, :show]
         resources :hives, only: [:index, :show, :create, :update, :destroy] do
             resource :hive_users, only: [:index, :create, :update, :destroy]
-            resources :messages, only: [:create, :update, :destroy]
+            resources :messages, only: [:show, :create, :update, :destroy]
         end
     end
     mount ActionCable.server, at: '/cable'

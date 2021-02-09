@@ -13688,77 +13688,9 @@ only screen and (min-resolution:192dpi) {
 
 
 
-.p-message_pane .c-virtual_list__sticky_container {
-	padding-bottom: 24px
-}
 
-.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar2__hider,
-.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider,
-.p-message_pane .c-message_list:not(.c-virtual_list--scrollbar) {
-	z-index: 200;
-	background: rgba($bh_primary_background, 1)
-}
 
-.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar2__hider:before,
-.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider:before,
-.p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before {
-	content: "";
-	display: block;
-	position: -webkit-sticky;
-	position: sticky;
-	top: -24px;
-	left: 0;
-	right: 0;
-	height: 31px;
-	margin-top: -31px;
-	box-sizing: border-box;
-	--saf-0: rgba($bh_foreground_low, 0.13);
-	box-shadow: 0 1px 0 var(--saf-0);
-	background: rgba($bh_primary_background, 1);
-	z-index: 200
-}
 
-.p-message_pane--ie.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar2__hider,
-.p-message_pane--ie.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider,
-.p-message_pane--ie.p-message_pane .c-message_list:not(.c-virtual_list--scrollbar) {
-	top: 8px
-}
-
-.p-message_pane--ie.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar2__hider:before,
-.p-message_pane--ie.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider:before,
-.p-message_pane--ie.p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before {
-	display: none
-}
-
-.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__track {
-	z-index: 200;
-	top: 12px
-}
-
-.p-message_pane .c-message_list--context_bar_showing.c-virtual_list--scrollbar>.c-scrollbar__track {
-	z-index: 201
-}
-
-.p-message_pane .p-message_pane__top_banners {
-	z-index: 201;
-	position: absolute;
-	top: 23px;
-	left: 16px;
-	right: 16px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column
-}
-
-body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_banners:not(:empty)+div .c-message_list.c-virtual_list--scrollbar>.c-scrollbar2__hider:before,
-body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_banners:not(:empty)+div .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider:before,
-body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_banners:not(:empty)+div .c-message_list:not(.c-virtual_list--scrollbar):before {
-	--saf-0: rgba($bh_primary_background, 1);
-	box-shadow: 0 32px var(--saf-0);
-	border-bottom: 1px solid rgba($bh_foreground_low_solid, 1);
-	height: 32px;
-	margin-top: -32px
-}
 
 .has_top_messages_banner .p-message_pane__top_banners {
 	display: none
@@ -13773,18 +13705,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 	display: none
 }
 
-.p-client_desktop--ia-top-nav .p-archives_banner,
-.p-client_desktop--ia-top-nav .p-message_pane__top_banners,
-.p-client_desktop--ia-top-nav .p-threads_view__bottom_banners,
-.p-client_desktop--ia-top-nav .p-threads_view__top_banners {
-	position: absolute;
-	width: auto;
-	right: auto;
-	left: 50%;
-	transform: translateX(-50%);
-	font-weight: 700;
-	text-shadow: none
-}
+
 
 .p-client_desktop--ia-top-nav .p-threads_view__bottom_banners {
 	bottom: 8px
@@ -13913,10 +13834,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 	background: #0b4c8c
 }
 
-.p-client_desktop--ia-top-nav .p-message_pane__top_banners {
-	z-index: 201;
-	top: 14px
-}
+
 
 .p-client_desktop--ia-top-nav .p-message_pane__banner {
 	margin-bottom: 0;
@@ -14415,16 +14333,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 	background: rgba($bh_foreground_min_solid, 1)
 }
 
-.p-client_desktop--ia-top-nav .p-message_pane__top_banners>.p-message_pane__search_tip_banner {
-	border-radius: 14px;
-	height: 28px;
-	font-size: 13px;
-	line-height: 28px;
-	padding-right: 0;
-	width: -webkit-max-content;
-	width: -moz-max-content;
-	width: max-content
-}
+
 
 .p-client_desktop--ia-top-nav .p-message_pane__search_tip_banner_action {
 	height: 26px;
@@ -14483,77 +14392,9 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 	top: 0
 }
 
-.p-flexpane_header {
-	background: rgba($bh_foreground_min_solid, 1);
-	border-bottom: 1px solid rgba($bh_foreground_low, .13);
-	padding: 12px 16px
-}
 
-.p-flexpane--iap1 .p-flexpane_header {
-	padding: 0 12px 0 16px;
-	background: rgba($bh_primary_background, 1)
-}
 
-.p-flexpane_header__primary {
-	font-size: 18px;
-	line-height: 1.33334;
-	font-weight: 900;
-	align-items: center;
-	display: flex
-}
 
-.p-flexpane--iap1 .p-flexpane_header__primary {
-	flex: 1;
-	min-width: 0;
-	height: 63px;
-	display: flex;
-	align-items: center;
-	font-size: 15px;
-	line-height: 1.46668
-}
-
-.p-flexpane_header__primary_content {
-	align-items: center;
-	display: flex;
-	flex: 1;
-	margin-right: auto;
-	min-width: 0
-}
-
-.p-flexpane_header__secondary {
-	margin-top: 8px
-}
-
-.p-flexpane--iap1 .p-flexpane_header__secondary {
-	margin-top: 0;
-	margin-bottom: 8px
-}
-
-.p-flexpane_header__control {
-	color: rgba($bh_foreground_max_solid, 97, 96, 97), 1);
-	cursor: pointer;
-	margin-left: 4px
-}
-
-.p-flexpane_header__control:hover {
-	color: rgba($bh_primary_foreground, 1)
-}
-
-.p-flexpane_header__control:active {
-	color: rgba($bh_highlight, 18, 100, 163), 1)
-}
-
-.p-flexpane_header__control--back {
-	margin-left: 0;
-	margin-right: 8px
-}
-
-.p-flexpane {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1
-}
 
 .p-flexpane--highlight {
 	animation: p-flexpane--highlight 3s forwards
@@ -14568,24 +14409,11 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 	}
 }
 
-.p-flexpane__title_container {
-	min-width: 0;
-	display: block;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap
-}
 
-.p-flexpane__subtitle {
-	font-size: 13px;
-	font-weight: 400
-}
 
-.p-flexpane__body {
-	flex: 1;
-	position: relative;
-	min-height: 0
-}
+
+
+
 
 .p-flexpane__footer {
 	border-top: 1px solid rgba($bh_foreground_low, .13);
@@ -15227,39 +15055,6 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 	padding-left: 28px
 }
 
-.p-threads_flexpane__header {
-	line-height: 1.33334
-}
-
-.p-threads_flexpane__header .p-flexpane_header__children {
-	display: flex;
-	align-items: center
-}
-
-.p-threads_flexpane__header .p-threads_flexpane__header_back {
-	color: rgba($bh_primary_foreground, 1)
-}
-
-.p-threads_flexpane__header .p-threads_flexpane__header_back:hover {
-	color: rgba($bh_highlight, 18, 100, 163), 1)
-}
-
-.p-threads_flexpane__header_channel_name,
-.p-threads_flexpane__header_permalink:focus,
-.p-threads_flexpane__header_permalink:hover {
-	color: rgba($bh_foreground_max, .7)
-}
-
-.p-threads_flexpane__header_channel_name {
-	font-size: 13px;
-	line-height: 1.38463;
-	font-weight: 400;
-	display: block;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-	cursor: pointer
-}
 
 .p-thread_separator {
 	margin-bottom: -2px
@@ -15450,10 +15245,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 	border-bottom-right-radius: 14px
 }
 
-.p-threads_flexpane_container {
-	display: flex;
-	flex-direction: column
-}
+
 
 .p-threads_flexpane .p-comment_list__toggle_container {
 	margin: 4px 12px
@@ -25622,19 +25414,6 @@ only screen and (min-resolution:192dpi) {
 	transition: padding-right 0s ease-in-out .3s, color .1s ease-out 0s
 }
 
-.p-channel_sidebar__section_heading_label .c-deprecated-icon:before {
-	font-family: Slack v2;
-	font-size: 20px;
-	font-style: normal;
-	font-weight: 400;
-	display: inline-block;
-	vertical-align: middle;
-	width: 20px;
-	flex-shrink: 0;
-	opacity: .64;
-	margin: 0 1px 0 -4px;
-	vertical-align: baseline
-}
 
 .p-channel_sidebar--classic_nav .p-channel_sidebar__section_heading_label {
 	font-weight: 700
@@ -29344,45 +29123,6 @@ path.p-download-illo__steam-line-two {
 	border-radius: 6px/4px
 }
 
-.p-workspace--context-pane-collapsed .p-workspace__secondary_view {
-	display: none
-}
-
-.p-workspace__secondary_view {
-	grid-area: p-workspace__secondary_view;
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: 44px auto;
-	grid-template-areas: "p-workspace__secondary_view_header" "p-workspace__secondary_view_contents";
-	overflow: hidden;
-	border-left: 1px solid rgba($bh_foreground_low, .13)
-}
-
-.p-workspace--iap1 .p-workspace__secondary_view {
-	z-index: 202
-}
-
-.p-workspace__secondary_view_contents--tiles {
-	display: flex;
-	flex-direction: column
-}
-
-.p-workspace--classic-nav .p-workspace__secondary_view {
-	grid-template-areas: "p-workspace__secondary_view_contents";
-	grid-template-rows: auto
-}
-
-.p-workspace__secondary_view_header {
-	grid-area: p-workspace__secondary_view_header;
-	display: flex;
-	min-width: 0
-}
-
-.p-workspace__secondary_view_contents {
-	grid-area: p-workspace__secondary_view_contents;
-	min-width: 0;
-	min-height: 0
-}
 
 .p-workspace_banner__desktop-download-app .c-banner__text,
 .p-workspace_banner__desktop-notifications .c-banner__text,
@@ -39422,14 +39162,7 @@ html {
 	border-radius: 4px
 }
 
-.c-deprecated-icon:before {
-	font-family: Slack v2;
-	font-size: 20px;
-	font-style: normal;
-	font-weight: 400;
-	display: inline-block;
-	vertical-align: middle
-}
+
 
 .c-deprecated-icon--inherit:before {
 	font-size: inherit
@@ -40791,9 +40524,6 @@ html {
 	content: "\E277"
 }
 
-.c-icon--times:before {
-	content: "\E278"
-}
 
 .c-icon--plus:before {
 	content: "\E279"
@@ -44167,118 +43897,7 @@ body.p-client_desktop--frameless .c-sk-overlay {
 	width: 100%
 }
 
-.c-scrollbar {
-	position: relative;
-	overflow: hidden
-}
 
-.c-scrollbar__hider {
-	overflow-y: scroll;
-	overflow-x: hidden;
-	outline: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: -50px;
-	bottom: 0;
-	height: 100%;
-	transform: translateZ(0)
-}
-
-.c-scrollbar__hider::-webkit-scrollbar {
-	display: none
-}
-
-.c-scrollbar--inherit_size .c-scrollbar__hider {
-	position: relative;
-	right: -50px;
-	width: calc(100% + 50px)
-}
-
-.c-scrollbar__track {
-	position: absolute;
-	right: 4px;
-	top: 4px;
-	bottom: 4px;
-	width: 8px
-}
-
-.c-scrollbar__track:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: -4px;
-	background: none
-}
-
-.c-scrollbar--hidden>.c-scrollbar__track {
-	display: none
-}
-
-.c-scrollbar__bar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	border-radius: 4px;
-	background: rgba($bh_primary_foreground, .52);
-	opacity: 0;
-	cursor: default;
-	outline: none;
-	z-index: 1;
-	will-change: transform
-}
-
-.c-scrollbar:hover .c-scrollbar__bar,
-.c-scrollbar__bar:active {
-	opacity: 1
-}
-
-.c-scrollbar__bar:active:after {
-	content: "";
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1;
-	cursor: default
-}
-
-.c-scrollbar--always_visible .c-scrollbar__bar {
-	opacity: 1
-}
-
-.c-scrollbar--monkey .c-scrollbar__child {
-	padding-right: 12px
-}
-
-.c-scrollbar--monkey.c-scrollbar--hidden .c-scrollbar__child {
-	padding-right: 0
-}
-
-.c-scrollbar--monkey .c-scrollbar__track {
-	border-radius: 3px;
-	background: rgba($bh_foreground_min_solid, 1);
-	z-index: 1
-}
-
-.c-scrollbar--monkey .c-scrollbar__bar {
-	background: rgba($bh_primary_foreground, .52);
-	box-shadow: 0 3px 0 #fff, 0 -3px 0 #fff
-}
-
-.c-scrollbar--monkey .c-scrollbar__bar,
-.c-scrollbar--monkey .c-scrollbar__bar:active,
-.c-scrollbar--monkey:hover .c-scrollbar__bar {
-	opacity: 1
-}
-
-.c-scrollbar--fade:not(:hover) .c-scrollbar__bar {
-	transition: opacity .1s .5s
-}
 
 .c-sk-modal_content {
 	background: rgba($bh_primary_background, 1);
@@ -46003,9 +45622,7 @@ body.p-client_desktop--frameless .c-popover {
 	color: hsla(0, 0%, 100%, .7)
 }
 
-.c-truncate--break_words {
-	word-break: break-all
-}
+
 
 .c-missing_text {
 	border-radius: 1000px;
@@ -47296,54 +46913,7 @@ pre .c-member_slug--mention {
 	color: inherit
 }
 
-.c-base_inline_entity {
-	display: inline;
-	white-space: pre
-}
 
-.c-base_inline_entity__avatar {
-	margin-right: 1.6px
-}
-
-.c-base_inline_entity__primary_content {
-	display: inline;
-	white-space: pre-wrap;
-	overflow-wrap: break-word
-}
-
-.c-base_inline_entity--truncate_block {
-	display: inline-flex
-}
-
-.c-base_inline_entity__inline_wrapper {
-	display: inline-flex;
-	flex: 1;
-	min-width: 0
-}
-
-.c-base_inline_entity__inline_wrapper .c-base_inline_entity__primary_content {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap
-}
-
-.c-base_inline_entity--dim {
-	color: rgba($bh_foreground_max, .7)
-}
-
-.c-base_inline_entity--highlight-dark {
-	color: #fff;
-	background-color: #1264a3
-}
-
-.c-base_inline_entity--highlight-dim {
-	color: rgba($bh_foreground_max, .7)
-}
-
-.c-base_inline_entity--highlight-dim,
-.c-base_inline_entity--highlight-light {
-	background-color: rgba($bh_foreground_min_solid, 1)
-}
 
 .c-inline_channel_entity__icon {
 	margin-right: 0
@@ -73819,4 +73389,9 @@ only screen and (min-resolution:192dpi) {
 .p-texty_floating_formatting_bar {
 	position: absolute;
 	z-index: 203
+}
+
+.resize-triggers > div {
+  background: #eee;
+  overflow: auto;
 }

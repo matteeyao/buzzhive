@@ -6,11 +6,17 @@ class Api::MessagesController < ApplicationController
     #     render :index
     # end
 
+    def show
+        @message = Message.find(params[:id])
+        @messages = @message.child_messages
+        render 'api/messages/show'
+    end
+
     def create
         @message = @hive.messages.new(message_params)
         @message.save
         MessageRelayJob.perform_later(@message)
-        render 'api/messages/show'
+        render 'api/messages/new'
         # Option 1: Create a response to ajax call, have controller render a json response
         # Set up front end controller to dispatch action -> receiveMessage() normal action creator
         # Option 2: Make it so FE doesn't need ajax response (taking out .then)
