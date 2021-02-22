@@ -3477,3 +3477,439 @@ div[aria-selected=true].p-channel_sidebar__static_list__item:focus:after {
 .c-virtual_list--scrollbar {
 	overflow: hidden
 }
+
+.p-message_pane_input {
+	display: flex;
+	padding: 0 20px
+}
+
+.p-message_pane_input_inner {
+	flex: 1 1 auto
+}
+
+.p-message_pane_input__wrapper--welcome-place {
+	background: rgba(29, 155, 209, .1);
+	padding: 0 20px
+}
+
+.p-message_pane_input__wrapper--welcome-place .p-message_pane_input {
+	display: flex;
+	padding: 0
+}
+
+.p-message_pane_input__message-suggestions-container {
+	padding: 0 0 20px 0;
+	margin: -10px 0 0 0
+}
+
+.p-message_pane_input_inner {
+	min-width: 0;
+	min-height: 0
+}
+
+
+.p-workspace__input.p-message_input {
+	display: flex;
+	position: relative
+}
+
+.p-workspace__input.p-message_input .c-texty_input__container {
+	flex: 1;
+	min-width: 0
+}
+
+.p-workspace__input.p-message_input .p-message_input__attachments,
+.p-workspace__input.p-message_input .p-message_input__files {
+	bottom: 40px;
+	left: 1px;
+	position: absolute;
+	right: 1px
+}
+
+.p-workspace__input.p-message_input .p-message_input__attachments .p-gallery_scroller__wrapper,
+.p-workspace__input.p-message_input .p-message_input__files .p-gallery_scroller__wrapper {
+	background: unset;
+	border: unset;
+	border-radius: unset
+}
+
+.p-workspace__input.p-message_input .p-message_input__attachments .p-multi_file_upload__file_gallery,
+.p-workspace__input.p-message_input .p-message_input__files .p-multi_file_upload__file_gallery {
+	padding: 12px
+}
+
+.p-workspace__input.p-message_input.p-message_input--focus-visible .p-message_input_field.focus {
+	--saf-0: rgba($bh_highlight, 1);
+	box-shadow: 0 0 0 1px var(--saf-0), 0 0 0 5px rgba(29, 155, 209, .3);
+	border-radius: 4px
+}
+
+.p-workspace__input.p-message_input.p-message_input--attachments-visible .c-texty_input {
+	padding-bottom: 122px!important
+}
+
+.p-workspace__input.p-message_input.p-message_input--attachments-visible .c-texty_input__warning {
+	bottom: 122px!important
+}
+
+.p-workspace__input.p-message_input.p-message_input--attachments-visible .c-texty_input__container:not(.c-texty_input__container--expanded):not(.c-texty_input__container--no_actions) .p-message_input_field:not(.c-texty_input--double_decker) {
+	padding-left: 12px
+}
+
+.p-workspace__input.p-message_input.p-message_input--attachments-visible .c-texty_input__container:not(.c-texty_input__container--expanded):not(.c-texty_input__container--no_actions) .p-message_input_field:not(.c-texty_input--double_decker) .ql-placeholder {
+	left: 12px
+}
+
+.p-workspace__input.p-message_input.p-message_input--disabled .c-texty_input__button,
+.p-workspace__input.p-message_input.p-message_input--disabled .p-shortcuts_menu_trigger_button {
+	opacity: .6;
+	pointer-events: none
+}
+
+.p-workspace__input.p-message_input .p-message_input__attachments {
+	padding: 0
+}
+
+.p-workspace__input.p-message_input .p-message_input__attachments .p-gallery_scroller__content {
+	display: flex;
+	align-items: center
+}
+
+.p-workspace__input.p-message_input .p-message_input__attachments .p-multi_file_upload__container {
+	min-width: unset
+}
+
+.p-workspace__input.p-message_input .p-message_input__attachments .p-draft_unfurls {
+	padding: 12px
+}
+
+.p-workspace__input.p-message_input .p-message_input__attachments .p-composer_attachments__separator {
+	margin-left: 12px;
+	height: 62px;
+	border-left: 1px solid rgba($bh_foreground_low_solid, 1)
+}
+
+.p-workspace__input.p-message_input .p-message_input_field {
+	background: rgba($bh_primary_background, 1);
+	border-radius: 4px;
+	border-width: 1px;
+	border-color: rgba($bh_foreground_high, .5);
+	min-height: 42px;
+	min-width: 1px;
+	padding-left: 10px;
+	padding-top: 0;
+	padding-bottom: 4px;
+	padding-right: 0;
+	flex: 1
+}
+
+.p-workspace__input.p-message_input .p-message_input_field.focus {
+	border-color: rgba($bh_highlight, 1);
+	outline: none;
+	outline-offset: 0
+}
+
+.p-workspace__input.p-message_input .p-message_input_field.texty_emoji_only {
+	padding-bottom: 0
+}
+
+.p-workspace__input.p-message_input .p-message_input_field.texty_emoji_only .ql-editor {
+	padding-top: 7px
+}
+
+.p-workspace__input.p-message_input .p-message_input_field.texty_emoji_only .ql-editor img.emoji {
+	top: -3px
+}
+
+.p-workspace__input.p-message_input .p-message_input_field.ql-disabled {
+	background: rgba($bh_foreground_min_solid, 1)!important;
+	opacity: .6;
+	pointer-events: none
+}
+
+.p-workspace__input.p-message_input .p-message_input_field.ql-disabled .ql-tooltip {
+	visibility: hidden
+}
+
+.p-workspace__input.p-message_input .p-message_input_field.ql-disabled~.p-texty_sticky_formatting_bar {
+	background: rgba($bh_foreground_min_solid, 1)!important
+}
+
+.p-workspace__input.p-message_input .p-message_input_field .ql-editor {
+	margin-top: 4px;
+	padding-bottom: 4px;
+	padding-top: 5px
+}
+
+.p-workspace__input.p-message_input .p-message_input_field .ql-placeholder {
+	left: 10px;
+	top: 9px
+}
+
+.p-workspace__input.p-message_input .p-message_input_field .p-composer__body--sticky {
+	padding-left: 43px
+}
+
+.p-workspace__input.p-message_input .p-message_input_field.focus {
+	border-color: rgba($bh_foreground_max, .7)
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor {
+	border-right: .25rem solid transparent;
+	border-right: none
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar {
+	position: absolute;
+	-webkit-appearance: none;
+	width: 8px
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar-thumb,
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar-track {
+	background-clip: padding-box!important;
+	border-radius: 4px;
+	color: transparent
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar-track {
+	background: transparent;
+	box-shadow: inset 0 -4px 0 0, inset 0 4px 0 0
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar-thumb {
+	background: transparent;
+	box-shadow: inset 0 -2px, inset 0 -3px, inset 0 2px, inset 0 3px;
+	min-height: 36px
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar-corner {
+	background: transparent
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar {
+	width: 16px
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar-thumb,
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor::-webkit-scrollbar-track {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-radius: 6px/4px
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover {
+	border-right: .25rem solid transparent;
+	border-right: none
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar {
+	position: absolute;
+	-webkit-appearance: none;
+	width: 8px
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar-thumb,
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar-track {
+	background-clip: padding-box!important;
+	border-radius: 4px;
+	color: transparent
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar-track {
+	background: transparent;
+	box-shadow: inset 0 -4px 0 0, inset 0 4px 0 0
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar-thumb {
+	background: rgba($bh_primary_foreground, .52);
+	box-shadow: inset 0 -2px, inset 0 -3px, inset 0 2px, inset 0 3px;
+	min-height: 36px
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar-corner {
+	background: transparent
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar {
+	width: 16px
+}
+
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar-thumb,
+.supports_custom_scrollbar .p-workspace__input.p-message_input .p-message_input_field .ql-editor:hover::-webkit-scrollbar-track {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-radius: 6px/4px
+}
+
+.p-workspace__input.p-message_input .c-texty_input__warning {
+	bottom: 48px
+}
+
+.p-workspace__input.p-message_input .c-texty_input__container:not(.c-texty_input__container--expanded):not(.c-texty_input__container--no_actions) .p-message_input_field:not(.c-texty_input--double_decker) {
+	padding-left: 43px
+}
+
+.p-workspace__input.p-message_input .c-texty_input__container:not(.c-texty_input__container--expanded):not(.c-texty_input__container--no_actions) .p-message_input_field:not(.c-texty_input--double_decker) .ql-placeholder {
+	left: 43px
+}
+
+.p-workspace__input.p-message_input .c-texty_input__container--no_actions .p-composer__body--sticky {
+	padding-left: 4px
+}
+
+.p-workspace__input.p-message_input.p-message_input--dark .p-message_input_field {
+	border-color: #565856;
+	background: rgba($bh_foreground_min, .04)
+}
+
+.p-workspace__input.p-message_input.p-message_input--dark .p-message_input_field~.p-texty_sticky_formatting_bar {
+	border-color: #565856
+}
+
+.p-workspace__input.p-message_input.p-message_input--dark .p-message_input_field.focus {
+	border-color: rgba($bh_foreground_high, .5)
+}
+
+.p-workspace__input.p-message_input.p-message_input--dark .p-message_input_field.focus~.p-texty_sticky_formatting_bar {
+	border-color: rgba($bh_foreground_high_solid, 1)
+}
+
+.p-workspace__input.p-message_input.p-message_input--dark ::-moz-selection {
+	background-color: #9a9c9e
+}
+
+.p-workspace__input.p-message_input.p-message_input--dark ::selection {
+	background-color: #9a9c9e
+}
+
+.p-workspace__input.p-message_input.p-message_input--dark ::-moz-selection {
+	background-color: #9a9c9e
+}
+
+.p-workspace__input.p-message_input.p-message_input--day1:not(.p-message_input--disabled) .c-icon_button.c-texty_input__button--send {
+	background: rgba($bh_highlight, 1);
+	color: #fff;
+	opacity: 1
+}
+
+.p-workspace__input.p-message_input.p-message_input--day1:not(.p-message_input--disabled) .c-icon_button.c-texty_input__button--send:hover {
+	color: #fff;
+	background: #2570aa
+}
+
+.p-workspace__input.p-message_input.p-message_input--day1:not(.p-message_input--disabled) .c-texty_input .ql-placeholder {
+	color: rgba($bh_highlight, 1);
+	-webkit-filter: grayscale(0);
+	-ms-filter: grayscale(0);
+	filter: grayscale(0);
+	opacity: 1
+}
+
+.p-workspace__input.p-message_input.p-message_input--day1:not(.p-message_input--disabled) .p-message_input_field {
+	border-color: rgba($bh_highlight, 1);
+	--saf-0: rgba($bh_highlight, 1);
+	box-shadow: 0 0 0 1px var(--saf-0);
+	background: linear-gradient(0deg, rgba($bh_highlight_accent, .05), rgba($bh_highlight_accent, .05)), rgba($bh_primary_background, 1);
+	z-index: 200
+}
+
+.p-workspace__input.p-message_input.p-message_input--day1:not(.p-message_input--disabled) .p-message_input_field~.p-texty_sticky_formatting_bar {
+	border-color: rgba($bh_highlight, 1)
+}
+
+.p-workspace__input.p-message_input.p-message_input--day1:not(.p-message_input--disabled).p-message_input--dark .p-message_input_field {
+	background: linear-gradient(0deg, rgba($bh_highlight_accent, .05), rgba($bh_highlight_accent, .05)), rgba($bh_foreground_min, .04)
+}
+
+.p-workspace__input .ql-editor {
+	max-height: calc(60vh - 80px)
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor {
+	border-right: .25rem solid transparent;
+	border-right: none
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar {
+	position: absolute;
+	-webkit-appearance: none;
+	width: 8px
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar-thumb,
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar-track {
+	background-clip: padding-box!important;
+	border-radius: 4px;
+	color: transparent
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar-track {
+	background: transparent;
+	box-shadow: inset 0 -4px 0 0, inset 0 4px 0 0
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar-thumb {
+	background: transparent;
+	box-shadow: inset 0 -2px, inset 0 -3px, inset 0 2px, inset 0 3px;
+	min-height: 36px
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar-corner {
+	background: transparent
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar {
+	width: 16px
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar-thumb,
+.supports_custom_scrollbar .p-workspace__input .ql-editor::-webkit-scrollbar-track {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-radius: 6px/4px
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover {
+	border-right: .25rem solid transparent;
+	border-right: none
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar {
+	position: absolute;
+	-webkit-appearance: none;
+	width: 8px
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar-thumb,
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar-track {
+	background-clip: padding-box!important;
+	border-radius: 4px;
+	color: transparent
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar-track {
+	background: transparent;
+	box-shadow: inset 0 -4px 0 0, inset 0 4px 0 0
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar-thumb {
+	background: rgba($bh_primary_foreground, .52);
+	box-shadow: inset 0 -2px, inset 0 -3px, inset 0 2px, inset 0 3px;
+	min-height: 36px
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar-corner {
+	background: transparent
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar {
+	width: 16px
+}
+
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar-thumb,
+.supports_custom_scrollbar .p-workspace__input .ql-editor:hover::-webkit-scrollbar-track {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-radius: 6px/4px
+}

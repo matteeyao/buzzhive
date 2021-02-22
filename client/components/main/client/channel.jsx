@@ -6,7 +6,7 @@ import Footer from "./components/main/footer/footer_container";
 import ThreadHeader from "./components/thread/header";
 import ThreadBody from "./components/thread/body";
 // import MessageFormContainer from "./components/create_message_container";
-// import WebSocketContainer from "./components/websocket_container";
+import WebSocketContainer from "./components/websocket_container";
 
 class Channel extends React.Component {
     constructor(props) {
@@ -16,19 +16,20 @@ class Channel extends React.Component {
 
     componentDidMount() {
         this.props.fetchHive(this.props.match.params.hiveId);
-        // this.bottom.current.scrollIntoView();
+        this.props.fetchMessages(this.props.match.params.hiveId);
+        this.bottom.current.scrollIntoView();
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.hiveId !== this.props.match.params.hiveId) {
             this.props.fetchHive(this.props.match.params.hiveId)
+            this.props.fetchMessages(this.props.match.params.hiveId);
         }
-        // this.bottom.current.scrollIntoView();
+        this.bottom.current.scrollIntoView();
     }
 
     render() {
         const { currentHive, messages, users } = this.props;
-
         return (
             <>
                 <div role="main" aria-label="Channel general" className="p-workspace__primary_view" >
@@ -39,17 +40,21 @@ class Channel extends React.Component {
                         />
                         <div className="p-file_drag_drop__container">
                             <Body
-                                currentHive={this.props.currentHive}
+                                currentHive={currentHive}
                                 messages={messages}
-                                users={this.props.users}
+                                users={users}
                             />
-                            <Footer />
+                            <div ref={this.bottom} />
+                            <Footer 
+                                currentHive={currentHive}
+                            />
+                            <WebSocketContainer />
                         </div>
                     </div>
                 </div>
                 <div className="p-workspace__secondary_view p-workspace__secondary_view--large">
                     <div className="p-workspace__secondary_view_contents">
-                        <div role="complementary" class="p-flexpane p-flexpane--iap1">
+                        <div role="complementary" className="p-flexpane p-flexpane--iap1">
                             <ThreadHeader
                                 currentHive={currentHive}
                             />
@@ -63,3 +68,14 @@ class Channel extends React.Component {
 }
 
 export default Channel;
+
+// <div className="chatroom-container">
+//     <h2>Channel</h2>
+//     <div className="message-list">
+//         {messageList}
+//     </div>
+//     <div ref={this.bottom} />
+//     <br/>
+//     <div className="message-input"><MessageFormContainer /></div>
+//     <WebSocketContainer />
+// </div>

@@ -5,6 +5,7 @@ import Footer from './footer';
 
 const mapStateToProps = (state, ownProps) => {
     return ({
+        currentHive: state.entities.currentHive,
         message: {
             body: "",
             author_id: state.session.currentUserId,

@@ -7,7 +7,7 @@ class HiveIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchHives();
+        // this.props.fetchHives();
     }
     
     render() {

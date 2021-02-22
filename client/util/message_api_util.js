@@ -1,3 +1,10 @@
+export const fetchMessages = (id) => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/hives/${id}/messages`,
+    })
+);
+
 export const createMessage = (message) => (
     $.ajax({
         method: 'POST',

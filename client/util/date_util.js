@@ -38,7 +38,7 @@ export const formatTime = date => {
     const minutes = obj.getMinutes();
     const tmp = `0${minutes}`;
     const paddedMinutes = tmp.slice(tmp.length - 2);
-    const ampm = fullHours < 12 || fullHours === 0 ? 'am' : 'pm';
+    const ampm = fullHours < 12 || fullHours === 0 ? ' AM' : ' PM';
     return `${hours}:${paddedMinutes}${ampm}`;
 };
 
