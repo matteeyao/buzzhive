@@ -30,7 +30,7 @@ class HiveIndex extends React.Component {
                             <span className="p-channel_sidebar__section_heading_label_overflow">Hives:</span>
                         </button>
                         <div className="p-channel_sidebar__section_heading_right">
-                            <button className="c-button-unstyled p-channel_sidebar__section_heading_right_item p-channel_sidebar__section_heading_plus p-channel_sidebar__section_heading_plus--hover-reveal" aria-hidden="true" tabIndex="-1" data-qa="channel_sidebar__plus__channels" delay="300" data-sk="tooltip_parent" type="button"></button>
+                            <button className="c-button-unstyled p-channel_sidebar__section_heading_right_item p-channel_sidebar__section_heading_plus p-channel_sidebar__section_heading_plus--hover-reveal" aria-hidden="true" tabIndex="-1" data-qa="channel_sidebar__plus__channels" delay="300" data-sk="tooltip_parent" type="button" onClick={this.props.hiveModal}></button>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ class HiveIndex extends React.Component {
                 {hives}
                 <div aria-level="2" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="addMoreChannels" data-qa="virtual-list-item" style={{top: `${196+(this.props.hives.length)*28}px`}}>
                     <div className="p-channel_sidebar__close_container">
-                        <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--dim p-channel_sidebar__link--add-more-items" role="presentation" data-sidebar-link-id="Vadd_more_items_channel" data-qa-channel-sidebar-link-id="Vadd_more_items_channel" tabIndex="-1" type="button">
+                        <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--dim p-channel_sidebar__link--add-more-items" role="presentation" data-sidebar-link-id="Vadd_more_items_channel" data-qa-channel-sidebar-link-id="Vadd_more_items_channel" tabIndex="-1" type="button" onClick={this.props.hiveModal}>
                             <i className="c-icon p-channel_sidebar__channel_icon_prefix p-channel_sidebar__channel_icon_prefix--comfy c-icon--plus-small c-icon--inherit c-icon--inline" data-qa="sidebar-channel-icon-prefix" type="plus-small" aria-hidden="true"></i>
                             <span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_sidebar_add_more_channel">Add Hives</span>
                         </button>

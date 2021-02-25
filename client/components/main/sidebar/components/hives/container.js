@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Hives from "./component";
 import { fetchHives } from "../../../../../actions/hive_actions";
+import { openModal } from '../../../../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return {
@@ -11,6 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchHives: () => dispatch(fetchHives()),
+        hiveModal: () => dispatch(openModal('hiveModal')),
     };
 };
 

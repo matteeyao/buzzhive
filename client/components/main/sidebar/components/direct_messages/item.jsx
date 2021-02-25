@@ -14,6 +14,7 @@ class Item extends React.Component {
 
     render() {
         const name = this.props.idx == 0 ? "Jane Doe" : "John Doe"
+        const pic = this.props.idx == 0 ? "https://lh3.ggpht.com/zfXLEYjCcn-peZoNQpwfqYTg-KtFuzs80Twae8obhfL_HS4ydGsJ1EUHIoKcyhLw8Pk=s180" : "https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png";
 
         return (
             <div aria-level="2" aria-setsize="7" aria-posinset="1" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="D01C9HZ0Q0L" data-qa="virtual-list-item" style={{top: `${this.props.startPos+this.props.idx*34}px`}}>
@@ -22,7 +23,7 @@ class Item extends React.Component {
                     <i className="c-icon p-channel_sidebar__edit_mode_checkbox p-channel_sidebar__edit_mode_checkbox--not_editing c-icon--real-checkbox-empty c-icon--inherit c-icon--inline" data-qa="edit-mode-checkbox-state" type="real-checkbox-empty" aria-hidden="true"></i>
                     <div className="p-channel_sidebar__user_avatar" data-qa-hidden-presence="0">
                         <span className="c-avatar" data-qa="channel-prefix-im-avatar" style={{height: "20px", width: "20px"}}>
-                            <img src="https://ca.slack-edge.com/T03GU501J-U01AJHGM12P-b84974b5e452-24" srcSet="https://ca.slack-edge.com/T03GU501J-U01AJHGM12P-b84974b5e452-48 2x" className="c-base_icon c-base_icon--image" aria-hidden="true" role="img" alt="" style={{height: "20px", width: "20px"}} />
+                            <img src={pic} srcSet={`${pic}`} className="c-base_icon c-base_icon--image" aria-hidden="true" role="img" alt="" style={{height: "20px", width: "20px"}} />
                         </span>
                         <div className="p-channel_sidebar__user_avatar_presence_bg"></div>
                         <i className="c-icon p-channel_sidebar__presence_icon p-channel_sidebar__presence_icon--dim_enabled p-channel_sidebar__presence_icon--on-avatar p-channel_sidebar__presence_icon--on-avatar-border c-presence c-presence--away c-icon--presence-offline" type="presence-offline" title="Away" aria-hidden="true" data-qa="presence_indicator" data-qa-presence-self="false" data-qa-presence-active="false" data-qa-presence-dnd="false"></i>

@@ -2689,6 +2689,8 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 }
 
 .c-texty_input__placeholder {
+    color: rgba($bh_primary_foreground, 1);
+    font-size: 16px;
 	display: block;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -2845,7 +2847,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 }
 
 .sk-client-theme--dark .c-icon_button.c-texty_input__button--emoji:hover .c-icon {
-	color: #1d1c1d
+	color: rgba($bh_foreground_max, .7);
 }
 
 .c-texty_input__container--multi_line .ql-editor {
@@ -5059,4 +5061,8 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
     display: table;
     height: 20px;
     margin-bottom: 10px;
+}
+
+.c-icon--lock-medium:before {
+  content: "\E50A";
 }

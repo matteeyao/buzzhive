@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
         currentHive: state.entities.currentHive,
         message: {
             body: "",
-            author_id: state.session.currentUserId,
+            author_id: state.session.currentUser.id,
             parent_message_id: null,
             msgeable_id: ownProps.match.params.hiveId,
             msgeable_type: "Hive"

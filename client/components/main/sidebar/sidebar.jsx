@@ -16,7 +16,7 @@ class SidebarDetail extends Component {
                                 </button>
                             </div>
                         </div>
-                        <button className="c-button-unstyled p-channel_sidebar__compose_button p-channel_sidebar__compose_button--iap1" aria-label="New message" data-qa="composer_button" delay="300" data-sk="tooltip_parent" type="button">
+                        <button className="c-button-unstyled p-channel_sidebar__compose_button p-channel_sidebar__compose_button--iap1" aria-label="New message" data-qa="composer_button" delay="300" data-sk="tooltip_parent" type="button" onClick={this.props.hiveModal}>
                             <svg height="16px" viewBox="0 0 20 20" className="p-channel_sidebar__compose_button_svg_icon">
                                 <path d="M8.66000142,13.3899994 L10.3700017,12.6999993 C10.8700018,12.4999993 11.3300019,12.1999992 11.7100019,11.8199992 
                                     L19.5600032,3.96999786 C20.1900033,3.33999776 20.0600033,2.19999757 19.2800032,1.41999745 L18.570003,0.70999733 
@@ -45,7 +45,7 @@ class SidebarDetail extends Component {
                                     <div role="tree" aria-label="Channels and direct messages" aria-describedby="channel_sidebar_summary" className="c-virtual_list c-virtual_list--scrollbar p-channel_sidebar__static_list c-scrollbar" style={{width: "260px", height: "842px"}}>
                                         <div data-qa="slack_kit_scrollbar" role="presentation" className="c-scrollbar__hider">
                                             <div role="presentation" className="c-scrollbar__child" style={{width: "260px"}}>
-                                                <div data-qa="slack_kit_list" className="c-virtual_list__scroll_container" role="presentation" style={{position: "relative", height: "912px"}}>
+                                                <div data-qa="slack_kit_list" className="c-virtual_list__scroll_container" role="presentation" style={{position: "relative", height: "842px", overflowY: "hidden"}}>
                                                     <div aria-level="1" aria-setsize="7" aria-posinset="1" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="Vall_threads" data-qa="virtual-list-item" style={{top: "12px"}}>
                                                         <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--all-threads" role="presentation" data-sidebar-link-id="Vall_threads" data-qa-channel-sidebar-link-id="Vall_threads" tabIndex="-1" type="button">
                                                             <span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_all_thread_link">Threads</span>

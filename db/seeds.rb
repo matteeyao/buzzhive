@@ -34,6 +34,7 @@ hive1 = Hive.create!(
     name: "welcome",
     description: "Welcome to buzzhive. Join hundreds of channels and communicate freely with other users.",
     is_private: false,
+    ref_link: "https://www.linkedin.com/in/matt-yao/",
     author_id: user14.id
 )
 hive2 = Hive.create!(
@@ -41,6 +42,13 @@ hive2 = Hive.create!(
     description: "Got something on your mind? Post it here where others can like and respond to your messages.",
     is_private: false,
     ref_link: "https://slack.com/",
+    author_id: user14.id
+)
+hive3 = Hive.create!(
+    name: "savethebees",
+    description: "Mission: to save the bees.",
+    is_private: true,
+    ref_link: "https://thebeeconservancy.org/",
     author_id: user14.id
 )
 
@@ -74,6 +82,21 @@ channelUser12 = HiveUser.create!(hive_id: hive2.id, user_id: user12.id)
 channelUser13 = HiveUser.create!(hive_id: hive2.id, user_id: user13.id)
 channelUser14 = HiveUser.create!(hive_id: hive2.id, user_id: user14.id)
 
+channelUser1 = HiveUser.create!(hive_id: hive3.id, user_id: user1.id)
+channelUser2 = HiveUser.create!(hive_id: hive3.id, user_id: user2.id)
+channelUser3 = HiveUser.create!(hive_id: hive3.id, user_id: user3.id)
+channelUser4 = HiveUser.create!(hive_id: hive3.id, user_id: user4.id)
+channelUser5 = HiveUser.create!(hive_id: hive3.id, user_id: user5.id)
+channelUser6 = HiveUser.create!(hive_id: hive3.id, user_id: user6.id)
+channelUser7 = HiveUser.create!(hive_id: hive3.id, user_id: user7.id)
+channelUser8 = HiveUser.create!(hive_id: hive3.id, user_id: user8.id)
+channelUser9 = HiveUser.create!(hive_id: hive3.id, user_id: user9.id)
+channelUser10 = HiveUser.create!(hive_id: hive3.id, user_id: user10.id)
+channelUser11 = HiveUser.create!(hive_id: hive3.id, user_id: user11.id)
+channelUser12 = HiveUser.create!(hive_id: hive3.id, user_id: user12.id)
+channelUser13 = HiveUser.create!(hive_id: hive3.id, user_id: user13.id)
+channelUser14 = HiveUser.create!(hive_id: hive3.id, user_id: user14.id)
+
 message1 = Message.create!(
     body: "Hello everyone. This is the first test message on Buzzhive.",
     author_id: user14.id,
@@ -98,16 +121,56 @@ message3 = Message.create!(
 )
 
 message4 = Message.create!(
+    body: "This is awesome!",
+    author_id: user12.id,
+    parent_message_id: message3.id,
+    msgeable_id: hive2.id,
+    msgeable_type: 'Hive'
+)
+
+message5 = Message.create!(
     body: "Where can I find the repo for buzzhive?",
     author_id: user7.id,
     msgeable_id: hive2.id,
     msgeable_type: 'Hive'
 )
 
-message5 = Message.create!(
+message6 = Message.create!(
     body: "You can find it here, at https://github.com/matteeyao/buzzhive.",
     author_id: user14.id,
-    parent_message_id: message4.id,
+    parent_message_id: message5.id,
+    msgeable_id: hive2.id,
+    msgeable_type: 'Hive'
+)
+
+message7 = Message.create!(
+    body: "Hi, welcome to buzzhive. Make yourself at home :)",
+    author_id: user14.id,
+    msgeable_id: hive1.id,
+    msgeable_type: 'Hive'
+)
+
+message8 = Message.create!(
+    body: "Bees lie at the heart of our survival. They pollinate 1 in 3 bites of food we eat and are essential to the health and prosperity 
+    of countless ecosystems. However, bees are in peril. According to the Center for Biological Diversity, more than half of North 
+    America’s 4,000 native bee species are in decline, with 1 in 4 species at risk of extinction. The time to take action is now.",
+    author_id: user14.id,
+    msgeable_id: hive3.id,
+    msgeable_type: 'Hive'
+)
+
+message9 = Message.create!(
+    body: "Hey Anonymous Hare!",
+    author_id: user3.id,
+    parent_message_id: message2.id,
+    msgeable_id: hive2.id,
+    msgeable_type: 'Hive'
+)
+
+message10 = Message.create!(
+    body: "Howdy Anonymous Hedgehog",
+    author_id: user6.id,
+    parent_message_id: message9.id,
     msgeable_id: hive2.id,
     msgeable_type: 'Hive'
 )

@@ -34,6 +34,18 @@ class Message < ApplicationRecord
         primary_key: :id,
         optional: true
 
+    def children
+        self.child_messages.where(msgeable_id: msgeable_id, msgeable_type: msgeable_type)
+    end
+
+    def destroy
+        update(user: nil, body: nil)
+    end
+
+    def deleted?
+        user.nil?
+    end
+
     private
     
     def ensure_messageable!

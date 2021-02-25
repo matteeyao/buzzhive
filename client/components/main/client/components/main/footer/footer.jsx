@@ -33,42 +33,20 @@ class MessageForm extends React.Component {
                             <form onSubmit={this.handleSubmit} className="p-workspace__input p-message_input p-message_input--dark">
                                 <div className="c-texty_input__container c-texty_input__container--multi_line c-texty_input__container--sticky_composer" data-buttons="0">
                                     <div className="p-message_input_field c-texty_input ql-container c-texty_input--double_decker" data-qa="message_input" data-message-input="true" data-channel-id="C03GU502Q" data-view-context="message-pane" data-min-lines="1">
-                                        <div className="ql-editor ql-blank" data-gramm="false" /* contentEditable="true" */ dir="auto" role="textbox" tabIndex="0" data-team-id="T03GU501J" aria-label="Message general" aria-describedby="context_bar_text-1ad47753" aria-multiline="true" aria-autocomplete="list" aria-expanded="false" aria-owns="chat_input_tab_ui" spellCheck="true">
-                                            <p>
-                                                <code>
-                                                    <span className="ql-cursor">
-                                                        ﻿
-                                                    </span>
-                                                </code>
-                                            </p>
-                                        </div>
-                                        <input 
-                                            className="ql-clipboard" /* contentEditable="true" */ 
-                                            tabIndex="-1" 
-                                            aria-hidden="true" 
-                                            role="presentation" 
-                                            type="text"
-                                            value={this.state.password}
-                                            onChange={this.update('body')}
-                                            className="c-texty_input__placeholder"
-                                            placeholder={`Message #${this.props.currentHive.name}`}
-                                        />
-
-                                        {/* <div className="ql-placeholder" aria-hidden="true" role="presentation" tabIndex="-1" data-reactroot="">
+                                        <div className="ql-editor ql-blank" data-gramm="false" /* contentEditable="true" */ dir="auto" role="textbox" tabIndex="0" data-team-id="T03GU501J" aria-label="Message general" aria-describedby="context_bar_text-1ad47753" aria-multiline="true" aria-autocomplete="list" aria-expanded="false" aria-owns="chat_input_tab_ui" spellCheck="true" style={{marginTop: "9px"}}>
                                             <input 
+                                                className="ql-clipboard" /* contentEditable="true" */ 
+                                                tabIndex="-1" 
+                                                aria-hidden="true" 
+                                                role="presentation" 
                                                 type="text"
-                                                value={this.state.password}
+                                                value={this.state.body}
                                                 onChange={this.update('body')}
                                                 className="c-texty_input__placeholder"
                                                 placeholder={`Message #${this.props.currentHive.name}`}
+                                                style={{width: "100%"}}
                                             />
-                                            
-                                            <div className="c-texty_input__placeholder">
-                                                Message 
-                                                <i className="c-icon c-texty_input__placeholder_icon--public c-icon--hash-small c-icon--inline" type="hash-small" aria-hidden="true"></i>
-                                                general
-                                            </div>
-                                        </div> */}
+                                        </div>                       
                                     </div>
                                     <div className="c-texty_buttons">
                                         <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small c-texty_input__button c-texty_input__button--send" data-qa="texty_send_button" aria-label="Send message" delay="150" data-sk="tooltip_parent" type="submit" value={this.props.formType}>

@@ -45,3 +45,12 @@ export const formatTime = date => {
 export const formatDateTime = date => (
     `${formatDate(date)} ${formatTime(date)}`
 );
+
+export const formatDays = date => {
+    const obj = new Date(date);
+    const today = new Date();
+    var difference = today.getTime() - obj.getTime();
+
+    var days = Math.ceil(difference / (1000 * 3600 * 24));
+    return days;
+};

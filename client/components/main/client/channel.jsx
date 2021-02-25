@@ -4,7 +4,7 @@ import Body from "./components/main/body/body";
 import Footer from "./components/main/footer/footer_container";
 
 import ThreadHeader from "./components/thread/header";
-import ThreadBody from "./components/thread/body";
+import ThreadBody from "./components/thread/component";
 // import MessageFormContainer from "./components/create_message_container";
 import WebSocketContainer from "./components/websocket_container";
 
@@ -29,7 +29,7 @@ class Channel extends React.Component {
     }
 
     render() {
-        const { currentHive, messages, users } = this.props;
+        const { currentHive, messages, users, fetchMessage } = this.props;
         return (
             <>
                 <div role="main" aria-label="Channel general" className="p-workspace__primary_view" >
@@ -43,6 +43,7 @@ class Channel extends React.Component {
                                 currentHive={currentHive}
                                 messages={messages}
                                 users={users}
+                                fetchMessage={fetchMessage}
                             />
                             <div ref={this.bottom} />
                             <Footer 

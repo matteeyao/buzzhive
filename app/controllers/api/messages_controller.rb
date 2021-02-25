@@ -1,15 +1,24 @@
 class Api::MessagesController < ApplicationController
-    before_action :set_hive, only: [:create]
+    before_action :set_hive, only: [:show, :create]
 
     def index
-        @messages = Message.all.where(parent_message_id: nil)
+        @messages = Message.all.where(parent_message_id: nil, msgeable_id: params[:hive_id])
         render :index
     end
 
     def show
-        @message = Message.find(params[:id])
-        @messages = @message.child_messages
+        @message = @hive.messages.find_by(id: params[:id])
         render 'api/messages/show'
+        
+        
+        
+        # if params[:id]
+        #     .child_messages.where(parent_message_id: params[:id])
+        # else
+        #     @hive.messages.where(parent_id: nil)
+        # end
+        # # @message = 
+        # render 'api/messages/show'
     end
 
     def create

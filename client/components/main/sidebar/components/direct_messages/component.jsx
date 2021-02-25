@@ -4,25 +4,37 @@ import Item from './item';
 class HiveIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            hivesLength: 196 + (this.props.hives.length + 1) * 28 + 12,
+        }
     }
 
     componentDidMount() {
         // this.props.fetchHives();
     }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.hives.length !== prevProps.hives.length) {
+            const value = 196 + (this.props.hives.length + 1) * 28 + 12;
+            this.setState({
+                hivesLength: value
+            });
+        };
+    }
     
     render() {
-        const directMessages = this.props.hives.map((hive,idx) => (
+        const directMessages = this.props.hives.slice(0,2).map((hive,idx) => (
             <Item
                 key={idx}
                 hive={hive}
                 idx={idx}
-                startPos={this.props.hivesLength+36}
+                startPos={this.state.hivesLength+36}
             />
         ));
 
         return (
             <>
-                <div aria-expanded="true" aria-level="1" aria-label="Direct Messages" aria-describedby="sectionHeading-L01B4NJB0TT-description channel-sections-reorder-description" aria-setsize="7" aria-posinset="6" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="sectionHeading-L01B4NJB0TT" data-qa="virtual-list-item" style={{top: `${this.props.hivesLength}px`}}>
+                <div aria-expanded="true" aria-level="1" aria-label="Direct Messages" aria-describedby="sectionHeading-L01B4NJB0TT-description channel-sections-reorder-description" aria-setsize="7" aria-posinset="6" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="sectionHeading-L01B4NJB0TT" data-qa="virtual-list-item" style={{top: `${this.state.hivesLength}px`}}>
                     <div className="p-channel_sidebar__section_heading p-channel_sidebar__drop_target_indicator" data-qa-channel-sidebar-section-heading="direct_messages" data-qa="direct_messages" draggable="true">
                         <span role="presentation" className="p-channel_sidebar__section_heading_expand_container p-channel_sidebar__section_heading_expand_container--show_more_feature" aria-hidden="true">
                             <i className="c-icon p-channel_sidebar__section_heading_expand p-channel_sidebar__section_heading_expand--show_more_feature c-icon--caret-right c-icon--inherit c-icon--inline" data-qa="channel-section-collapse" type="caret-right" aria-hidden="true"></i>
@@ -35,11 +47,11 @@ class HiveIndex extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div aria-owns="D01C9HZ0Q0L G01HFKB0B6G D01C280M82C D01HPK30XHU D01DXNZU0A3 D01FN2ZAULW D01DCJHDCRF addMoreDM" aria-label="Direct Messages" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="group" id="sectionHeadingAriaGroup-L01B4NJB0TT" data-qa="virtual-list-item" style={{top: `${this.props.hivesLength + 34}px`}}>
+                <div aria-owns="D01C9HZ0Q0L G01HFKB0B6G D01C280M82C D01HPK30XHU D01DXNZU0A3 D01FN2ZAULW D01DCJHDCRF addMoreDM" aria-label="Direct Messages" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="group" id="sectionHeadingAriaGroup-L01B4NJB0TT" data-qa="virtual-list-item" style={{top: `${this.state.hivesLength + 34}px`}}>
                     <div id="sectionHeading-L01B4NJB0TT-description" className="p-channel_sidebar__group-description">Press Cmd Shift K to find or create a direct message. Press delete to remove a direct message from the sidebar</div>
                 </div>                
                 {directMessages}
-                <div aria-level="2" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="addMoreDM" data-qa="virtual-list-item" style={{top: `${this.props.hivesLength+34+(this.props.hives.length)*34}px`}}>
+                <div aria-level="2" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="addMoreDM" data-qa="virtual-list-item" style={{top: `${this.state.hivesLength+34+(this.props.hives.slice(0,2).length)*34}px`}}>
                     <div className="p-channel_sidebar__close_container">
                         <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--dim p-channel_sidebar__link--add-more-items" role="presentation" data-sidebar-link-id="Vadd_more_items_dm" data-qa-channel-sidebar-link-id="Vadd_more_items_dm" tabIndex="-1" type="button">
                             <i className="c-icon p-channel_sidebar__channel_icon_prefix p-channel_sidebar__channel_icon_prefix--comfy c-icon--plus-small c-icon--inherit c-icon--inline" data-qa="sidebar-channel-icon-prefix" type="plus-small" aria-hidden="true"></i>

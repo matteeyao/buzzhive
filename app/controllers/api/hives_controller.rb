@@ -3,7 +3,11 @@ class Api::HivesController < ApplicationController
 
     def index
         @hives = Hive.includes(:users).all
-        render (hive_params[:search] ? "api/hives/search" : :index)
+        if (params[:hive].present?)
+            render "api/hives/search"
+        else
+            render :index
+        end
     end
 
     def show
@@ -12,16 +16,32 @@ class Api::HivesController < ApplicationController
     end
 
     def create
-        @hive = Hive.new(hive_params)
+        create_params = {
+            name: hive_params[:name],
+            description: hive_params[:description],
+            is_private: hive_params[:is_private],
+            author_id: current_user.id,
+            ref_link: hive_params[:ref_link]
+        }
+
+        @hive = Hive.new(create_params)
         if @hive.save
             @hive.hive_users.where(user_id: current_user.id).first_or_create
+
+            User.all
+                .select { |user| user.id != current_user.id }
+                .each { |user| HiveUser.new(hive_id: @hive.id, user_id: user.id).save }
+
+            @hive_users = @hive.hive_users.includes(:user)
+
             serialized_data = ActiveModelSerializers::Adapter::Json.new(
                 HiveSerializer.new(@hive)
             ).serializable_hash
             ActionCable.server.broadcast 'hives_channel', serialized_data
-            head :ok
+            render :show
         else
-            render json: ['Unable to create channel.'], status: 422
+            # render json: ['Unable to create channel.'], status: 422
+            render json: @hive.errors.full_messages, status: 422
         end
     end
 
@@ -36,15 +56,11 @@ class Api::HivesController < ApplicationController
     #     end
     # end
 
-    # def destroy
-    #     @user = selected_user
-    #     if @user
-    #         @user.destroy
-    #         render :show
-    #     else
-    #         render ['User could not be located.']
-    #     end
-    # end
+    def destroy
+        if @hive && current_user.id == @hive.author_id
+            @hive.destroy
+        end
+    end
 
     private
 
@@ -53,6 +69,10 @@ class Api::HivesController < ApplicationController
     end
 
     def hive_params
-        params.require(:hive).permit(:name, :description, :is_private, :ref_link, :search)
+        params.require(:hive).permit(:name, :description, :is_private, :ref_link)
+    end
+
+    def search_params
+        params.require(:hive).permit(:search)
     end
 end

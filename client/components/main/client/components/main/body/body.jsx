@@ -1,12 +1,30 @@
 import React from 'react';
 import Message from './item';
 
-export default ({currentHive, messages, users}) => {
+export default ({currentHive, messages, users, fetchMessage}) => {
+    const [dimensions, setDimensions] = React.useState({ 
+        height: window.innerHeight,
+        width: window.innerWidth,
+    })
+
+    React.useEffect(() => {
+        function handleResize() {
+            setDimensions({
+                height: window.innerHeight,
+                width: window.innerWidth,
+            });
+        };
+
+        window.addEventListener('resize', handleResize);
+    })
+
     const messageBlocks = messages.map((message, idx) => (
         <Message
             key={idx}
             message={message}
             author={users[message.authorId]}
+            hiveid = {currentHive.id}
+            fetchMessage={fetchMessage}
         />
     ));
 
@@ -17,9 +35,9 @@ export default ({currentHive, messages, users}) => {
                 <div style={{overflow: "auto", height: "auto"}}>
                     <div role="presentation">
                         <div tabIndex="0" style={{position: "absolute", width: "1px", height: "1px", outline: "none", boxShadow: "none", top: "0px", }}></div>
-                        <div role="list" aria-label={currentHive.name+" (channel)"} className="c-virtual_list c-virtual_list--scrollbar c-message_list c-message_list--dark c-scrollbar c-scrollbar--fade" style={{width: `${(window.innerWidth)*.45}px`, height: "700px"}}>
+                        <div role="list" aria-label={currentHive.name+" (channel)"} className="c-virtual_list c-virtual_list--scrollbar c-message_list c-message_list--dark c-scrollbar c-scrollbar--fade" style={{width: `${(dimensions.width)*.45}px`, height: "700px"}}>
                             <div data-qa="slack_kit_scrollbar" role="presentation" className="c-scrollbar__hider">
-                                <div role="presentation" className="c-scrollbar__child" style={{width: `${(window.innerWidth)*.45}px`, height: "100%", marginTop: '10px'}}>
+                                <div role="presentation" className="c-scrollbar__child" style={{width: `${(dimensions.width)*.45}px`, height: "100%", marginTop: '10px'}}>
                                     <div data-qa="slack_kit_list" className="c-virtual_list__scroll_container" role="presentation" style={{position: "relative", height: "100%"}}>
                                         <ul>
                                             {messageBlocks}
@@ -32,7 +50,7 @@ export default ({currentHive, messages, users}) => {
                 </div>
                 <div className="resize-triggers">
                     <div className="expand-trigger">
-                        <div style={{width: `${(window.innerWidth)*.45}px`, height: "655px"}}></div>
+                        <div style={{width: `${(dimensions.width)*.45}px`, height: "655px"}}></div>
                     </div>
                     <div className="contract-trigger"></div>
                 </div>
