@@ -8,8 +8,12 @@
 # json.partial! 'api/messages/show', message: @message
 
 json.partial! 'message', message: @message
-    json.set! :children do 
-        json.array! @message.children do |message|
-            json.partial! 'show', message: message if message.child_messages.length > 0
+    json.set! :children do
+        if @message.children.length > 0
+            json.array! @message.children do |message|
+                json.partial! 'show', message: message
+            end
+        else
+            json.array!
         end
     end

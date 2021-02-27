@@ -35,7 +35,7 @@ class Message < ApplicationRecord
         optional: true
 
     def children
-        self.child_messages.where(msgeable_id: msgeable_id, msgeable_type: msgeable_type)
+        self.child_messages.where(msgeable_id: self.msgeable_id, msgeable_type: self.msgeable_type)
     end
 
     def destroy

@@ -7,7 +7,7 @@ import library from "./icons/library"
 // TEST IMPORTS START
 // import { fetchHive, fetchHives } from './util/hive_api_util'
 import { fetchHive, fetchHives, searchHives, deleteHive } from './actions/hive_actions'
-import { fetchMessage } from './actions/message_actions'
+import { fetchMessage, clearThread } from './actions/message_actions'
 
 // import { fetchUsers } from './actions/user_actions'
 import { fetchUsers } from './util/user_api_util';
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.searchHives = searchHives;
     window.deleteHive = deleteHive;
     window.fetchMessage = fetchMessage;
+    window.clearThread = clearThread;
     // TESTING END
     
     const root = document.getElementById('root');

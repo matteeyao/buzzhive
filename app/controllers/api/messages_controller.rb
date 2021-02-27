@@ -10,8 +10,6 @@ class Api::MessagesController < ApplicationController
         @message = @hive.messages.find_by(id: params[:id])
         render 'api/messages/show'
         
-        
-        
         # if params[:id]
         #     .child_messages.where(parent_message_id: params[:id])
         # else

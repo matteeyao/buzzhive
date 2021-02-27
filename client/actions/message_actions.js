@@ -3,25 +3,32 @@ import * as APIUtil from '../util/message_api_util';
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const RECEIVE_THREAD = 'RECEIVE_THREAD';
+export const CLEAR_THREAD = 'CLEAR_THREAD';
 
-const receiveMessages = messages => {
+export const receiveMessages = messages => {
     return {
         type: RECEIVE_MESSAGES,
         messages,
     }
 };
 
-const receiveMessage = message => {
+export const receiveMessage = message => {
     return {
         type: RECEIVE_MESSAGE,
         message,
     };
 };
 
-const receiveThread = message => {
+export const receiveThread = message => {
     return {
         type: RECEIVE_THREAD,
         message,
+    };
+};
+
+export const closeThread = () => {
+    return {
+        type: CLEAR_THREAD,
     };
 };
 
@@ -41,4 +48,16 @@ export const createMessage = (messageForm) => dispatch => (
     APIUtil.createMessage(messageForm).then(message => (
         dispatch(receiveMessage(message))
     ))
+);
+
+export const createThreadReply = (messageForm, hive_id, id) => dispatch => {
+    return (
+        APIUtil.createMessage(messageForm).then(() => (
+            dispatch(fetchMessage(hive_id, id))
+        ))
+    );
+};
+
+export const clearThread = () => dispatch => (
+    dispatch(closeThread())
 );

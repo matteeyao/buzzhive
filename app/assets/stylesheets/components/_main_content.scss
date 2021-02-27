@@ -5064,5 +5064,16 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 }
 
 .c-icon--lock-medium:before {
-  content: "\E50A";
+    content: "\E50A";
+}
+
+.c-icon_button.c-texty_input__button--cancel {
+    width: 32px;
+    height: 31.3px;
+    margin: 1px 2px 0 0;
+    background: #ff8080;
+}
+
+.c-icon_button.c-texty_input__button--cancel:hover {
+    color: #fff;
 }

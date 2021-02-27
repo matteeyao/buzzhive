@@ -12771,9 +12771,7 @@ only screen and (min-resolution:192dpi) {
 	flex-grow: 1
 }
 
-.p-threads_flexpane .c-message_kit__thread_message--root .c-message_kit__gutter {
-	padding-top: 20px
-}
+
 
 .p-threads_flexpane .c-message_kit__thread_message--root .c-message_kit__labels__label {
 	margin-bottom: -16px
@@ -12923,42 +12921,6 @@ only screen and (min-resolution:192dpi) {
 .p-threads_flexpane__error_emoji .emoji-sizer {
 	font-size: 64px;
 	margin-bottom: 16px
-}
-
-.c-message_kit__thread_message .c-message_kit__gutter,
-.c-message_kit__thread_message .c-message_kit__tombstone {
-	padding: 8px 24px 8px 16px
-}
-
-.c-message_kit__thread_message .c-message_kit__gutter__right {
-	padding-right: 0
-}
-
-.c-message_kit__thread_message .c-message_kit__labels__label {
-	padding-top: 4px;
-	padding-left: 16px
-}
-
-.c-message_kit__thread_message .c-message_kit__labels--light .c-message_kit__labels__icon {
-	width: 36px
-}
-
-.c-message_kit__thread-message--new_reply {
-	background: rgba(29, 155, 209, .1)
-}
-
-.c-message_kit__thread_message--root .c-message_kit__gutter,
-.c-message_kit__thread_message--root .c-message_kit__tombstone {
-	padding-top: 12px
-}
-
-.c-message_kit__thread_message--root .c-message_kit__labels__label {
-	padding-top: 8px;
-	margin-bottom: -8px
-}
-
-.c-message_kit__thread_message--root .c-timestamp {
-	margin-left: 4px
 }
 
 .p-setup_channel_examples_header {

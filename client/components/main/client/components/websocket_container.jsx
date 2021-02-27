@@ -24,7 +24,9 @@ class WebSocket extends React.Component {
                 connected: () => {},
                 received: (data) => {
                     const message = data.message;
-                    this.props.receiveMessage(message);
+                    if (message.parentMessageId === null) {
+                        this.props.receiveMessage(message);
+                    }
                 },
                 disconnected: () => {}
             }
