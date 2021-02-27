@@ -20,9 +20,7 @@
 /node_modules
 /yarn-error.log
 
-/public/assets/config
-/public/assets/javacripts
-/public/assets/stylesheets
+/public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
