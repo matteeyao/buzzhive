@@ -1,10 +1,8 @@
 # README
 
-[buzzhive](https://buzzhive.herokuapp.com/#/), a collobaration hub designed 
-to personalize communication and collobation across every community. Through 
-endless conversation and authentic human connections, buzzhive provides access 
-to the right people, information, and tools for every activity from discussing 
-interests to acheiving ambitions.
+[buzzhive](https://buzzhive.herokuapp.com/#/), a collaboration hub designed to personalize communication and collaboration across every community. Through endless conversation and authentic human connections, buzzhive provides access to the right people, information, and tools for every activity from discussing interests to achieving ambitions.
+
+
 
 ## Features
 
