@@ -13,15 +13,15 @@ class WebSocket extends React.Component {
         this.createSubscription();
     };
 
-    // componentDidUpdate(prevProps) {
-    //     this.createSubscription();
-    // };
+    componentDidUpdate(prevProps) {
+        this.createSubscription();
+    };
 
     createSubscription() {
         App.cable.subscriptions.create(
             { channel: "HivesChannel", id: this.props.currentHiveId }, 
             {
-                connected: () => {},
+                connected: () => {/*console.log(this.props.currentUser.username, "is connected to Hive", this.props.currentHiveId) */},
                 received: (data) => {
                     const message = data.message;
                     if (message.parentMessageId === null) {
@@ -40,7 +40,7 @@ class WebSocket extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.session.currentUser,
         currentHiveId: ownProps.match.params.hiveId,
         messages: Object.values(state.entities.messages),
     };

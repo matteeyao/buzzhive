@@ -9,6 +9,14 @@ class MessageForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.message.msgeable_id !== this.props.message.msgeable_id) {
+            this.setState({
+                msgeable_id: this.props.match.params.hiveId,
+            })
+        }
+    }
+
     update(field) {
         return e =>
             this.setState({
@@ -21,6 +29,7 @@ class MessageForm extends React.Component {
         // App.cable.subscriptions.subscriptions[0].speak({
         //     message: this.state.body
         // });
+        // console.log(this.state)
         this.props.action(this.state);
         this.setState(this.baseState);
     };
