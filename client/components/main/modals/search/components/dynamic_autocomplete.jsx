@@ -3,7 +3,7 @@ import Footer from './footer';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default ({searchString, searchResults}) => {
+export default ({searchString, searchResults, closeModal}) => {
    
     const filterResults = () => {
         const search = searchString.toLowerCase();
@@ -23,25 +23,27 @@ export default ({searchString, searchResults}) => {
                 <i className="c-icon c-channel_icon--small c-small_channel_entity__icon c-icon--hash-medium" type="hash-medium" aria-hidden="true"></i>
 
             return (
-                <li key={ result.id } data-type="channel" id="c-search_autcomplete__suggestion_1" role="option" tabIndex="-1" aria-selected="false" aria-labelledby="c-search_autcomplete__suggestion_1 search-autocomplete-recent-channels-header" className="c-search_autocomplete__suggestion_item">
-                    <Link to={ `/hives/${result.id}` } style={{textDecoration: "none", color: "inherit"}}>
-                        <div className="c-base_list_entity c-base_list_entity--small">
-                            <div className="c-base_list_entity__primary_content">
-                                <div className="c-small_channel_entity c-base_entity c-base_entity--small c-base_entity--has-avatar">
-                                    {locked}
-                                    <div className="c-base_entity__text-contents">
-                                        <span className="c-base_entity__text">
-                                            <span className="c-truncate c-truncate--break_words" style={{overflow: "hidden", textOverflow: "ellipsis", WebkitBoxOrient: "vertical", display: "-webkit-box", WebkitLineClamp: "1"}} >
-                                                <span className="c-small_channel_entity__content c-small_channel_entity__content--xws">
-                                                    <span className="c-channel_entity__name c-channel_entity__name--bold">{result.name}</span>
+                <li key={ result.id }>
+                    <Link to={ `/hives/${result.id}` } style={{textDecoration: "none", color: "inherit"}} onClick={closeModal}>
+                        <div data-type="channel" id="c-search_autcomplete__suggestion_1" role="option" tabIndex="-1" aria-selected="false" aria-labelledby="c-search_autcomplete__suggestion_1 search-autocomplete-recent-channels-header" className="c-search_autocomplete__suggestion_item">
+                            <div className="c-base_list_entity c-base_list_entity--small">
+                                <div className="c-base_list_entity__primary_content">
+                                    <div className="c-small_channel_entity c-base_entity c-base_entity--small c-base_entity--has-avatar">
+                                        {locked}
+                                        <div className="c-base_entity__text-contents">
+                                            <span className="c-base_entity__text">
+                                                <span className="c-truncate c-truncate--break_words" style={{overflow: "hidden", textOverflow: "ellipsis", WebkitBoxOrient: "vertical", display: "-webkit-box", WebkitLineClamp: "1"}} >
+                                                    <span className="c-small_channel_entity__content c-small_channel_entity__content--xws">
+                                                        <span className="c-channel_entity__name c-channel_entity__name--bold">{result.name}</span>
+                                                    </span>
                                                 </span>
                                             </span>
-                                        </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="c-base_list_entity__secondary_content">
-                                <div className="c-small_channel_entity__secondary-content-badge"></div>
+                                <div className="c-base_list_entity__secondary_content">
+                                    <div className="c-small_channel_entity__secondary-content-badge"></div>
+                                </div>
                             </div>
                         </div>
                     </Link>

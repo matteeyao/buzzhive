@@ -5,8 +5,8 @@ export default ({message, author, hiveid, fetchMessage}) => {
     if (message && author) {
         return (
             <li className="message_block_container">
-                <div className="c-virtual_list__sticky_container" role="presentation" style={{marginTop: "8px"}}>
-                    <div aria-roledescription="separator" className="c-virtual_list__item--sticky c-virtual_list__item" tabIndex="-1" role="listitem" id="1611986400000.C2J4CK8N7" data-qa="virtual-list-item" style={{marginTop: "0px", zIndex: "199"}}>
+                <div className="c-virtual_list__sticky_container" role="presentation">
+                    <div aria-roledescription="separator" className="c-virtual_list__item--sticky c-virtual_list__item" tabIndex="-1" data-qa="virtual-list-item" style={{marginTop: "0px", zIndex: "199"}}>
                         <div className="c-message_list__day_divider__label c-message_list__day_divider__label--jump_to_date">
                             <button className="c-button-unstyled c-message_list__day_divider__label__pill" aria-label="Jump to date" aria-haspopup="menu" aria-expanded="false" type="button" style={{background: "rgba(47,50,55,1)"}}>
                                 {DateUtil.formatDateTime(message.createdAt)}
@@ -15,16 +15,15 @@ export default ({message, author, hiveid, fetchMessage}) => {
                         </div>
                     </div>
                 </div>
-                <div className="c-virtual_list__item" tabIndex="-1" role="presentation" id="1611986400000divider" data-qa="virtual-list-item" style={{marginTop: "17px"}}>
+                <div className="c-virtual_list__item" tabIndex="-1" role="presentation" id="1611986400000divider" data-qa="virtual-list-item">
                     <div className="c-message_list__day_divider" data-stringify-ignore="true">
                         <div className="c-message_list__day_divider__line" data-stringify-ignore="true"></div>
                     </div>
-                </div>
-                <div aria-expanded="true" className="c-virtual_list__item c-virtual_clearfix" tabIndex="-1" role="listitem" id="1612043729.007300" data-qa="virtual-list-item" style={{margin: "0px", marginTop: "57px"}}>
+                </div> 
+                <div aria-expanded="true" className="c-virtual_list__item c-virtual_clearfix" tabIndex="-1" role="listitem" data-qa="virtual-list-item" style={{position: "relative", margin: "40px 0 10px 0"}}>
                     <div role="document" className="c-message_kit__background p-message_pane_message__message c-message_kit__message" data-qa="message_container" data-qa-unprocessed="false" data-qa-placeholder="false">
                         <div role="document" className="c-message_kit__hover" data-qa-hover="true">
                             <div className="c-message_kit__actions c-message_kit__actions--default" style={{position: "relative"}}>
-                                <div className="c-message_kit__labels__offscreen_message" aria-live="assertive"></div>
                                 <div className="c-message_kit__gutter">
                                     <div className="c-message_kit__gutter__left" data-stringify-ignore="true">
                                         <button className="c-button-unstyled c-message_kit__avatar c-avatar c-avatar--interactive " aria-hidden="true" tabIndex="-1" aria-haspopup="menu" aria-expanded="false" type="button" style={{height: "36px", width: "36px"}}>

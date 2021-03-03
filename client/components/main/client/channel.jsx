@@ -78,7 +78,7 @@ class Channel extends React.Component {
                                     <div className="flex_one no_min_height">
                                         <div role="presentation" id="C2J4CK8N7-1612043729.007300-thread-list">
                                             <div tabIndex="0" style={{position: "absolute", width: "1px", height: "1px", outline: "none", boxShadow: "none", top: "0px"}}></div>
-                                            <div role="list" aria-label="Thread in help-requests (channel)" className="c-virtual_list c-virtual_list--scrollbar c-scrollbar c-scrollbar--hidden" style={{width: "100%", height: `${this.state.height}px`}}>
+                                            <div role="list" aria-label="Thread in help-requests (channel)" className="c-virtual_list c-virtual_list--scrollbar c-scrollbar c-scrollbar--hidden" style={{width: "100%", minHeight: `${this.state.height}px`}}>
                                                 <div data-qa="slack_kit_scrollbar" role="presentation" className="c-scrollbar__hider" style={{width: "100%"}} >
                                                     <div role="presentation" className="c-scrollbar__child" style={{width: "100%"}} >
                                                         <div data-qa="slack_kit_list" className="c-virtual_list__scroll_container" role="presentation" style={{position: "relative", minHeight: `${this.state.height}px`}}>

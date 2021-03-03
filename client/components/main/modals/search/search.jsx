@@ -21,6 +21,7 @@ class Search extends Component {
             <DynamicAutocomplete 
                 searchString={this.state.searchString}
                 searchResults={this.props.search}
+                closeModal={closeModal}
                  /> :
             <StaticAutocomplete />
 

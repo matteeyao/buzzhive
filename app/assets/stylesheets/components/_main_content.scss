@@ -4551,7 +4551,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 	cursor: default;
 	display: block;
 	height: .1px;
-	top: 14px;
+	top: 5px;
 	position: relative;
 	text-align: center;
 	-webkit-user-select: none;
@@ -5052,14 +5052,13 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 .message_block_container {
     display: flex;
     position: relative;
-    height: 160px;
+    // height: 160px;
 }
 
 .c-virtual_clearfix::after {
     content: "";
     clear: both;
     display: table;
-    height: 20px;
     margin-bottom: 10px;
 }
 
