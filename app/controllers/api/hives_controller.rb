@@ -23,14 +23,15 @@ class Api::HivesController < ApplicationController
             author_id: current_user.id,
             ref_link: hive_params[:ref_link]
         }
-
         @hive = Hive.new(create_params)
         if @hive.save
             @hive.hive_users.where(user_id: current_user.id).first_or_create
 
-            User.all
-                .select { |user| user.id != current_user.id }
-                .each { |user| HiveUser.new(hive_id: @hive.id, user_id: user.id).save }
+            if !@hive.is_private
+                User.all
+                    .select { |user| user.id != current_user.id }
+                    .each { |user| HiveUser.new(hive_id: @hive.id, user_id: user.id).save }
+            end
 
             @hive_users = @hive.hive_users.includes(:user)
 

@@ -31,16 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // TESTING START
-    // window.store = store;
-    // window.getState = store.getState;
-    // window.dispatch = store.dispatch;
-    // window.fetchHives = fetchHives;
-    // window.fetchHive = fetchHive;
-    // window.fetchUsers = fetchUsers;
-    // window.searchHives = searchHives;
-    // window.deleteHive = deleteHive;
-    // window.fetchMessage = fetchMessage;
-    // window.clearThread = clearThread;
+    window.store = store;
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
+    window.fetchHives = fetchHives;
+    window.fetchHive = fetchHive;
+    window.fetchUsers = fetchUsers;
+    window.searchHives = searchHives;
+    window.deleteHive = deleteHive;
+    window.fetchMessage = fetchMessage;
+    window.clearThread = clearThread;
     // TESTING END
     
     const root = document.getElementById('root');

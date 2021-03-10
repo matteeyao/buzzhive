@@ -3,7 +3,7 @@ class Api::HiveUsersController < ApplicationController
     
     def create
         @hive_user = @hive.hive_users.where(user_id: current_user.id).first_or_create
-        redirect_to @hive
+        redirect_to api_hive_url(@hive)
     end
 
     def destroy

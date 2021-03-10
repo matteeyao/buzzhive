@@ -12,6 +12,10 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             login(@user)
+
+            Hive.all
+                .each { |hive| HiveUser.new(hive_id: hive.id, user_id: @user.id).save if !hive.is_private }
+                
             render "api/users/show"
         else
             render json: @user.errors.full_messages, status: 422

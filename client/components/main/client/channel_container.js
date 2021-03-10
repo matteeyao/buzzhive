@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { fetchHive } from "../../../actions/hive_actions";
 import { fetchMessages, fetchMessage, clearThread, createThreadReply } from "../../../actions/message_actions";
+import { createHiveUser } from "../../../actions/hive_user_actions";
 import Hive from "./channel";
 import { withRouter } from "react-router-dom";
 
@@ -21,6 +22,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchMessage: (hive_id, id) => dispatch(fetchMessage(hive_id, id)),
         clearThread: () => dispatch(clearThread()),
         action: (messageForm, hive_id, id) => dispatch(createThreadReply(messageForm, hive_id, id)),
+        createHiveUser: (hive_id) => dispatch(createHiveUser(hive_id)),
     };
 };
 

@@ -14,7 +14,7 @@ const receiveHives = hives => {
     }
 };
 
-const receiveHive = data => {
+export const receiveHive = data => {
     return {
         type: RECEIVE_HIVE,
         data

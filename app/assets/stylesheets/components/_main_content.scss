@@ -5077,3 +5077,25 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
     color: #fff;
     height: con
 }
+
+.request-access-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.request-access-button {
+    padding: 10px 120px;
+    font-family: $discord-font;
+    font-size: 20px;
+    font-weight: 600;
+    color: #d1d2d3;
+    background: transparent;
+    box-shadow: 0 0 0 2px $stil-de-grain-yellow, 0 0 0 3px rgba($stil-de-grain-yellow, 0.7);
+}
+
+.request-access-button:hover {
+    color: $bh_primary_background;
+    background-color: rgba($stil-de-grain-yellow, 0.9);
+}
+
