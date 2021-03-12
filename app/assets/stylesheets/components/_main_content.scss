@@ -4138,7 +4138,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 }
 
 .p-shortcuts_menu_trigger_button_container:hover {
-	border-color: transparent
+	// border-color: transparent
 }
 
 .p-shortcuts_menu_trigger_button {
@@ -4156,8 +4156,8 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 
 .p-shortcuts_menu_trigger_button:not(.p-shortcuts_menu_trigger_button--only_workflows):active,
 .p-shortcuts_menu_trigger_button:not(.p-shortcuts_menu_trigger_button--only_workflows):hover {
-	background: rgba($bh_highlight, 1)!important;
-	color: #fff!important
+	// background: rgba($bh_highlight, 1)!important;
+	// color: #fff!important
 }
 
 .p-shortcuts_menu_trigger_button.p-shortcuts_menu_trigger_button--only_workflows:active,
@@ -4172,7 +4172,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 
 .p-shortcuts_menu_trigger_button--dark:not(.p-shortcuts_menu_trigger_button--only_workflows).p-shortcuts_menu_trigger_button:active,
 .p-shortcuts_menu_trigger_button--dark:not(.p-shortcuts_menu_trigger_button--only_workflows).p-shortcuts_menu_trigger_button:hover {
-	background: #1264a3!important
+	// background: #1264a3!important
 }
 
 .p-shortcuts_menu_trigger_button--highlighted:not(.p-shortcuts_menu_trigger_button--only_workflows) {

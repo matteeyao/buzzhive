@@ -4,7 +4,7 @@ import Message from './message';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import _ from 'lodash';
 
-export default ({currentHive, currentThread, users, currentUser, action, fetchMessage, closeThread}) => {
+export default ({currentHive, currentThread, hiveUsers, currentUser, action, fetchMessage, closeThread}) => {
     function isEmpty(obj) {
         for(var prop in obj) {
             if(obj.hasOwnProperty(prop)) {
@@ -37,7 +37,7 @@ export default ({currentHive, currentThread, users, currentUser, action, fetchMe
                     currentHive={currentHive}
                     currentThread={initialMessage} 
                     message={initialMessage} 
-                    users={users} 
+                    hiveUsers={hiveUsers} 
                     currentUser={currentUser}
                     action={action}
                 />
@@ -49,7 +49,7 @@ export default ({currentHive, currentThread, users, currentUser, action, fetchMe
                                     currentHive={currentHive}
                                     currentThread={initialMessage}
                                     message={message} 
-                                    users={users}
+                                    hiveUsers={hiveUsers}
                                     currentUser={currentUser}
                                     action={action}
                                 />

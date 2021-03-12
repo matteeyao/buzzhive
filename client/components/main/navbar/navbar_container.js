@@ -9,6 +9,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     profileModal: () => dispatch(openModal('profileModal')),
     searchModal: () => dispatch(openModal('searchModal')),
+    aboutModal: () => dispatch(openModal('aboutModal'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

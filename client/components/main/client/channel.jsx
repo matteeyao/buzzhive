@@ -46,14 +46,15 @@ class Channel extends React.Component {
     }
 
     render() {
-        const { currentHive, currentThread, messages, users, currentUser, action, fetchMessage, closeThread, createHiveUser } = this.props;
+        const { currentHive, currentThread, messages, hiveUsers, currentUser, action, 
+            fetchMessage, closeThread, createHiveUser, aboutModal, hiveUsersModal } = this.props;
 
-        const locked = users[currentUser.id] ?
+        const locked = hiveUsers[currentUser.id] ?
             <div className="p-file_drag_drop__container">
                 <Body
                     currentHive={currentHive}
                     messages={messages}
-                    users={users}
+                    hiveUsers={hiveUsers}
                     fetchMessage={fetchMessage}
                 />
                 <div ref={this.bottom} />
@@ -76,14 +77,16 @@ class Channel extends React.Component {
                     <div className="p-workspace__primary_view_contents">
                         <Header
                             currentHive={currentHive}
-                            users={users}
+                            hiveUsers={hiveUsers}
+                            aboutModal={aboutModal}
+                            hiveUsersModal={hiveUsersModal}
                         />
                         {locked}
                         {/* <div className="p-file_drag_drop__container">
                             <Body
                                 currentHive={currentHive}
                                 messages={messages}
-                                users={users}
+                                hiveUsers={hiveUsers}
                                 fetchMessage={fetchMessage}
                             />
                             <div ref={this.bottom} />
@@ -112,7 +115,7 @@ class Channel extends React.Component {
                                                             <ThreadBody 
                                                                 currentHive={currentHive}
                                                                 currentThread={currentThread}
-                                                                users={users}
+                                                                hiveUsers={hiveUsers}
                                                                 currentUser={currentUser}
                                                                 action={action}
                                                                 fetchMessage={fetchMessage}

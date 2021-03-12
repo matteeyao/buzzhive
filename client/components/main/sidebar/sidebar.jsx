@@ -10,7 +10,7 @@ class SidebarDetail extends Component {
                     <div className="p-ia__sidebar_header p-ia__sidebar_header--top-nav">
                         <div tabIndex="-1" data-qa="sidebar_header_button" className="p-ia__sidebar_header__button" aria-haspopup="menu" aria-expanded="false">
                             <div className="p-ia__sidebar_header__info">
-                                <button className="c-button-unstyled p-ia__sidebar_header__team_name" data-qa="team-menu-trigger" aria-label="Main menu for App Academy" type="button">
+                                <button className="c-button-unstyled p-ia__sidebar_header__team_name" data-qa="team-menu-trigger" aria-label="Main menu for App Academy" type="button" onClick={this.props.aboutModal}>
                                     <span className="p-ia__sidebar_header__team_name_text">buzzhive</span> 
                                     <i className="c-icon p-ia__sidebar_header__menu_icon c-icon--chevron-down" type="chevron-down" aria-hidden="true"></i>
                                 </button>
@@ -47,20 +47,20 @@ class SidebarDetail extends Component {
                                             <div role="presentation" className="c-scrollbar__child" style={{width: "260px"}}>
                                                 <div data-qa="slack_kit_list" className="c-virtual_list__scroll_container" role="presentation" style={{position: "relative", height: "842px", overflowY: "hidden"}}>
                                                     <div aria-level="1" aria-setsize="7" aria-posinset="1" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="Vall_threads" data-qa="virtual-list-item" style={{top: "12px"}}>
-                                                        <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--all-threads" role="presentation" data-sidebar-link-id="Vall_threads" data-qa-channel-sidebar-link-id="Vall_threads" tabIndex="-1" type="button">
+                                                        <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--all-threads not-allowed" role="presentation" data-sidebar-link-id="Vall_threads" data-qa-channel-sidebar-link-id="Vall_threads" tabIndex="-1" type="button">
                                                             <span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_all_thread_link">Threads</span>
                                                         </button>
                                                     </div>
                                                     <div aria-level="1" aria-setsize="7" aria-posinset="2" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="Pdms" data-qa="virtual-list-item" style={{top: "40px"}}>
                                                         <div>
-                                                            <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--page p-channel_sidebar__link--page_pdms position_relative" role="presentation" data-sidebar-link-id="Pdms" data-qa-channel-sidebar-link-id="Pdms" tabIndex="-1" aria-label="All direct messages" type="button">
+                                                            <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--page p-channel_sidebar__link--page_pdms position_relative not-allowed" role="presentation" data-sidebar-link-id="Pdms" data-qa-channel-sidebar-link-id="Pdms" tabIndex="-1" aria-label="All direct messages" type="button">
                                                                 <i className="c-icon p-channel_sidebar__link__icon c-icon--dm c-icon--inherit" type="dm" aria-hidden="true"></i><span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_page_pdms">All DMs</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                     <div aria-level="1" aria-setsize="7" aria-posinset="3" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="Pactivity" data-qa="virtual-list-item" style={{top: "68px"}}>
                                                         <div>
-                                                            <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--page p-channel_sidebar__link--page_pactivity position_relative" role="presentation" data-sidebar-link-id="Pactivity" data-qa-channel-sidebar-link-id="Pactivity" tabIndex="-1" type="button">
+                                                            <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--page p-channel_sidebar__link--page_pactivity position_relative not-allowed" role="presentation" data-sidebar-link-id="Pactivity" data-qa-channel-sidebar-link-id="Pactivity" tabIndex="-1" type="button">
                                                                 <i className="c-icon p-channel_sidebar__link__icon p-channel_sidebar__link__activity c-icon--mentions c-icon--inherit" type="mentions" aria-hidden="true"></i>
                                                                 <span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_page_pactivity">Mentions &amp; reactions</span>
                                                             </button>
@@ -68,14 +68,14 @@ class SidebarDetail extends Component {
                                                     </div>
                                                     <div aria-level="1" aria-setsize="7" aria-posinset="4" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="Psaved" data-qa="virtual-list-item" style={{top: "96px"}}>
                                                         <div>
-                                                            <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--page p-channel_sidebar__link--page_psaved position_relative" role="presentation" data-sidebar-link-id="Psaved" data-qa-channel-sidebar-link-id="Psaved" tabIndex="-1" type="button">
+                                                            <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--page p-channel_sidebar__link--page_psaved position_relative not-allowed" role="presentation" data-sidebar-link-id="Psaved" data-qa-channel-sidebar-link-id="Psaved" tabIndex="-1" type="button">
                                                                 <i className="c-icon p-channel_sidebar__link__icon c-icon--bookmark c-icon--inherit" type="bookmark" aria-hidden="true"></i>
                                                                 <span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_page_psaved">Saved items</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                     <div className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="morePages" data-qa="virtual-list-item" style={{top: "124px"}}>
-                                                        <button className="c-button-unstyled p-channel_sidebar__section_heading p-channel_sidebar__section-heading--pages-drawer" aria-label="More pages" tabIndex="-1" aria-haspopup="menu" aria-expanded="false" type="button">
+                                                        <button className="c-button-unstyled p-channel_sidebar__section_heading p-channel_sidebar__section-heading--pages-drawer not-allowed" aria-label="More pages" tabIndex="-1" aria-haspopup="menu" aria-expanded="false" type="button">
                                                             <i className="c-icon p-channel_sidebar__section-heading--pages-drawer-icon c-icon--vertical-ellipsis c-icon--inherit c-icon--inline" type="vertical-ellipsis" aria-hidden="true"></i>
                                                             <span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_page_psaved">More</span>
                                                         </button>

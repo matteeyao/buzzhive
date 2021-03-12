@@ -47,7 +47,7 @@ class ReplyForm extends React.Component {
                                             value={this.state.body}
                                             onChange={this.update('body')}
                                             className="c-texty_input__placeholder"
-                                            placeholder={`Reply to ${this.props.users[this.props.message.authorId].username}`}
+                                            placeholder={`Reply to ${this.props.hiveUsers[this.props.message.authorId].username}`}
                                             style={{width: "100%"}}
                                         />
                                     </div>                       
@@ -59,14 +59,14 @@ class ReplyForm extends React.Component {
                                     <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small c-texty_input__button c-texty_input__button--cancel" delay="150" data-sk="tooltip_parent" onClick={this.props.closeForm}>
                                         <FontAwesomeIcon icon="times" />
                                     </button>
-                                    <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small c-texty_input__button" aria-label="File menu" tabIndex="-1" data-qa="msg_input_file_btn_inset" delay="500" aria-haspopup="menu" aria-expanded="false" data-sk="tooltip_parent" type="button">
+                                    <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small c-texty_input__button" aria-label="File menu" tabIndex="-1" data-qa="msg_input_file_btn_inset" delay="500" aria-haspopup="menu" aria-expanded="false" data-sk="tooltip_parent" type="button" style={{opacity: "0.2", cursor: "default"}}>
                                         <i className="c-icon c-icon--paperclip" type="paperclip" aria-hidden="true"></i>
                                     </button>
                                     <input type="file" className="p-hidden_file_input" multiple="" aria-hidden="true" data-qa="file_upload" tabIndex="-1" />
-                                    <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small c-texty_input__button c-texty_input__button--emoji" data-qa="texty_emoji_button" tabIndex="-1" aria-hidden="true" aria-label="Emoji" delay="500" aria-haspopup="true" data-sk="tooltip_parent" type="button">
+                                    <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small c-texty_input__button c-texty_input__button--emoji" data-qa="texty_emoji_button" tabIndex="-1" aria-hidden="true" aria-label="Emoji" delay="500" aria-haspopup="true" data-sk="tooltip_parent" type="button" style={{opacity: "0.2", cursor: "default"}}>
                                         <i className="c-icon c-icon--smile-o" type="smile-o" aria-hidden="true"></i>
                                     </button>
-                                    <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small c-texty_input__button" data-qa="texty_mention_button" tabIndex="-1" aria-hidden="true" aria-label="Mention someone" delay="500" data-sk="tooltip_parent" type="button">
+                                    <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small c-texty_input__button" data-qa="texty_mention_button" tabIndex="-1" aria-hidden="true" aria-label="Mention someone" delay="500" data-sk="tooltip_parent" type="button" style={{opacity: "0.2", cursor: "default"}}>
                                         <i className="c-icon c-icon--mentions" type="mentions" aria-hidden="true"></i>
                                     </button>
                                 </div>
@@ -93,7 +93,11 @@ class ReplyForm extends React.Component {
                                 </div>
                             </div>
                             <div className="p-shortcuts_menu_trigger_button_left_column">
-                                <div className="p-shortcuts_menu_trigger_button_container"><button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small p-shortcuts_menu_trigger_button p-shortcuts_menu_trigger_button--dark" data-qa="shortcuts_menu_trigger__message-pane" aria-label="Shortcuts" delay="150" aria-haspopup="true" data-sk="tooltip_parent" type="button"><i className="c-icon c-icon--bolt" type="bolt" aria-hidden="true"></i></button></div>
+                                <div className="p-shortcuts_menu_trigger_button_container">
+                                    <button className="c-button-unstyled c-icon_button c-icon_button--light c-icon_button--size_small p-shortcuts_menu_trigger_button p-shortcuts_menu_trigger_button--dark" data-qa="shortcuts_menu_trigger__message-pane" aria-label="Shortcuts" delay="150" aria-haspopup="true" data-sk="tooltip_parent" type="button" style={{opacity: "0.2", cursor: "default"}}>
+                                        <i className="c-icon c-icon--bolt" type="bolt" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>

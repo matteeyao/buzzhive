@@ -1,7 +1,9 @@
 import React from 'react';
-import ProfileModalContainer from './profile/profile';
-import SearchModalContainer from './search/search_container';
-import HiveFormContainer from './forms/hive_form_container';
+import ProfileModalContainer from './profile/component';
+import SearchModalContainer from './search/container';
+import HiveFormContainer from './hive_form/container';
+import AboutModalContainer from './about/container';
+import HiveUsersModal from './hive_users/container';
 
 export default ({modal, currentUser, logout, closeModal}) => {
     if (!modal) return null;
@@ -19,6 +21,12 @@ export default ({modal, currentUser, logout, closeModal}) => {
             break;
         case 'hiveModal':
             component = <HiveFormContainer />;
+            break;
+        case 'aboutModal':
+            component = <AboutModalContainer />;
+            break;
+        case 'hiveUsersModal':
+            component = <HiveUsersModal />;
             break;
         default:
             return null;

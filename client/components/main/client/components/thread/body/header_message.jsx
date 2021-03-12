@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReplyForm from "./form";
 
-const HeaderMessage = ({currentHive, currentThread, message, users, currentUser, action}) => {
+const HeaderMessage = ({currentHive, currentThread, message, hiveUsers, currentUser, action}) => {
 
     const [ reply, setReply ] = useState(false);
 
@@ -11,7 +11,7 @@ const HeaderMessage = ({currentHive, currentThread, message, users, currentUser,
         currentThread={currentThread}
         message={message}
         currentUser={currentUser}
-        users={users}
+        hiveUsers={hiveUsers}
         action={action}
         closeForm={()=>setReply(false)} 
     /> : null;
@@ -32,7 +32,7 @@ const HeaderMessage = ({currentHive, currentThread, message, users, currentUser,
                                 <div className="c-message_kit__gutter__right" data-qa="message_content">
                                     <span className="c-message__sender c-message_kit__sender" data-qa="message_sender" data-stringify-type="replace">
                                         <p rel="noopener noreferrer" data-message-sender="U019JPB15B7" data-qa="message_sender_name" aria-haspopup="menu" aria-expanded="false" className="c-link c-message__sender_link " style={{fontWeight: "900", color: "#d1d2d3"}}>
-                                            {users[currentThread.authorId].username} ({users[currentThread.authorId].fname} {users[currentThread.authorId].lname})
+                                            {hiveUsers[currentThread.authorId].username} ({hiveUsers[currentThread.authorId].fname} {hiveUsers[currentThread.authorId].lname})
                                         </p>
                                     </span>
                                     &nbsp;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./navbar/navbar_container";
-import Modals from "./modals/modal_container";
+import Modals from "./modals/container";
 import Sidebar from "./sidebar/sidebar_container";
 import Client from "./client/channel_container";
 import { withRouter } from 'react-router-dom';

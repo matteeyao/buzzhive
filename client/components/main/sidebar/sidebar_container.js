@@ -9,6 +9,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
     return {
         hiveModal: () => dispatch(openModal('hiveModal')),
+        aboutModal: () => dispatch(openModal('aboutModal')),
     };
 };
 

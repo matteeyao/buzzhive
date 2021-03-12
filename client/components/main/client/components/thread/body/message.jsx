@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReplyForm from "./form";
 
-const Message = ({currentHive, currentThread, message, users, currentUser, action}) => {
+const Message = ({currentHive, currentThread, message, hiveUsers, currentUser, action}) => {
     
     const [ reply, setReply ] = useState(false);
     
-    const author = users[message.authorId];
+    const author = hiveUsers[message.authorId];
 
     const nestedMessages = (message.children || []).map(message => {
-        return <Message key={message.id} currentHive={currentHive} currentThread={currentThread} message={message} users={users} currentUser={currentUser} action={action} type="child" />
+        return <Message key={message.id} currentHive={currentHive} currentThread={currentThread} message={message} hiveUsers={hiveUsers} currentUser={currentUser} action={action} type="child" />
     })
 
     const replyForm = reply ? <ReplyForm 
@@ -17,7 +17,7 @@ const Message = ({currentHive, currentThread, message, users, currentUser, actio
         currentThread={currentThread}
         message={message}
         currentUser={currentUser}
-        users={users}
+        hiveUsers={hiveUsers}
         action={action}
         closeForm={()=>setReply(false)
     } /> : null;

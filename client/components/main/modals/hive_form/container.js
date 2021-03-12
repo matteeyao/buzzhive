@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import { closeModal } from '../../../../actions/modal_actions';
 import { createHive } from "../../../../actions/hive_actions"
-import HiveForm from "./hive_form"
+import Component from "./component"
 
 const mapStateToProps = ({ errors: { hive } }) => {
     return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => (
     }
 )
 
-export default connect(mapStateToProps, mapDispatchToProps)(HiveForm)
+export default connect(mapStateToProps, mapDispatchToProps)(Component)

@@ -1,7 +1,7 @@
 import React from 'react';
 import Message from './item';
 
-export default ({currentHive, messages, users, fetchMessage}) => {
+export default ({currentHive, messages, hiveUsers, fetchMessage}) => {
     const [dimensions, setDimensions] = React.useState({ 
         height: window.innerHeight,
         width: window.innerWidth,
@@ -22,7 +22,7 @@ export default ({currentHive, messages, users, fetchMessage}) => {
         <Message
             key={idx}
             message={message}
-            author={users[message.authorId]}
+            author={hiveUsers[message.authorId]}
             hiveid = {currentHive.id}
             fetchMessage={fetchMessage}
         />

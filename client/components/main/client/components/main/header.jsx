@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({currentHive, users}) => {
+export default ({currentHive, aboutModal, hiveUsersModal}) => {
     const icon = currentHive.isPrivate ? 
         <i className="c-icon c-inline_channel_icon c-inline_channel_icon--private c-icon--lock-medium c-icon--inherit" type="lock-medium" aria-hidden="true"></i> :
         <i className="c-icon c-inline_channel_icon c-icon--hash-medium-bold c-icon--inherit" type="hash-medium-bold" aria-hidden="true"></i>
@@ -43,10 +43,10 @@ export default ({currentHive, users}) => {
         </div>
         <div className="p-ia__view_header__spacer"></div>
         <span className="p-avatar_stack">
-            <button className="c-button-unstyled p-ia__view_header__button" aria-label="Add people to #general" delay="150" data-sk="tooltip_parent" type="button">
+            <button className="c-button-unstyled p-ia__view_header__button" aria-label="Add people to #general" delay="150" data-sk="tooltip_parent" type="button" onClick={hiveUsersModal}>
                 <i className="c-icon p-ia__view_header__button_icon c-icon--add-user" type="add-user" aria-hidden="true"></i>
             </button>
-            <button className="c-button-unstyled p-ia__view_header__button" data-qa="channel-details" type="button" aria-label="Show details for channel #general" aria-expanded="false" delay="300" data-sk="tooltip_parent">
+            <button className="c-button-unstyled p-ia__view_header__button" data-qa="channel-details" type="button" aria-label="Show details for channel #general" aria-expanded="false" delay="300" data-sk="tooltip_parent" onClick={aboutModal}>
                 <i className="c-icon p-ia__view_header__button_icon c-icon--info-circle" type="info-circle" aria-hidden="true"></i> 
             </button>
         </span>

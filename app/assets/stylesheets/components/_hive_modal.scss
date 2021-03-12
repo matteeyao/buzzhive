@@ -260,3 +260,40 @@
         }
     }
 }
+
+.hive-popover__content {
+    min-width: 560px;
+    max-width: 560px;
+    top: 90px;
+    right: auto;
+    left: 60% !important;
+    transform: translateX(-50%);
+    height: auto;
+    > div {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: rgba($bh_primary_background, 1);
+        border-radius: 8px;
+        box-shadow: 0 0 0 1px rgba($bh_foreground_low, 0.13), 0 4px 12px 0 rgba(0, 0, 0, .12);
+        overflow: hidden;
+        -webkit-app-region: no-drag;
+    }
+    h2 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        color: #F8F8FA;
+        margin: 40px 10px;
+        svg {
+            height: 16px;
+            width: 16px;
+        }
+    }
+    .c-search__input_and_close__close {
+        position: absolute;
+    }
+    .hive-invite__users_and_close {
+        
+    }
+}
