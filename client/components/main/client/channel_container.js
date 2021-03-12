@@ -3,7 +3,7 @@ import { fetchHive } from "../../../actions/hive_actions";
 import { fetchMessages, fetchMessage, clearThread, createThreadReply } from "../../../actions/message_actions";
 import { createHiveUser } from "../../../actions/hive_user_actions";
 import { openModal } from "../../../actions/modal_actions";
-import Hive from "./channel";
+import Channel from "./channel";
 import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state) => {
@@ -30,5 +30,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(Hive)
+    connect(mapStateToProps, mapDispatchToProps)(Channel)
 );

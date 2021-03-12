@@ -10,7 +10,6 @@ class Search extends Component {
     }
 
     componentDidMount() {
-        this.props.searchHives();
     }
 
     render() {
@@ -20,7 +19,7 @@ class Search extends Component {
 
         return (
             <div className="ReactModal__Overlay ReactModal__Overlay--after-open c-popover c-search_modal c-search_modal--autocomplete c-search_modal--iap1_topnav c-search_modal--initial_autocomplete c-popover--z_above_fs" onClick={closeModal}>
-                <div className="hive-popover__content" aria-label="Search" style={{position: "absolute", outline: "none", marginTop: "0px"}} onClick={e => e.stopPropagation()}>
+                {/* <div className="hive-popover__content" aria-label="Search" style={{position: "absolute", outline: "none", marginTop: "0px"}} onClick={e => e.stopPropagation()}>
                     <div role="presentation">
                         <div className="c-search__input_and_close">
                             <div className="c-search__input_box" data-qa="search_input_box" role="presentation" style={{paddingRight: "0"}}>
@@ -33,7 +32,7 @@ class Search extends Component {
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }

@@ -8,7 +8,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    searchHives: () => dispatch(searchHives()),
     closeModal: () => dispatch(closeModal())
 });
 
