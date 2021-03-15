@@ -32,7 +32,7 @@ export default ({currentUser, closeModal, logout}) => {
                                         </div>
                                     </div>
                                     <div className="p-ia__main_menu__custom_status_item p-ia__main_menu__custom_status_item--empty">
-                                        <button className="c-button-unstyled p-ia__main_menu__custom_status_button" type="button" id="menu-1513-1" role="menuitem" aria-label="Update your status" tabIndex="-1" data-qa="main-menu-custom-status-item">
+                                        <button className="c-button-unstyled p-ia__main_menu__custom_status_button" type="button" id="menu-1513-1" role="menuitem" aria-label="Update your status" tabIndex="-1" data-qa="main-menu-custom-status-item" style={{cursor:"not-allowed"}}>
                                             <div className="p-ia__main_menu__custom_status_icon">
                                                 <i className="c-icon p-ia__main_menu__custom_status_icon__part p-ia__main_menu__custom_status_icon__hover p-ia__main_menu__custom_status_smile--fill c-icon--circle-fill" type="circle-fill" aria-hidden="true"></i>
                                                 <i className="c-icon p-ia__main_menu__custom_status_icon__part c-icon--smile-o" type="smile-o" aria-hidden="true"></i>
@@ -42,13 +42,13 @@ export default ({currentUser, closeModal, logout}) => {
                                         </button>
                                     </div>
                                     <div className="c-menu_item__li" data-qa="menu_item_button-wrapper">
-                                        <button className="c-button-unstyled c-menu_item__button" id="menu-1513-2" data-qa="menu_item_button" role="menuitem" tabIndex="-1" type="button">
+                                        <button className="c-button-unstyled c-menu_item__button" id="menu-1513-2" data-qa="menu_item_button" role="menuitem" tabIndex="-1" type="button" style={{cursor:"not-allowed"}}>
                                             <div className="c-menu_item__label">Set yourself as <strong>away</strong></div>
                                         </button>
                                     </div>
                                     <div role="presentation" className="c-submenu" data-qa="submenu_trigger_wrapper">
                                         <div className="c-menu_item__li" data-qa="menu_item_button-wrapper">
-                                            <button className="c-button-unstyled c-menu_item__button c-menu_item__button--with_submenu" id="menu-1513-3" data-qa="menu_item_button" role="menuitem" aria-haspopup="true" tabIndex="-1" type="button">
+                                            <button className="c-button-unstyled c-menu_item__button c-menu_item__button--with_submenu" id="menu-1513-3" data-qa="menu_item_button" role="menuitem" aria-haspopup="true" tabIndex="-1" type="button" style={{cursor:"not-allowed"}}>
                                                 <div className="c-menu_item__label">Pause notifications</div>
                                                 <div className="c-menu_item__shortcut"><span className="p-ia__main_menu__dnd_label">On</span></div>
                                                 <i className="c-icon c-menu_item__submenu-indicator c-icon--chevron-right" type="chevron-right" data-qa="menu_item_submenu_indicator" role="presentation" aria-hidden="true"></i>
@@ -59,7 +59,7 @@ export default ({currentUser, closeModal, logout}) => {
                                         <hr className="c-menu_separator__separator" />
                                     </div>
                                     <div className="c-menu_item__li" data-qa="menu_item_button-wrapper">
-                                        <button className="c-button-unstyled p-edit_profile_item__container c-menu_item__button" id="menu-1513-5" data-qa="menu_item_button" role="menuitem" tabIndex="-1" type="button">
+                                        <button className="c-button-unstyled p-edit_profile_item__container c-menu_item__button" id="menu-1513-5" data-qa="menu_item_button" role="menuitem" tabIndex="-1" type="button" style={{cursor:"not-allowed"}}>
                                             <div className="c-menu_item__icon" data-qa="menu_item_icon" role="presentation">
                                                 <i className="c-icon c-icon--camera-photo-filled" type="camera-photo-filled" aria-hidden="true"></i>
                                             </div>
@@ -67,12 +67,12 @@ export default ({currentUser, closeModal, logout}) => {
                                         </button>
                                     </div>
                                     <div className="c-menu_item__li" data-qa="menu_item_button-wrapper">
-                                        <button className="c-button-unstyled c-menu_item__button" id="menu-1513-6" data-qa="menu_item_button" role="menuitem" tabIndex="-1" type="button">
+                                        <button className="c-button-unstyled c-menu_item__button" id="menu-1513-6" data-qa="menu_item_button" role="menuitem" tabIndex="-1" type="button" style={{cursor:"not-allowed"}}>
                                             <div className="c-menu_item__label">View profile</div>
                                         </button>
                                     </div>
                                     <div className="c-menu_item__li" data-qa="menu_item_button-wrapper">
-                                        <button className="c-button-unstyled c-menu_item__button" id="menu-1513-7" data-qa="menu_item_button" role="menuitem" tabIndex="-1" type="button">
+                                        <button className="c-button-unstyled c-menu_item__button" id="menu-1513-7" data-qa="menu_item_button" role="menuitem" tabIndex="-1" type="button" style={{cursor:"not-allowed"}}>
                                             <div className="c-menu_item__label">Preferences</div>
                                         </button>
                                     </div>
