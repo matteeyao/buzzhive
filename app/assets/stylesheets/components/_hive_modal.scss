@@ -278,12 +278,15 @@
         box-shadow: 0 0 0 1px rgba($bh_foreground_low, 0.13), 0 4px 12px 0 rgba(0, 0, 0, .12);
         overflow: hidden;
         -webkit-app-region: no-drag;
+        > .c-search__input_and_close {
+            padding: 5px 20px;
+        }
     }
-    h2 {
-        text-align: center;
-        font-size: 18px;
+    .c-search__input_box__container {
+        text-align: left;
+        font-size: 16px;
         font-weight: 700;
-        color: #F8F8FA;
+        color: #D1D2D3;
         margin: 40px 10px;
         svg {
             height: 16px;
@@ -292,8 +295,65 @@
     }
     .c-search__input_and_close__close {
         position: absolute;
+        right: 0;
     }
-    .hive-invite__users_and_close {
-        
+    .c-search_autocomplete__container {
+        .c-search_autocomplete__suggestion_list {
+            min-height: 60vh;
+            max-height: 60vh;
+            .c-search_autocomplete__guided_search_wrapper {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    font-size: 16px;
+                    color: #D1D2D3;
+                    tbody {
+                        tr {
+                            td {
+                                padding: 20px 0;
+                                font-weight: 600;
+                            }
+                            .users_table-username {
+                                padding-left: 40px;
+                                span {
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                    color: #818385;
+                                }
+                            }
+                            .users_table-action {
+                                font-size: 20px;
+                                padding-right: 20px;
+                                &:hover {
+                                    cursor: pointer;
+                                    color: #FFFFFF;
+                                }
+                                .eye-slash {
+                                    color: rgb(74, 76, 79);
+                                    &:hover {
+                                        color: #FFFFFF;
+                                    }
+                                }
+                            }
+                            &:hover {
+                                background: rgba($bh_primary_foreground, .07);
+                            }
+                        }
+                    }
+                }
+            }
+            &::-webkit-scrollbar {
+                width: 0.5em;
+                background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: grey;
+                height:30px;
+                border-radius: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                display:none;
+            }
+        }
     }
 }

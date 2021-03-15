@@ -25,7 +25,7 @@ const HeaderMessage = ({currentHive, currentThread, message, hiveUsers, currentU
                             <div className="c-message_kit__labels__offscreen_message" aria-live="assertive"></div>
                             <div className="c-message_kit__gutter">
                                 <div className="c-message_kit__gutter__left">
-                                    <button className="c-button-unstyled c-message_kit__avatar c-avatar c-avatar--interactive " aria-hidden="true" aria-label="View Joshua Dore’s Profile" tabIndex="-1" aria-haspopup="menu" aria-expanded="false" type="button" style={{height: "36px", width: "36px"}}>
+                                    <button className="c-button-unstyled c-message_kit__avatar c-avatar c-avatar--interactive " aria-hidden="true" tabIndex="-1" aria-haspopup="menu" aria-expanded="false" type="button" style={{height: "36px", width: "36px"}}>
                                         <img src="https://ca.slack-edge.com/T2J65A5T9-U79F6BVFF-ge96b0600bd0-48" srcSet="https://ca.slack-edge.com/T2J65A5T9-U79F6BVFF-ge96b0600bd0-48 2x" className="c-base_icon c-base_icon--image" aria-hidden="true" role="img" alt="" style={{height: "36px", width: "36px"}} />
                                     </button>
                                 </div>

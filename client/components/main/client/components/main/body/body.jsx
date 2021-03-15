@@ -37,7 +37,7 @@ export default ({currentHive, messages, hiveUsers, fetchMessage}) => {
                         <div tabIndex="0" style={{position: "absolute", width: "1px", height: "1px", outline: "none", boxShadow: "none", top: "0px", }}></div>
                         <div role="list" aria-label={currentHive.name+" (channel)"} className="c-virtual_list c-virtual_list--scrollbar c-message_list c-message_list--dark c-scrollbar c-scrollbar--fade" style={{width: `${(dimensions.width)*.45}px`, height: '100%' /* minHeight: `${(dimensions.height)}px` */}}>
                             <div data-qa="slack_kit_scrollbar" role="presentation" className="c-scrollbar__hider">
-                                <div role="presentation" className="c-scrollbar__child" style={{width: `${(dimensions.width)*.45}px`, height: "100%", marginTop: '10px'}}>
+                                <div role="presentation" className="c-scrollbar__child" style={{width: `${(dimensions.width)*.45}px`, /* height: "100%", */ marginTop: '10px'}}>
                                     <div data-qa="slack_kit_list" className="c-virtual_list__scroll_container" role="presentation" style={{position: "relative", height: "100%"}}>
                                         <ul style={{paddingTop: "10px"}}>
                                             {messageBlocks}

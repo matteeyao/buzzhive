@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import NavBar from "./navbar/navbar_container";
 import Modals from "./modals/container";
 import Sidebar from "./sidebar/sidebar_container";
-import Client from "./client/channel_container";
-import { withRouter } from 'react-router-dom';
+import Client from "./client/container";
 
 class Main extends Component {
     render() {
@@ -26,4 +25,4 @@ class Main extends Component {
     }
 };
 
-export default withRouter(Main);
+export default Main;

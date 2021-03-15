@@ -3,7 +3,7 @@ import { fetchHive } from "../../../actions/hive_actions";
 import { fetchMessages, fetchMessage, clearThread, createThreadReply } from "../../../actions/message_actions";
 import { createHiveUser } from "../../../actions/hive_user_actions";
 import { openModal } from "../../../actions/modal_actions";
-import Channel from "./channel";
+import Channel from "./component";
 import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state) => {
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchMessage: (hive_id, id) => dispatch(fetchMessage(hive_id, id)),
         clearThread: () => dispatch(clearThread()),
         action: (messageForm, hive_id, id) => dispatch(createThreadReply(messageForm, hive_id, id)),
-        createHiveUser: (hive_id) => dispatch(createHiveUser(hive_id)),
+        createHiveUser: (hiveUserForm) => dispatch(createHiveUser(hiveUserForm)),
         aboutModal: () => dispatch(openModal('aboutModal')),
         hiveUsersModal: () => dispatch(openModal('hiveUsersModal')),
     };

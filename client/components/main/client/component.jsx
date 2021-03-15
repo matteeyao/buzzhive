@@ -12,7 +12,7 @@ import WebSocketContainer from "./components/websocket_container";
 class Channel extends React.Component {
     constructor(props) {
         super(props);
-        this.bottom = React.createRef();
+        // this.bottom = React.createRef();
         this.state = {
             height: window.innerHeight,
             width: window.innerWidth,            
@@ -23,7 +23,7 @@ class Channel extends React.Component {
         this.props.fetchHive(this.props.match.params.hiveId);
 
         this.props.fetchMessages(this.props.match.params.hiveId);
-        this.bottom.current.scrollIntoView();
+        // this.bottom.current.scrollIntoView();
 
         const handleResize = () => {
             this.setState({
@@ -42,7 +42,7 @@ class Channel extends React.Component {
 
             this.props.fetchMessages(this.props.match.params.hiveId);
         }
-        this.bottom.current.scrollIntoView();
+        // this.bottom.current.scrollIntoView();
     }
 
     render() {
@@ -57,7 +57,7 @@ class Channel extends React.Component {
                     hiveUsers={hiveUsers}
                     fetchMessage={fetchMessage}
                 />
-                <div ref={this.bottom} />
+                {/* <div ref={this.bottom} /> */}
                 <Footer 
                     currentHive={currentHive}
                 />
@@ -68,7 +68,7 @@ class Channel extends React.Component {
                     currentHive={currentHive}
                     createHiveUser={createHiveUser}
                 />
-                <div ref={this.bottom} />
+                {/* <div ref={this.bottom} /> */}
             </div>
                   
         return (
@@ -78,6 +78,7 @@ class Channel extends React.Component {
                         <Header
                             currentHive={currentHive}
                             hiveUsers={hiveUsers}
+                            currentUser={currentUser}
                             aboutModal={aboutModal}
                             hiveUsersModal={hiveUsersModal}
                         />

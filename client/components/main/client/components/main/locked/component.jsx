@@ -14,7 +14,9 @@ export default ({currentHive, createHiveUser}) => {
             </div>
             <div className="request-access-container">
                 <button className="request-access-button" onClick={() => setTimeout(function() { 
-                    createHiveUser(currentHive.id);
+                        createHiveUser({
+                            hive_id: currentHive.id
+                        });
                     }, 3000) }>
                     Request Access
                 </button>

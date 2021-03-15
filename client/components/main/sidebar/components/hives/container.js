@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import Hives from "./component";
 import { fetchHives } from "../../../../../actions/hive_actions";
 import { openModal } from '../../../../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
     return {
@@ -16,4 +17,6 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hives);
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(Hives)
+);
