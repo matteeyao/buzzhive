@@ -6,7 +6,7 @@ export default ({hive, idx}) => {
 
     const handleClick = () => {
         const hiveId = hive.id;
-        history.push(`/hives/${hiveId}`);
+        history.push(`/client/hives/${hiveId}`);
     }
     
     const locked = hive.isPrivate ?

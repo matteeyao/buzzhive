@@ -93,7 +93,7 @@ class HiveForm extends Component {
         const hive = { name, description, is_private, ref_link };
         // console.log(hiveFormData);
         this.props.createHive(hive)
-            .then((res) => this.props.history.push(`/hives/${res.data.hive.id}`))
+            .then((res) => this.props.history.push(`/client/hives/${res.data.hive.id}`))
             .then(() => this.closeModal());
     }
 

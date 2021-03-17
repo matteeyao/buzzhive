@@ -1,13 +1,14 @@
 class Api::MessagesController < ApplicationController
-    before_action :set_hive, only: [:show, :create]
+    before_action :set_channel, only: [:show, :create]
 
     def index
-        @messages = Message.all.where(parent_message_id: nil, msgeable_id: params[:hive_id])
+        channelID = params[:hive_id] || params[:direct_message_id]
+        @messages = Message.all.where(parent_message_id: nil, msgeable_id: channelID)
         render :index
     end
 
     def show
-        @message = @hive.messages.find_by(id: params[:id])
+        @message = @channel.messages.find_by(id: params[:id])
         render 'api/messages/show'
         
         # if params[:id]
@@ -20,7 +21,7 @@ class Api::MessagesController < ApplicationController
     end
 
     def create
-        @message = @hive.messages.new(message_params)
+        @message = @channel.messages.new(message_params)
         @message.save
         MessageRelayJob.perform_later(@message)
         render 'api/messages/new'
@@ -53,8 +54,12 @@ class Api::MessagesController < ApplicationController
 
     private
 
-    def set_hive
-        @hive = current_user.hives.find(params[:hive_id])
+    # def set_hive
+    #     @hive = current_user.hives.find(params[:hive_id])
+    # end
+
+    def set_channel
+        @channel = current_user.hives.find(params[:hive_id]) || current_user.direct_messages.find(params[:direct_message_id])
     end
 
     def message_params

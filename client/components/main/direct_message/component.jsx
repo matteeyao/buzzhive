@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./components/main/header";
-import Body from "./components/main/body/body";
-import Footer from "./components/main/footer/footer_container";
-import Locked from "./components/main/locked/component";
+import Header from "./components/client/header";
+import Body from "./components/client/body/body";
+import Footer from "./components/client/footer/footer_container";
+import Locked from "./components/client/locked/component";
 
 import ThreadHeader from "./components/thread/header/header";
 import ThreadBody from "./components/thread/body/component";
@@ -49,7 +49,7 @@ class Channel extends React.Component {
         const { currentHive, currentThread, messages, hiveUsers, currentUser, action, 
             fetchMessage, closeThread, createHiveUser, aboutModal, hiveUsersModal } = this.props;
 
-        const locked = hiveUsers[currentUser.id] ?
+        const locked = /* hiveUsers[currentUser.id] */ true ?
             <div className="p-file_drag_drop__container">
                 <Body
                     currentHive={currentHive}
@@ -73,7 +73,7 @@ class Channel extends React.Component {
                   
         return (
             <>
-                <div role="main" aria-label="Channel general" className="p-workspace__primary_view" >
+                <div role="main" aria-label="Channel general" className="p-workspace__primary_view">
                     <div className="p-workspace__primary_view_contents">
                         <Header
                             currentHive={currentHive}
@@ -98,7 +98,7 @@ class Channel extends React.Component {
                         </div> */}
                     </div>
                 </div>
-                <div className="p-workspace__secondary_view p-workspace__secondary_view--large">
+                {/* <div className="p-workspace__secondary_view p-workspace__secondary_view--large">
                     <div className="p-workspace__secondary_view_contents">
                         <div role="complementary" className="p-flexpane p-flexpane--iap1">
                             <ThreadHeader
@@ -132,7 +132,7 @@ class Channel extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </>
         );
     }

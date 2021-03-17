@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then(() => this.props.history.push('/hives/1'));
+            .then(() => this.props.history.push('/client/hives/1'));
     }
 
     demo(e) {
@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
                 password: 'demopw'
             };
             this.props.processForm(userInfo)
-                .then(() => this.props.history.push('/hives/1'));
+                .then(() => this.props.history.push('/client/hives/1'));
         }, 2000);
     }
 
