@@ -5,11 +5,20 @@ class Item extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
     handleClick() {
         const dmId = this.props.directMessage.id;
         this.props.history.push(`/client/dms/${dmId}`);
+    }
+
+    handleRemove() {
+        const firstDMid = Object.values(this.props.directMessages)[0].id
+        // console.log(firstDMid)
+
+        this.props.deleteDM(this.props.directMessage.id)
+            .then(() => this.props.history.push(`/client/dms/${firstDMid}`));
     }
 
     render() {
@@ -35,7 +44,7 @@ class Item extends React.Component {
                     </div>
                     <span dir="auto" className="p-channel_sidebar__name p-channel_sidebar__name--away" data-qa="channel_sidebar_name_julian-tipler" aria-label="" delay="300" data-sk="tooltip_parent"><span>{name}</span></span>
                 </a>
-                <button className="c-button-unstyled p-channel_sidebar__close" data-qa="channel_item_close" aria-hidden="true" tabIndex="-1" type="button"><i className="c-deprecated-icon c-icon--times" type="times" aria-hidden="true" onClick={() => this.props.deleteDM(this.props.directMessage.id)}></i></button>
+                <button className="c-button-unstyled p-channel_sidebar__close" data-qa="channel_item_close" aria-hidden="true" tabIndex="-1" type="button"><i className="c-deprecated-icon c-icon--times" type="times" aria-hidden="true" onClick={this.handleRemove}></i></button>
                 </div>
             </div>
         );

@@ -11,9 +11,10 @@ class Api::DirectMessagesController < ApplicationController
     end
     
     def create
-        @direct_message = DirectMessage.new(direct_message_params)
+        @direct_message = DirectMessage.new({author_id: current_user.id,})
         if @direct_message.save
             @direct_message.direct_message_users.where(user_id: current_user.id).first_or_create
+            @direct_message.direct_message_users.where(user_id: direct_message_params[:respondent_id]).first_or_create
             render :show
         else
             render json: ["Unable to create direct message channel."], status: 422
@@ -31,6 +32,6 @@ class Api::DirectMessagesController < ApplicationController
     end
 
     def direct_message_params
-        params.require(:direct_message).permit(:author_id)
+        params.require(:direct_message).permit(:author_id, :respondent_id)
     end
 end

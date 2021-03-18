@@ -1,7 +1,7 @@
-export const fetchMessages = (id) => (
+export const fetchMessages = (data) => (
     $.ajax({
         method: 'GET',
-        url: `/api/hives/${id}/messages`,
+        url: `/api/${data.type}/${data.id}/messages`,
     })
 );
 
@@ -15,7 +15,7 @@ export const fetchMessage = (hive_id, id) => (
 export const createMessage = (message) => (
     $.ajax({
         method: 'POST',
-        url: `/api/${message.msgeable_type.toLowerCase()}s/${message.msgeable_id}/messages`,
+        url: `/api/${message.msgeable_type.split('t').join('t_').toLowerCase()}s/${message.msgeable_id}/messages`,
         data: { message },
     })
 );

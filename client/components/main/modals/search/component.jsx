@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StaticAutocomplete from './components/static_autocomplete';
 import DynamicAutocomplete from './components/dynamic_autocomplete';
+import DynamicUserAutocomplete from './components/dynamic_user_autocomplete';
 
 class Search extends Component {
     constructor(props) {
@@ -12,17 +13,28 @@ class Search extends Component {
 
     componentDidMount() {
         this.props.searchHives();
+        this.props.fetchUsers();
     }
 
     render() {
         const { closeModal } = this.props;
 
         const autocomplete = this.state.searchString ? 
-            <DynamicAutocomplete 
-                searchString={this.state.searchString}
-                searchResults={this.props.search}
-                closeModal={closeModal}
-                 /> :
+            <React.Fragment>
+                <DynamicAutocomplete 
+                    searchString={this.state.searchString}
+                    searchResults={this.props.search}
+                    closeModal={closeModal}
+                />
+                <DynamicUserAutocomplete
+                    currentUser={this.props.currentUser} 
+                    searchString={this.state.searchString}
+                    searchResults={this.props.users}
+                    directMessages={this.props.directMessages}
+                    createDM={this.props.createDM}
+                    closeModal={closeModal}
+                />
+            </React.Fragment> :
             <StaticAutocomplete />
 
         const clear = this.state.searchString ? "c-button-unstyled c-search__input_box__clear" : "c-button-unstyled c-search__input_box__clear c-search__input_box__clear__hidden";

@@ -81,7 +81,7 @@ class SidebarDetail extends Component {
                                                         </button>
                                                     </div>
                                                     <Hives />
-                                                    <DirectMessages />
+                                                    <DirectMessages/>
                                                 </div>
                                             </div>
                                         </div>

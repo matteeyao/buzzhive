@@ -12,7 +12,7 @@ class MessageForm extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.message.msgeable_id !== this.props.message.msgeable_id) {
             this.setState({
-                msgeable_id: this.props.match.params.hiveId,
+                msgeable_id: this.props.match.params.dmId,
             })
         }
     }
@@ -35,7 +35,7 @@ class MessageForm extends React.Component {
     };
 
     render() {
-        if (this.props.currentHive) {
+        if (this.props.currentDirectMessage) {
             return (
                 <div className="workspace__primary_view_footer">
                     <div className="p-message_pane_input" data-qa="message_input_container">
@@ -53,7 +53,7 @@ class MessageForm extends React.Component {
                                                 value={this.state.body}
                                                 onChange={this.update('body')}
                                                 className="c-texty_input__placeholder"
-                                                placeholder={`Message #${this.props.currentHive.name}`}
+                                                placeholder={`Message ${this.props.name}`}
                                                 style={{width: "100%"}}
                                             />
                                         </div>                       

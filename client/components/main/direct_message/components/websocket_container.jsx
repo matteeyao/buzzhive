@@ -19,7 +19,7 @@ class WebSocket extends React.Component {
 
     createSubscription() {
         App.cable.subscriptions.create(
-            { channel: "HivesChannel", id: this.props.currentHiveId }, 
+            { channel: "DirectMessagesChannel", id: this.props.currentDirectMessageId }, 
             {
                 connected: () => {/*console.log(this.props.currentUser.username, "is connected to Hive", this.props.currentHiveId) */},
                 received: (data) => {
@@ -41,7 +41,7 @@ class WebSocket extends React.Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.session.currentUser,
-        currentHiveId: ownProps.match.params.hiveId,
+        currentDirectMessageId: ownProps.match.params.dmId,
         messages: Object.values(state.entities.messages),
     };
 };

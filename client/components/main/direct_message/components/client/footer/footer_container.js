@@ -5,13 +5,13 @@ import Footer from './footer';
 
 const mapStateToProps = (state, ownProps) => {
     return ({
-        currentHive: state.entities.currentHive,
+        currentDirectMessage: state.entities.currentDirectMessage,
         message: {
             body: "",
             author_id: state.session.currentUser.id,
             parent_message_id: null,
-            msgeable_id: ownProps.match.params.hiveId,
-            msgeable_type: "Hive"
+            msgeable_id: ownProps.match.params.dmId,
+            msgeable_type: "DirectMessage"
         },
         formType: 'Post Message',
     })

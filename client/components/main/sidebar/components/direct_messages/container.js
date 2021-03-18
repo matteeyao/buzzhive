@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import DirectMessages from "./component";
 import { fetchDMs, deleteDM } from "../../../../../actions/direct_message_actions";
+import { openModal } from '../../../../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return {
@@ -14,7 +15,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchDMs: () => dispatch(fetchDMs()),
-        deleteDM: (id) => dispatch(deleteDM(id))
+        deleteDM: (id) => dispatch(deleteDM(id)),
+        searchModal: () => dispatch(openModal('searchModal')),
     };
 };
 

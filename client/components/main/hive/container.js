@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchHive: (id) => dispatch(fetchHive(id)),
-        fetchMessages: (id) => dispatch(fetchMessages(id)),
+        fetchMessages: (data) => dispatch(fetchMessages(data)),
         fetchMessage: (hive_id, id) => dispatch(fetchMessage(hive_id, id)),
         clearThread: () => dispatch(clearThread()),
         action: (messageForm, hive_id, id) => dispatch(createThreadReply(messageForm, hive_id, id)),

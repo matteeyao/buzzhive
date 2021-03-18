@@ -22,7 +22,7 @@ class Channel extends React.Component {
     componentDidMount() {
         this.props.fetchHive(this.props.match.params.hiveId);
 
-        this.props.fetchMessages(this.props.match.params.hiveId);
+        this.props.fetchMessages({type: 'hives', id: this.props.match.params.hiveId});
         // this.bottom.current.scrollIntoView();
 
         const handleResize = () => {
@@ -40,7 +40,7 @@ class Channel extends React.Component {
             this.props.clearThread();
             this.props.fetchHive(this.props.match.params.hiveId);
 
-            this.props.fetchMessages(this.props.match.params.hiveId);
+            this.props.fetchMessages({type: 'hives', id: this.props.match.params.hiveId});
         }
         // this.bottom.current.scrollIntoView();
     }

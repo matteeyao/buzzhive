@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import NavBar from "./navbar/navbar_container";
 import Modals from "./modals/container";
 import Sidebar from "./sidebar/sidebar_container";
-import Channel from "./channel/container";
+import Channel from "./hive/container";
 import DirectMessage from "./direct_message/container";
 
 class Main extends Component {

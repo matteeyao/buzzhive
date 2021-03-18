@@ -1,7 +1,7 @@
 import React from 'react';
 import * as DateUtil from '../../../../../../util/date_util';
 
-export default ({message, author, hiveid, fetchMessage}) => {
+export default ({message, author, directMessageId}) => {
     if (message && author) {
         return (
             <li className="message_block_container">
@@ -56,7 +56,7 @@ export default ({message, author, hiveid, fetchMessage}) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div role="presentation" className="c-message__reply_bar c-message_kit__thread_replies" data-qa="reply_bar" data-stringify-ignore="true" onClick={()=>fetchMessage(hiveid,message.id)}>
+                                        {/* <div role="presentation" className="c-message__reply_bar c-message_kit__thread_replies" data-qa="reply_bar" data-stringify-ignore="true" onClick={()=>fetchMessage(hiveid,message.id)}>
                                             <button className="c-button-unstyled c-avatar c-avatar--interactive " aria-label="View Brandon Milhomme’s Profile" tabIndex="0" aria-haspopup="menu" aria-expanded="false" type="button" style={{height: "24px", width: "24px"}}>
                                                 <div className="c-base_icon c-base_icon--image" style={{height: "24px", width: "24px", background: "none"}}><i className="far fa-comment-dots fa-2x" style={{fontSize: "24px"}}></i></div>
                                             </button>
@@ -67,7 +67,7 @@ export default ({message, author, hiveid, fetchMessage}) => {
                                                 <span className="c-message__reply_bar_view_thread">{DateUtil.formatDays(message.createdAt)} days ago</span>
                                             </div>
                                             <i className="c-deprecated-icon c-message__reply_bar_arrow c-icon--chevron-right c-deprecated-icon--vertical-align-baseline" type="chevron_right" aria-hidden="true"></i>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

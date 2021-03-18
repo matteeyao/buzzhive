@@ -3,7 +3,8 @@ class Api::MessagesController < ApplicationController
 
     def index
         channelID = params[:hive_id] || params[:direct_message_id]
-        @messages = Message.all.where(parent_message_id: nil, msgeable_id: channelID)
+        channelType = params.keys.include?("hive_id") ? "Hive" : "DirectMessage"
+        @messages = Message.all.where(parent_message_id: nil, msgeable_id: channelID, msgeable_type: channelType)
         render :index
     end
 
@@ -59,7 +60,9 @@ class Api::MessagesController < ApplicationController
     # end
 
     def set_channel
-        @channel = current_user.hives.find(params[:hive_id]) || current_user.direct_messages.find(params[:direct_message_id])
+        @channel = params.keys.include?("hive_id") ? 
+            current_user.hives.find(params[:hive_id]) : 
+            current_user.direct_messages.find(params[:direct_message_id])
     end
 
     def message_params

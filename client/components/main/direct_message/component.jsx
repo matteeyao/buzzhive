@@ -3,13 +3,9 @@ import Header from "./components/client/header";
 import Body from "./components/client/body/body";
 import Footer from "./components/client/footer/footer_container";
 import Locked from "./components/client/locked/component";
-
-import ThreadHeader from "./components/thread/header/header";
-import ThreadBody from "./components/thread/body/component";
-// import MessageFormContainer from "./components/create_message_container";
 import WebSocketContainer from "./components/websocket_container";
 
-class Channel extends React.Component {
+class DirectMessage extends React.Component {
     constructor(props) {
         super(props);
         // this.bottom = React.createRef();
@@ -20,9 +16,8 @@ class Channel extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchHive(this.props.match.params.hiveId);
-
-        this.props.fetchMessages(this.props.match.params.hiveId);
+        this.props.fetchDM(this.props.match.params.dmId);
+        this.props.fetchMessages({type: 'direct_messages', id: this.props.match.params.dmId});
         // this.bottom.current.scrollIntoView();
 
         const handleResize = () => {
@@ -36,51 +31,57 @@ class Channel extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.match.params.hiveId !== this.props.match.params.hiveId) {
-            this.props.clearThread();
-            this.props.fetchHive(this.props.match.params.hiveId);
-
-            this.props.fetchMessages(this.props.match.params.hiveId);
+        if (prevProps.match.params.dmId !== this.props.match.params.dmId) {
+            this.props.fetchDM(this.props.match.params.dmId);
+            this.props.fetchMessages({type: 'direct_messages', id: this.props.match.params.dmId});
         }
         // this.bottom.current.scrollIntoView();
     }
 
     render() {
-        const { currentHive, currentThread, messages, hiveUsers, currentUser, action, 
-            fetchMessage, closeThread, createHiveUser, aboutModal, hiveUsersModal } = this.props;
+        const { currentDirectMessage, messages, currentUser, aboutModal } = this.props;
 
-        const locked = /* hiveUsers[currentUser.id] */ true ?
-            <div className="p-file_drag_drop__container">
-                <Body
-                    currentHive={currentHive}
-                    messages={messages}
-                    hiveUsers={hiveUsers}
-                    fetchMessage={fetchMessage}
-                />
-                {/* <div ref={this.bottom} /> */}
-                <Footer 
-                    currentHive={currentHive}
-                />
-                <WebSocketContainer />
-            </div> :
-            <div className="p-file_drag_drop__container">
-                <Locked
-                    currentHive={currentHive}
-                    createHiveUser={createHiveUser}
-                />
-                {/* <div ref={this.bottom} /> */}
-            </div>
+        const ids = currentDirectMessage.users ? Object.values(currentDirectMessage.users)
+            .map(user => user.id) : [];
+
+        const name = currentDirectMessage.users ? Object.values(currentDirectMessage.users)
+            .map(user => user.username)
+            .filter(username => username != currentUser.username)
+            [0] : 
+            null
+
+        const locked = ids ?
+            ids.includes(currentUser.id) ?
+                <div className="p-file_drag_drop__container">
+                    <Body
+                        currentDirectMessage={currentDirectMessage}
+                        messages={messages}
+                    />
+                    {/* <div ref={this.bottom} /> */}
+                    <Footer
+                        name={name}
+                        currentDirectMessage={currentDirectMessage}
+                    />
+                    <WebSocketContainer />
+                </div> :
+                <div className="p-file_drag_drop__container" style={{marginTop: "-1px", borderTop: "1pt solid rgb(66, 68, 71)"}}>
+                    <Locked
+                        currentDirectMessage={currentDirectMessage}
+                    />
+                    {/* <div ref={this.bottom} /> */}
+                </div>
+            : <React.Fragment></React.Fragment>
                   
+
         return (
-            <>
+            <React.Fragment>
                 <div role="main" aria-label="Channel general" className="p-workspace__primary_view">
                     <div className="p-workspace__primary_view_contents">
                         <Header
-                            currentHive={currentHive}
-                            hiveUsers={hiveUsers}
+                            name={name}
+                            currentDirectMessage={currentDirectMessage}
                             currentUser={currentUser}
                             aboutModal={aboutModal}
-                            hiveUsersModal={hiveUsersModal}
                         />
                         {locked}
                         {/* <div className="p-file_drag_drop__container">
@@ -133,20 +134,9 @@ class Channel extends React.Component {
                         </div>
                     </div>
                 </div> */}
-            </>
+            </React.Fragment>
         );
     }
 }
 
-export default Channel;
-
-// <div className="chatroom-container">
-//     <h2>Channel</h2>
-//     <div className="message-list">
-//         {messageList}
-//     </div>
-//     <div ref={this.bottom} />
-//     <br/>
-//     <div className="message-input"><MessageFormContainer /></div>
-//     <WebSocketContainer />
-// </div>
+export default DirectMessage;

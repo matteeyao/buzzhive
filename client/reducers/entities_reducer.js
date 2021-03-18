@@ -5,6 +5,7 @@ import allUsersReducer from "./users_reducer";
 import hivesReducer from "./hives_reducer";
 import currentHiveReducer from "./current_hive_reducer";
 import currentThreadReducer from "./current_thread_reducer";
+import currentDirectMessageReducer from "./current_direct_message_reducer";
 import directMessagesReducer from "./direct_messages_reducer";
 import messagesReducer from "./messages_reducer";
 import searchReducer from "./search_reducer";
@@ -15,6 +16,7 @@ const entitiesReducer = combineReducers({
     currentHive: currentHiveReducer,
     hives: hivesReducer,
     currentThread: currentThreadReducer,
+    currentDirectMessage: currentDirectMessageReducer,
     directMessages: directMessagesReducer,
     messages: messagesReducer,
     search: searchReducer,

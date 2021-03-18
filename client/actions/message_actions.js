@@ -32,8 +32,8 @@ export const closeThread = () => {
     };
 };
 
-export const fetchMessages = id => dispatch => (
-    APIUtil.fetchMessages(id).then(messages => (
+export const fetchMessages = data => dispatch => (
+    APIUtil.fetchMessages(data).then(messages => (
         dispatch(receiveMessages(messages))
     ))
 );

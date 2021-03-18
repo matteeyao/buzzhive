@@ -28,6 +28,7 @@ class HiveIndex extends React.Component {
                 key={idx}
                 idx={idx}
                 directMessage={directMessage}
+                directMessages={this.props.directMessages}
                 currentUser={this.props.currentUser}
                 deleteDM={this.props.deleteDM}
                 startPos={this.state.hivesLength+36}
@@ -55,7 +56,7 @@ class HiveIndex extends React.Component {
                 {directMessages}
                 <div aria-level="2" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="addMoreDM" data-qa="virtual-list-item" style={{top: `${this.state.hivesLength+34+(this.props.directMessages.length)*34}px`}}>
                     <div className="p-channel_sidebar__close_container">
-                        <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--dim p-channel_sidebar__link--add-more-items" role="presentation" data-sidebar-link-id="Vadd_more_items_dm" data-qa-channel-sidebar-link-id="Vadd_more_items_dm" tabIndex="-1" type="button">
+                        <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--dim p-channel_sidebar__link--add-more-items" role="presentation" data-sidebar-link-id="Vadd_more_items_dm" data-qa-channel-sidebar-link-id="Vadd_more_items_dm" tabIndex="-1" type="button" onClick={this.props.searchModal}>
                             <i className="c-icon p-channel_sidebar__channel_icon_prefix p-channel_sidebar__channel_icon_prefix--comfy c-icon--plus-small c-icon--inherit c-icon--inline" data-qa="sidebar-channel-icon-prefix" type="plus-small" aria-hidden="true"></i>
                             <span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_sidebar_add_more_dm">Add Conversations</span>
                         </button>
