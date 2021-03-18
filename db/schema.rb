@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_191836) do
+ActiveRecord::Schema.define(version: 2021_03_18_162023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,8 +18,6 @@ ActiveRecord::Schema.define(version: 2021_03_16_191836) do
   create_table "direct_message_users", force: :cascade do |t|
     t.bigint "direct_message_id"
     t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["direct_message_id"], name: "index_direct_message_users_on_direct_message_id"
     t.index ["user_id"], name: "index_direct_message_users_on_user_id"
   end
@@ -78,5 +76,6 @@ ActiveRecord::Schema.define(version: 2021_03_16_191836) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "direct_message_users", "direct_messages"
   add_foreign_key "direct_message_users", "users"
 end
