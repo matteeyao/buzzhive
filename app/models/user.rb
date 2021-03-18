@@ -17,7 +17,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     after_initialize :ensure_session_token
-    after_save :seed_direct_messages
+    after_create :seed_direct_messages
 
     validates :username, :fname, :lname, :email, :password_digest, 
         :session_token, presence: true
@@ -59,15 +59,34 @@ class User < ApplicationRecord
     end
 
     def seed_direct_messages
-        User.all
-            .reject { |user| user.id == self.id }
-            .sample(2)
-            .each do |user| 
-                @direct_message = DirectMessage.new(author_id: user.id)
-                @direct_message.save
-                DirectMessageUser.new(direct_message_id: @direct_message.id, user_id: self.id).save
-                DirectMessageUser.new(direct_message_id: @direct_message.id, user_id: user.id).save
-            end
+        flag = true
+
+        while flag 
+            flag = false
+
+            User.all
+                .reject { |user| user.id == self.id }
+                .sample(1)
+                .each do |user|
+                    DirectMessage.where(author_id: [user.id])
+                        .each do |dm|
+                            if dm.direct_message_users
+                                .map { |dmUser| dmUser.user_id }
+                                .include?(user.id)
+                                    flag = true
+                            end
+                        end
+                    if !flag
+                        @direct_message = DirectMessage.new(author_id: user.id)
+                        @direct_message.save
+                        DirectMessageUser.new(direct_message_id: @direct_message.id, user_id: self.id).save
+                        DirectMessageUser.new(direct_message_id: @direct_message.id, user_id: user.id).save
+                    end
+                end
+        end
+
+        
+
     end
 
     private
