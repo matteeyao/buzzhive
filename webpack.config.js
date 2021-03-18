@@ -24,6 +24,9 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        extensions: [".js", ".jsx", "*"]
+        extensions: [".js", ".jsx", "*"],
+        alias: {
+            assets: path.resolve("./app/assets"),
+        },
     }
 };

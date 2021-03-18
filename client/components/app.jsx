@@ -5,7 +5,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import LogInFormContainer from './session/session_form_container';
 import SignUpFormContainer from './session/signup_form_container';
-import MainContainer from './main/main_container';
+import ClientContainer from './main/container';
 
 const App = () => (
     <>
@@ -13,7 +13,7 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <ProtectedRoute path="/hives/:hiveId" component={MainContainer} />
+            <ProtectedRoute path="/client" component={ClientContainer} />
         </Switch>
     </>
 );

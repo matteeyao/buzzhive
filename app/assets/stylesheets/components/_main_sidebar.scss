@@ -3913,3 +3913,8 @@ div[aria-selected=true].p-channel_sidebar__static_list__item:focus:after {
 	border-right: 4px solid transparent;
 	border-radius: 6px/4px
 }
+
+.not-allowed:hover {
+    opacity: 0.2;
+    cursor: not-allowed;
+}

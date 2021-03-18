@@ -10,7 +10,7 @@ class HiveIndex extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchHives();
+        this.props.fetchDMs();
     }
 
     componentDidUpdate(prevProps) {
@@ -23,11 +23,14 @@ class HiveIndex extends React.Component {
     }
     
     render() {
-        const directMessages = this.props.hives.slice(0,2).map((hive,idx) => (
+        const directMessages = this.props.directMessages.map((directMessage,idx) => (
             <Item
                 key={idx}
-                hive={hive}
                 idx={idx}
+                directMessage={directMessage}
+                directMessages={this.props.directMessages}
+                currentUser={this.props.currentUser}
+                deleteDM={this.props.deleteDM}
                 startPos={this.state.hivesLength+36}
             />
         ));
@@ -51,9 +54,9 @@ class HiveIndex extends React.Component {
                     <div id="sectionHeading-L01B4NJB0TT-description" className="p-channel_sidebar__group-description">Press Cmd Shift K to find or create a direct message. Press delete to remove a direct message from the sidebar</div>
                 </div>                
                 {directMessages}
-                <div aria-level="2" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="addMoreDM" data-qa="virtual-list-item" style={{top: `${this.state.hivesLength+34+(this.props.hives.slice(0,2).length)*34}px`}}>
+                <div aria-level="2" className="p-channel_sidebar__static_list__item c-virtual_list__item" tabIndex="-1" role="treeitem" id="addMoreDM" data-qa="virtual-list-item" style={{top: `${this.state.hivesLength+34+(this.props.directMessages.length)*34}px`}}>
                     <div className="p-channel_sidebar__close_container">
-                        <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--dim p-channel_sidebar__link--add-more-items" role="presentation" data-sidebar-link-id="Vadd_more_items_dm" data-qa-channel-sidebar-link-id="Vadd_more_items_dm" tabIndex="-1" type="button">
+                        <button className="c-button-unstyled p-channel_sidebar__link p-channel_sidebar__link--dim p-channel_sidebar__link--add-more-items" role="presentation" data-sidebar-link-id="Vadd_more_items_dm" data-qa-channel-sidebar-link-id="Vadd_more_items_dm" tabIndex="-1" type="button" onClick={this.props.searchModal}>
                             <i className="c-icon p-channel_sidebar__channel_icon_prefix p-channel_sidebar__channel_icon_prefix--comfy c-icon--plus-small c-icon--inherit c-icon--inline" data-qa="sidebar-channel-icon-prefix" type="plus-small" aria-hidden="true"></i>
                             <span className="p-channel_sidebar__name" data-qa="channel_sidebar_name_sidebar_add_more_dm">Add Conversations</span>
                         </button>

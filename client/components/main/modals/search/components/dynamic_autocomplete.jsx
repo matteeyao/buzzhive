@@ -24,7 +24,7 @@ export default ({searchString, searchResults, closeModal}) => {
 
             return (
                 <li key={ result.id }>
-                    <Link to={ `/hives/${result.id}` } style={{textDecoration: "none", color: "inherit"}} onClick={closeModal}>
+                    <Link to={ `/client/hives/${result.id}` } style={{textDecoration: "none", color: "inherit"}} onClick={closeModal}>
                         <div data-type="channel" id="c-search_autcomplete__suggestion_1" role="option" tabIndex="-1" aria-selected="false" aria-labelledby="c-search_autcomplete__suggestion_1 search-autocomplete-recent-channels-header" className="c-search_autocomplete__suggestion_item">
                             <div className="c-base_list_entity c-base_list_entity--small">
                                 <div className="c-base_list_entity__primary_content">
@@ -71,7 +71,7 @@ export default ({searchString, searchResults, closeModal}) => {
                     </li>
                     {results}
                 </ol>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </div>
     )

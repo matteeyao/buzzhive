@@ -50,7 +50,7 @@
 	display: grid;
 	grid-template-rows: auto;
 	overflow: hidden;
-	position: relative
+	position: relative;
 }
 
 .p-workspace-layout .p-workspace__sidebar {
@@ -105,6 +105,10 @@
 .p-workspace-layout {
     grid-template-columns: 260px 45% auto;
     grid-template-areas: 'p-workspace__sidebar p-workspace__primary_view p-workspace__secondary_view';
+    &.dm {
+        grid-template-columns: 260px auto;
+        grid-template-areas: 'p-workspace__sidebar p-workspace__primary_view';
+    }
 }
 
 .p-setup_tada_coachmark__ReactModal__Body--open .p-workspace__primary_view_contents:before {
@@ -143,7 +147,7 @@
 	display: flex;
 	align-items: center;
 	padding: 0 16px 0 8px;
-	border-bottom: 1px solid rgba($bh_foreground_low, .13);
+	// border-bottom: 1px solid rgba($bh_foreground_low, .13);
 	flex-shrink: 0
 }
 
@@ -4138,7 +4142,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 }
 
 .p-shortcuts_menu_trigger_button_container:hover {
-	border-color: transparent
+	// border-color: transparent
 }
 
 .p-shortcuts_menu_trigger_button {
@@ -4156,8 +4160,8 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 
 .p-shortcuts_menu_trigger_button:not(.p-shortcuts_menu_trigger_button--only_workflows):active,
 .p-shortcuts_menu_trigger_button:not(.p-shortcuts_menu_trigger_button--only_workflows):hover {
-	background: rgba($bh_highlight, 1)!important;
-	color: #fff!important
+	// background: rgba($bh_highlight, 1)!important;
+	// color: #fff!important
 }
 
 .p-shortcuts_menu_trigger_button.p-shortcuts_menu_trigger_button--only_workflows:active,
@@ -4172,7 +4176,7 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
 
 .p-shortcuts_menu_trigger_button--dark:not(.p-shortcuts_menu_trigger_button--only_workflows).p-shortcuts_menu_trigger_button:active,
 .p-shortcuts_menu_trigger_button--dark:not(.p-shortcuts_menu_trigger_button--only_workflows).p-shortcuts_menu_trigger_button:hover {
-	background: #1264a3!important
+	// background: #1264a3!important
 }
 
 .p-shortcuts_menu_trigger_button--highlighted:not(.p-shortcuts_menu_trigger_button--only_workflows) {
@@ -5077,3 +5081,25 @@ body:not(.p-client_desktop--ia-top-nav) .p-message_pane .p-message_pane__top_ban
     color: #fff;
     height: con
 }
+
+.request-access-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.request-access-button {
+    padding: 10px 120px;
+    font-family: $discord-font;
+    font-size: 20px;
+    font-weight: 600;
+    color: #d1d2d3;
+    background: transparent;
+    box-shadow: 0 0 0 2px $stil-de-grain-yellow, 0 0 0 3px rgba($stil-de-grain-yellow, 0.7);
+}
+
+.request-access-button:hover {
+    color: $bh_primary_background;
+    background-color: rgba($stil-de-grain-yellow, 0.9);
+}
+

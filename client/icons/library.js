@@ -25,7 +25,9 @@ import { faBars,
         faPaperPlane,
         faPenFancy,
         faLevelDownAlt,
-        faReply
+        faReply,
+        faUserPlus,
+        faEyeSlash,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { 
@@ -46,4 +48,4 @@ export default library.add(fab, faBars, faComments, faChevronUp,
     faFeatherAlt, faCaretDown, faCaretRight,
     faCircle, faLock, faHashtag, faSearch,
     faPlus, faCheck, faUser, faPaperPlane,
-    faPenFancy, faLevelDownAlt, faReply);
+    faPenFancy, faLevelDownAlt, faReply, faUserPlus, faEyeSlash);

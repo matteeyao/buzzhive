@@ -15,6 +15,11 @@ HiveUser.reset_pk_sequence
 Message.delete_all
 Message.reset_pk_sequence
 
+DirectMessage.delete_all
+DirectMessage.reset_pk_sequence
+DirectMessageUser.delete_all
+DirectMessageUser.reset_pk_sequence
+
 user1 = User.create!(username: "Anonymous Fox", fname: "Guest", lname: "User", email: "anonymousfox@buzzhive.io", password: "demopw")
 user2 = User.create!(username: "Anonymous Bison", fname: "Guest", lname: "User", email: "anonymousbison@buzzhive.io", password: "demopw")
 user3 = User.create!(username: "Anonymous Hedgehog", fname: "Guest", lname: "User", email: "anonymoushedgehog@buzzhive.io", password: "demopw")
@@ -174,3 +179,45 @@ message10 = Message.create!(
     msgeable_id: hive2.id,
     msgeable_type: 'Hive'
 )
+
+DirectMessage.all.each do |dm|
+    Message.create!(
+        body: "Hey there! Nice to see you on buzzhive!",
+        author_id: dm.direct_message_users.where(user_id: dm.author_id).first.user_id,
+        msgeable_id: dm.id,
+        msgeable_type: 'DirectMessage'
+    )
+    Message.create!(
+        body: "Thnx :), great to see you here too.",
+        author_id: dm.direct_message_users.where.not(user_id: dm.author_id).first.user_id,
+        msgeable_id: dm.id,
+        msgeable_type: 'DirectMessage'
+    )
+    Message.create!(
+        body: "Let me know if there's anything I can help you with!",
+        author_id: dm.direct_message_users.where(user_id: dm.author_id).first.user_id,
+        msgeable_id: dm.id,
+        msgeable_type: 'DirectMessage'
+    )
+end
+
+# message11 = Message.create!(
+#     body: "This is the first test message.",
+#     author_id: DirectMessage.find(24).direct_message_users.where(user_id: DirectMessage.find(24).author_id).first.user_id,
+#     msgeable_id: 24,
+#     msgeable_type: 'DirectMessage'
+# )
+
+# message12 = Message.create!(
+#     body: "This is the second test message.",
+#     author_id: user14.id,
+#     msgeable_id: 24,
+#     msgeable_type: 'DirectMessage'
+# )
+
+# message13 = Message.create!(
+#     body: "This is the third test message.",
+#     author_id: DirectMessage.find(24).direct_message_users.where(user_id: DirectMessage.find(24).author_id).first.user_id,
+#     msgeable_id: 24,
+#     msgeable_type: 'DirectMessage'
+# )

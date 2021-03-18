@@ -5,9 +5,6 @@ const usersReducer = (state = {}, action) => {
     Object.freeze(state);
 
     switch (action.type) {
-        case RECEIVE_HIVE:
-            const { data } = action;
-            return data.hiveUsers ? data.hiveUsers : {};
         case RECEIVE_USERS:
             return action.users;
         default:

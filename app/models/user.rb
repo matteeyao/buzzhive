@@ -17,6 +17,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     after_initialize :ensure_session_token
+    after_save :seed_direct_messages
 
     validates :username, :fname, :lname, :email, :password_digest, 
         :session_token, presence: true
@@ -29,6 +30,12 @@ class User < ApplicationRecord
         class_name: :Hive,
         foreign_key: :author_id
     has_many :authored_messages, inverse_of: 'author'
+
+    has_many :direct_message_users, dependent: :destroy
+    has_many :direct_messages, through: :direct_message_users
+    has_many :authored_direct_messages,
+        class_name: :DirectMessage,
+        foreign_key: :author_id
 
     def self.find_by_credentials(username, password) 
         user = User.find_by(username: username)
@@ -49,6 +56,18 @@ class User < ApplicationRecord
         generate_unique_session_token
         self.save!
         self.session_token
+    end
+
+    def seed_direct_messages
+        User.all
+            .reject { |user| user.id == self.id }
+            .sample(2)
+            .each do |user| 
+                @direct_message = DirectMessage.new(author_id: user.id)
+                @direct_message.save
+                DirectMessageUser.new(direct_message_id: @direct_message.id, user_id: self.id).save
+                DirectMessageUser.new(direct_message_id: @direct_message.id, user_id: user.id).save
+            end
     end
 
     private

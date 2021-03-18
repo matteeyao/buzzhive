@@ -6,6 +6,10 @@ Rails.application.routes.draw do
             resource :hive_users, only: [:index, :create, :update, :destroy]
             resources :messages, only: [:index, :show, :create, :update, :destroy]
         end
+        resources :direct_messages, only: [:index, :show, :create, :destroy] do
+            resource :direct_message_users, only: [:index, :create, :destroy]
+            resources :messages, only: [:index, :show, :create, :update, :destroy]
+        end
     end
     mount ActionCable.server, at: '/cable'
     root to: "static_pages#root"

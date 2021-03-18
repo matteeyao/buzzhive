@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default ({currentUser}) => {
-    const authRoute = (currentUser) ? "/hives/1" : "/login";
+    const authRoute = (currentUser) ? "client/hives/1" : "/login";
 
     return (
         <div className="grid-3Ykf_K footer-2JjWU3 brand-2EpRQL" role="navigation">

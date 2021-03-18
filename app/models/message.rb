@@ -38,9 +38,9 @@ class Message < ApplicationRecord
         self.child_messages.where(msgeable_id: self.msgeable_id, msgeable_type: self.msgeable_type)
     end
 
-    def destroy
-        update(user: nil, body: nil)
-    end
+    # def destroy
+    #     update(user: nil, body: nil)
+    # end
 
     def deleted?
         user.nil?
