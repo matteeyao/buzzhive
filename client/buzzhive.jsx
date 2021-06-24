@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import library from "./icons/library"
+import ReactGA, { pageview } from 'react-ga';
 
 // TEST IMPORTS START
 // import { fetchHive, fetchHives } from './util/hive_api_util'
@@ -16,6 +17,7 @@ import { fetchUsers } from './util/user_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    initializeGA();
     let store;
     if (window.currentUser) {
         const preloadedState = {
@@ -46,3 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
 });
+
+function initializeGA() {
+    ReactGA.initialize('');
+    pageview(location.pathname + location.hash);
+}

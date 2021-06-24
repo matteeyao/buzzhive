@@ -2,12 +2,25 @@
 
 [buzzhive](https://buzzhive.herokuapp.com/#/), a collaboration hub designed to personalize communication and collaboration across every community. Through endless conversation and authentic human connections, buzzhive provides access to the right people, information, and tools for every activity.
 
+# QuickStart
 
+1. execute `bundle install`
+
+2. execute `bundle exec rails db:setup && bundle exec rails db:migrate && bundle exec rails db:seed`
+
+3. run `rails s`
+
+4. run `redis-server`
+
+5. Go to `http://localhost:3000/#/`
+
+<br/>
 
 ## Features
 
 <img src="app/assets/images/splash-page.png" width="1000">
-<br></br>
+
+<br/>
 
 1. **New account creation, login, and guest login** 
 
