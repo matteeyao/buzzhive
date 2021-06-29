@@ -36,7 +36,7 @@ export default () => {
             <div className="grid-3Ykf_K">
                 <div className="row-3wW-Fx container-3iEQmT imageBottom-2ROCI6 lastFeatureTile-11EYAU visible-hh3e_5">
                     <div className="description-1K7RzO">
-                        <h2 className="h2-25VyWe">Disclaimer:</h2>
+                        <h2 className="h2-25VyWe">Disclaimer</h2>
                         <div className="text-3U-SDd textMedium-1DcD2z subtitle-1ZS-lq">
                             This application is for demonstration purposes only and is intended to closely resemble the core functionality and seamless design of Slack and Discord. 
                             As such, some of the images, IP, and content were duplicated from Slack and Discord in this building exercise and belong solely to Slack, Salesforce, and
@@ -54,7 +54,7 @@ export default () => {
             <div className="grid-3Ykf_K greyBackground-2ATEHg">
                 <div className="row-3wW-Fx container-3fzHO2 cta-3aOZq-">
                     <div aria-hidden="true" className="sparklesContainer-3Fo_ua"><img className="sparkles-QgcuS6" src="/assets/a188414ce83f2454b9d71a47c3d95909.svg" alt="" /></div>
-                    <h4 className="h4-1gN70b title-2TUBQe">Ready to start your journey?</h4>
+                    <h4 className="h4-1gN70b title-2TUBQe">Ready to get buzzin'?</h4>
                     <a className="button-195cDm buttonBrand-33cvhX buttonLarge-2j8B-n downloadButton-1lMS1e" href="#" style={{cursor:"not-allowed"}}>
                         <svg width="24" height="24" viewBox="0 0 24 24" className="icon-nuGd5b">
                         <g fill="currentColor">
