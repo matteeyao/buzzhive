@@ -12,6 +12,8 @@
 
 4. run `redis-server`
 
+5. run `npm run webpack`
+
 5. Go to `http://localhost:3000/#/`
 
 <br/>

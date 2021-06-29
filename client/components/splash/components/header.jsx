@@ -57,7 +57,13 @@ export default ({currentUser}) => {
                             </g>
                             </svg>       
                         </a>
-                        <div className="links-10hR8L"><a className="link-1bIkeG link-oDO0Ir" href="#">Download</a><a className="link-1bIkeG link-oDO0Ir" href="#">Why buzzhive?</a><a className="link-1bIkeG link-oDO0Ir" href="#">Nitro</a><a className="link-1bIkeG link-oDO0Ir" href="#">Safety</a><a className="link-1bIkeG link-oDO0Ir" href="#">Support</a></div>
+                        <div className="links-10hR8L">
+                            <a className="link-1bIkeG link-oDO0Ir" href="#" style={{cursor:"not-allowed"}}>Download</a>
+                            <a className="link-1bIkeG link-oDO0Ir" href="#" style={{cursor:"not-allowed"}}>Why buzzhive?</a>
+                            <a className="link-1bIkeG link-oDO0Ir" href="#" style={{cursor:"not-allowed"}}>Sputter</a>
+                            <a className="link-1bIkeG link-oDO0Ir" href="#" style={{cursor:"not-allowed"}}>Safety</a>
+                            <a className="link-1bIkeG link-oDO0Ir" href="#" style={{cursor:"not-allowed"}}>Support</a>
+                        </div>
                         <div className="appButton-2wSXh-">
                             {/* <a className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g" href="//discord.com/login">Open buzzhive</a> */}
                             <Link className="button-195cDm buttonWhite-18r1SC buttonSmall-2bnF7I gtm-click-class-login-button button-1x6X9g" to={authRoute}>Open buzzhive</Link>
@@ -69,11 +75,14 @@ export default ({currentUser}) => {
             <div className="row-3wW-Fx heroContainer-3j1eQg">
                 <div className="heroBody-3b6R3c">
                     <div className="heroText-Sc7-zG">
-                        <h1 className="h1-1JG5Bw">Your place to talk</h1>
-                        <div className="text-3U-SDd textMedium-1DcD2z heroSubtitle-32Iz6d">A collobaration hub designed to personalize communication across every community. Through endless conversation and authentic human connections, buzzhive provides access to the right people, information, and tools for every activity from discussing interests to acheiving ambitions.</div>
+                        <h1 className="h1-1JG5Bw">A clone of <a href="https://slack.com/" target="_blank"> Slack</a> and <a href="https://discord.com/" target="_blank">Discord</a></h1>
+                        <div className="text-3U-SDd textMedium-1DcD2z heroSubtitle-32Iz6d">
+                            buzzhive is a full-stack clone of Slack, with an aim to re-create Slack's core features, seamless design, and excellent user experience and incorporate Discord's whimsical splash page.
+                            Written from scratch in just over 14 days, this app utilizes a Ruby on Rails backend and JavaScript ES6/React/Redux frontend.
+                        </div>
                     </div>
                     <div className="ctaContainer-3vWJHU">
-                        <a className="button-195cDm buttonWhite-18r1SC buttonLarge-2j8B-n downloadButton-111eh6 twoButtons-3Bk8eU">
+                        <a className="button-195cDm buttonWhite-18r1SC buttonLarge-2j8B-n downloadButton-111eh6 twoButtons-3Bk8eU" style={{cursor:"not-allowed"}}>
                             <svg width="24" height="24" viewBox="0 0 24 24" className="icon-nuGd5b">
                             <g fill="currentColor">
                                 <path d="M17.707 10.708L16.293 9.29398L13 12.587V2.00098H11V12.587L7.70697 9.29398L6.29297 10.708L12 16.415L17.707 10.708Z"></path>
