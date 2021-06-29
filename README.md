@@ -4,15 +4,15 @@
 
 # QuickStart
 
-1. execute `bundle install`
+1. Execute `bundle install`
 
-2. execute `bundle exec rails db:setup && bundle exec rails db:migrate && bundle exec rails db:seed`
+2. Execute `bundle exec rails db:setup && bundle exec rails db:migrate && bundle exec rails db:seed`
 
-3. run `rails s`
+3. Run `rails s`
 
-4. run `redis-server`
+4. Run `redis-server`
 
-5. run `npm run webpack`
+5. Run `npm run webpack`
 
 5. Go to `http://localhost:3000/#/`
 
