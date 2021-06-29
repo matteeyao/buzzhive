@@ -75,7 +75,7 @@ export default ({currentUser}) => {
             <div className="row-3wW-Fx heroContainer-3j1eQg">
                 <div className="heroBody-3b6R3c">
                     <div className="heroText-Sc7-zG">
-                        <h1 className="h1-1JG5Bw">A clone of <a href="https://slack.com/" target="_blank"> Slack</a> and <a href="https://discord.com/" target="_blank">Discord</a></h1>
+                        <h1 className="h1-1JG5Bw">A clone of <a href="https://slack.com/" target="_blank" style={{color:"#fff"}}> Slack</a> and <a href="https://discord.com/" target="_blank" style={{color:"#fff"}}>Discord</a></h1>
                         <div className="text-3U-SDd textMedium-1DcD2z heroSubtitle-32Iz6d">
                             buzzhive is a full-stack clone of Slack, with an aim to re-create Slack's core features, seamless design, and excellent user experience and incorporate Discord's whimsical splash page.
                             Written from scratch in just over 14 days, this app utilizes a Ruby on Rails backend and JavaScript ES6/React/Redux frontend.

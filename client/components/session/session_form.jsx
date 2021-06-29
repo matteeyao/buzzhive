@@ -174,7 +174,7 @@ class SessionForm extends React.Component {
                     <div className="p-refreshed_page__sub_heading">Continue with the Google account or username you use to sign in.</div>
                     <div className="p-get_started_signin">
                         <div className="p-google_form">
-                            <button className="c-button c-button--primary c-button--large c-third_party_auth c-google_login full_width" id="google_login_button" data-qa="base_google_login_button" type="button">
+                            <button className="c-button c-button--primary c-button--large c-third_party_auth c-google_login full_width" id="google_login_button" data-qa="base_google_login_button" type="button" style={{cursor:"not-allowed"}}>
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="c-third_party_auth__icon">
                                 <g>
                                     <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
