@@ -1,8 +1,10 @@
 # README
 
-[buzzhive](https://buzzhive.herokuapp.com/#/), a collaboration hub designed to personalize communication and collaboration across every community. Through endless conversation and authentic human connections, buzzhive provides access to the right people, information, and tools for every activity.
+[buzzhive](https://buzzhivez.herokuapp.com/#/), a collaboration hub designed to personalize communication and collaboration across every community. Through endless conversation and authentic human connections, buzzhive provides access to the right people, information, and tools for every activity.
 
-# QuickStart
+<br/>
+
+## QuickStart
 
 1. Execute `bundle install`
 
